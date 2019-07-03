@@ -1,4 +1,9 @@
 ports:
 - port: 8888
+- port: 1969
+- port: 1905
+  onOpen: notify
 tasks:
-- command: npm install
+- before: npm i -g npm
+- init: npm i
+- command: npm i -g ./

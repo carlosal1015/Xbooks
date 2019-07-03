@@ -2,14 +2,14 @@
 
 'use strict';
 
-const pkg = require('../package.json');
-const initiator = require('../lib/initiator.js');
-const ccc = require("../lib/common_cli_conventions.js");
+const pkg = require('../package');
+const initiator = require('../lib/initiator');
+const ccc = require("../lib/common_cli_conventions");
+const installer = require("../lib/installer");
+const server = require("../lib/server");
 
 const cmd = require('commander');
 const path = require('path');
-
-const Xbooks_root = path.join(process.argv[1].replace('\\xbooks\\bin\\Xbooks.js', '\\xbooks'));
 
 ccc.alert("Xbooks is under development process!!");
 
@@ -20,6 +20,22 @@ cmd
     .action(()=>{
         initiator.initiate();
     });
+
+cmd
+    .command("install")
+    .alias('i')
+    .description("to install dependencies defined in .Xbooksrc")
+    .action(()=>{
+        installer.install(process.argv[1].replace(path.join("bin","Xbooks.js"), ""), path.resolve());
+    })
+
+cmd
+    .command("serve")
+    .alias("s")
+    .description("serve your blog on port:1969||xxxx")
+    .action(()=>{
+        server.serve()
+    })
 
 cmd
     .version(pkg.version, '-v, --version')
