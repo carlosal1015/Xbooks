@@ -1,9 +1,20 @@
 ports:
 - port: 8888
+  onOpen: open-preview
 - port: 1969
+  onOpen: open-browser
 - port: 1905
+  onOpen: ignore
+- port: 8080
   onOpen: notify
 tasks:
-- before: npm i -g npm
-- init: npm i
+- command: npm i -g npm
+- command: npm i
 - command: npm i -g ./
+github:
+  prebuilds:
+      branches: true
+      pullRequestsFromFork: true
+      addComment: true
+      addBadge: true
+      addLabel: true
