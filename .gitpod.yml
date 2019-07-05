@@ -1,3 +1,5 @@
+image:
+    file: .gitpod.dockerfile
 ports:
 - port: 8888
   onOpen: open-preview
@@ -9,4 +11,3 @@ ports:
   onOpen: notify
 tasks:
 - command: npm i -g npm && rm -r node_modules && rm -f package-lock.json && npm i && npm i -g ./
-- command: pyenv uninstall --force 2.7.15 && pyenv uninstall --force 3.7.2 && pyenv install anaconda3-5.3.1 && pyenv global anaconda3-5.3.1
