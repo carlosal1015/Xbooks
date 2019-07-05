@@ -11,7 +11,7 @@ const server = require("../lib/server/server");
 const cmd = require('commander');
 const path = require('path');
 
-ccc.alert("Xbooks is under development process!!");
+ccc.alert(ccc.logo("Xbooks" + pkg.version)+" is under development process!!");
 
 cmd
     .command('initialize')
@@ -62,7 +62,7 @@ cmd
 
 
 if((!process.argv.slice(2).length)){
-    ccc.note("Xbooks " + pkg.version + " is a cli based cloud pipelined software\r\nto produce a website out of a repo of jupyter notebooks on GitHub.com repo hosting service! " + "\nas of now Git-GitHub-GitLab is prefrenced! but there's more to work on!\n");
+    ccc.note(ccc.logo("Xbooks" + pkg.version) + " is a cli based cloud pipelined software\r\nto produce a website out of a repo of jupyter notebooks on GitHub.com repo hosting service! " + "\nas of now Git-GitHub-GitLab-[GitPod-Binder] is prefrenced! but there's more to work on!\n");
     cmd.help();
 }
 
