@@ -5,7 +5,7 @@ RUN wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
 RUN bash Anaconda3-5.0.1-Linux-x86_64.sh -b -p ~/anaconda 
 RUN rm Anaconda3-5.0.1-Linux-x86_64.sh 
 RUN echo 'export PATH="~/anaconda/bin:$PATH"' >> ~/.bashrc 
-RUN source .bashrc 
+RUN . .bashrc 
 RUN conda update conda
 RUN apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
 USER root
