@@ -1,7 +1,7 @@
 # https://github.com/gitpod-io/workspace-images/blob/master/full/Dockerfile
 
 FROM continuumio/anaconda
-RUN yes | unminimize \
+RUN unminimize \
     && apt-get install -yq \
         asciidoctor \
         bash-completion \
