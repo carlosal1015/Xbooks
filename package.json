@@ -8,11 +8,9 @@
   },
   "scripts": {
     "start": "node ./bin/xbooks",
-    "on_CI_test": "node ./test/on_CI_test.js",
+    "on_CI_test": "node ./tests/on_CI_test.js",
     "test": "npm run-script on_CI_test",
     "prepublish": "npm test",
-    "uninstall": "rm -r node_modules && rm -f package-lock.json",
-    "preinstall": "npm uninstall",
     "convert_Xbooks": "python ./lib/converter/Xbooks.py",
     "c": "npm run-script convert_Xbooks"
   },
