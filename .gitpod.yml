@@ -10,4 +10,4 @@ ports:
 - port: 8080
   onOpen: notify
 tasks:
-- command: npm i -g npm && rm -r node_modules && rm -f package-lock.json && npm i && npm i -g ./
+- command: npm i -g npm && ((rm -r node_modules && rm -f package-lock.json && npm i && npm i -g ./) || npm i && npm i -g ./)
