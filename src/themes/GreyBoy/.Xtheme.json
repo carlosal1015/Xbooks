@@ -11,12 +11,10 @@
 
     ],
     "theme_fetcher_count": 0,
-    "install": {
-        "index.html": "dir:${Xbooks}$",
-        "Xtheme": "dir:${Xbooks}$"
-    },
-    "uninstall": {
-        "index.html": "dir:${Xbooks}$",
-        "Xtheme": "dir:${Xbooks}$"
-    }
+    "files": [
+        "index.html"
+    ],
+    "dirs": [
+        "Assets"
+    ]
 }

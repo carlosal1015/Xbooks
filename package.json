@@ -7,13 +7,21 @@
     "Xbooks": "bin/Xbooks.js"
   },
   "scripts": {
-    "test": "echo no tests yet!"
+    "start": "node ./bin/xbooks",
+    "on_CI_test": "node ./test/on_CI_test.js",
+    "test": "npm run-script on_CI_test",
+    "prepublish": "npm test",
+    "uninstall": "rm -r node_modules && rm -f package-lock.json",
+    "preinstall": "npm uninstall",
+    "convert_Xbooks": "python ./lib/converter/Xbooks.py",
+    "c": "npm run-script convert_Xbooks"
   },
   "author": "XinYaanZyoy",
   "license": "MIT",
   "dependencies": {
     "boxen": "^4.1.0",
     "browser-sync": "^2.26.7",
+    "cheerio": "^1.0.0-rc.3",
     "colors": "^1.3.3",
     "commander": "^2.20.0",
     "fs-extra": "^8.0.1",

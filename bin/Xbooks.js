@@ -4,9 +4,9 @@
 
 const pkg = require('../package');
 const initiator = require('../lib/initiator');
-const ccc = require("../lib/common_cli_conventions");
-const installer = require("../lib/installer");
-const server = require("../lib/server");
+const ccc = require("../lib/ccc/common_cli_conventions");
+const installer = require("../lib/installer/initiator");
+const server = require("../lib/server/server");
 
 const cmd = require('commander');
 const path = require('path');
@@ -34,8 +34,12 @@ cmd
     .alias("s")
     .description("serve your blog on port:1969||xxxx")
     .action(()=>{
-        server.serve()
+        server.serve();
     })
+
+cmd
+    .command("convert")
+    .description("convert your ipynbs to html")
 
 cmd
     .version(pkg.version, '-v, --version')
@@ -55,6 +59,7 @@ cmd
               "git add && commit && push  (to publish example_blog)",
             ]);
   });
+
 
 if((!process.argv.slice(2).length)){
     ccc.note("Xbooks " + pkg.version + " is a cli based cloud pipelined software\r\nto produce a website out of a repo of jupyter notebooks on GitHub.com repo hosting service! " + "\nas of now Git-GitHub-GitLab is prefrenced! but there's more to work on!\n");
