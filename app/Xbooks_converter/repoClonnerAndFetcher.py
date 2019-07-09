@@ -2,6 +2,7 @@
 
 import os
 from git import Repo
+from Xbooks_converter import common_cli_conventions as ccc
 
 def fstatus(plus, minus, lines):
     """
@@ -23,7 +24,7 @@ def fstatus(plus, minus, lines):
     if len(status) == 3:
         return str().join(status)
     else:
-        print("something went wrong!")
+        ccc.fail("while parsing file status code")
 
 class ClonnerAndFetcher:
     def __init__(self, url):
@@ -33,10 +34,11 @@ class ClonnerAndFetcher:
         """
         clones git repository returns true if success; failure otherwise
         """
-        self.repo = Repo.clone_from(self.url, "./Xbooks/", branch="master")
-        print("successful clonning!")
+        self.repo = Repo.clone_from(self.url, "./Xblog", branch="master")
+        self.author = self.repo.head.commit.author.name
+        ccc.success("clonning repo " + self.url)
         return self
-
+        
     def fetch(self):
         """
         fetches changes and returns dict with keys convert, delete, and rename
@@ -48,7 +50,7 @@ class ClonnerAndFetcher:
             status = fstatus(fd['insertions'], fd['deletions'], fd['lines'])
             if fn.startswith("notebooks") and fn not in []:
                 if status != "110" and status != "100" and status != "010":
-                    if os.path.exists(os.path.join("Xbooks", fn)):
+                    if os.path.exists(os.path.join("../Xblog", fn)):
                         if status == "111" or status == "101" or status == "011":
                             toConvert.append(fn)
                     else:
@@ -56,10 +58,11 @@ class ClonnerAndFetcher:
                             toDelete.append(fn)
                     if status == "000":
                             toRename.append(fn)
+        ccc.success("fetching changes of commit " + str(self.repo.head.commit)[:7])
         return {
-                "toConvert": toConvert,
-                "toDelete": toDelete,
-                "toRename": toRename
+                "to_be_converted": toConvert,
+                "to_be_deleted": toDelete,
+                "to_be_renamed": toRename
                 }
 
 if __name__ == "__main__":

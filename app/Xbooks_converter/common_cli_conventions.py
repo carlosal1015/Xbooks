@@ -40,6 +40,9 @@ def cyan(tag, txt):
 def magenta(tag, txt):
     print(Back.MAGENTA+'|'+tag+'|', Fore.MAGENTA+'> '+txt)
 
+def white(tag, txt):
+    print(Fore.BLACK+Back.WHITE+'|'+tag+'|', Fore.WHITE+'> '+txt)
+
 def test():
     success("this is success")
     fail("this is failure")
