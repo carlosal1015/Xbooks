@@ -4,13 +4,16 @@
 
 const pkg = require('../package');
 const initiator = require('../lib/initiator');
-const ccc = require("../lib/ccc/common_cli_conventions");
+const ccc = require("../lib/common_cli_conventions");
 const installer = require("../lib/installer/initiator");
 const server = require("../lib/server/server");
+const uninstaller = require("../lib/uninstaller/Xbooks_uninstaller");
 
 const cmd = require('commander');
 const path = require('path');
 
+ccc.greet("hola! lots of hopes and wishes for your project! from the writter of Xbooks; XinYaanZyoy! \
+       \nhttps://GitHub.com/XinYaanZyoy")
 ccc.alert(ccc.logo("Xbooks" + pkg.version)+" is under development process!!");
 
 cmd
@@ -30,16 +33,21 @@ cmd
     })
 
 cmd
+    .command("uninstall")
+    .alias('uni')
+    .description("to uninstall all Xbooks and all those Xbooks releated and created by Xbooks files!")
+    .option('-f, --full', "to fully uninstall Xbooks")
+    .action((cmd)=>{
+        uninstaller.uninstall(cmd.full);
+    })
+
+cmd
     .command("serve")
     .alias("s")
     .description("serve your blog on port:1969||xxxx")
     .action(()=>{
         server.serve();
     })
-
-cmd
-    .command("convert")
-    .description("convert your ipynbs to html")
 
 cmd
     .version(pkg.version, '-v, --version')

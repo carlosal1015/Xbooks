@@ -1,0 +1,20 @@
+{
+    "Xtheme_name": "GreyBoy",
+    "Author_name": "XinYaanZyoy",
+    "references": [
+        "https://colorlib.com/wp/template/jackson/"
+    ],
+    "Author_website": "https://XinYaanZyoy.GitHub.io",
+    "theme_description": "a perfect theme for a grey boy!",
+    "theme_color": "grey",
+    "unsupported_Xplugins": [
+
+    ],
+    "theme_fetcher_count": 0,
+    "files": [
+        "index.html"
+    ],
+    "dirs": [
+        "Assets"
+    ]
+}

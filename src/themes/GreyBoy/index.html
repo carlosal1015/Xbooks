@@ -1,8 +1,7 @@
-<!DOCTYPE HTML>
 <html>
-<!-- installed by Xbooks.js node app-->
-
 <head>
+    <!-- installed by Xbooks.js node app-->
+
     <!-- mob check http://detectmobilebrowser.com/mobile -->
     <script>
         (function (a, b) {
@@ -15,14 +14,11 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>KoHam</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="XinYaanZyoy" />
-
-    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://printjs-4de6.kxcdn.com/print.min.css">
 
     <!-- Facebook and Twitter integration -->
     <!-- <meta property="og:title" content=""/>
@@ -41,101 +37,23 @@
     <link rel="stylesheet" href="./Assets/css/bootstrap.css">
     <!-- Theme style  -->
     <link rel="stylesheet" href="./Assets/css/style.css">
-
-
+    <script src="\Assets/js/index.js"></script>
 </head>
 
 <body style="background-image: url(./Assets/images/mathysics_grey.png);">
 
     <header style="height:60px;">
         <!-- https://bootswatch.com/journal/ -->
-        <ol class="breadcrumb"
+        <ol id="explorer" class="breadcrumb"
             style="background-color: rgb(24, 26, 27,0.5) !important; color: rgb(200, 192, 188) !important;">
-            <li class="breadcrumb-item"><a href="#" style="--link-color:rgb(100, 172, 232) !important; --link-color-hover:rgb(126, 187, 236) !important;
+            <li style="cursor: pointer" class="breadcrumb-item"><a onclick="document.getElementById('Xdisplay').contentWindow.location.replace('notebooks/welcome.html'); updateExplorer('notebooks/welcome.html')" style="--link-color:rgb(100, 172, 232) !important; --link-color-hover:rgb(126, 187, 236) !important;
 					--link-color-active:rgb(100, 172, 232) !important; --visited-color:rgb(148, 100, 232) !important;
-					--visited-color-hover:rgb(167, 126, 236) !important; --visited-color-active:rgb(148, 100, 232)
+					--visited-color-hover:rgb(29, 28, 32) !important; --visited-color-active:rgb(148, 100, 232)
 					!important;"><text
                         style="color:grey; font-size: 24px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><img
-                            height="40px" src="./Assets/images/logo.png" />~</a>
-            </li>
-            <li class="breadcrumb-item" before-style="30"><a href="#"
-                    style="--link-color:rgb(100, 172, 232) !important; --link-color-hover:rgb(126, 187, 236) !important; --link-color-active:rgb(100, 172, 232) !important; --visited-color:rgb(148, 100, 232) !important; --visited-color-hover:rgb(167, 126, 236) !important; --visited-color-active:rgb(148, 100, 232) !important;">Library</a>
-            </li>
-            <li class="breadcrumb-item active" style="color: rgb(200, 192, 188) !important;">Data</li>
-            <li>
-
+                            height="40px" src="/Assets/images/logo.png" />KoHam(Who Am I) ~</a>
             </li>
         </ol>
-
-        <!--moving text https://www.quackit.com/html/codes/scrolling_text.cfm -->
-        <style>
-            .example1 {
-                height: 50px;
-                overflow: hidden;
-                position: relative;
-            }
-
-            .example1 h3 {
-                font-size: 3em;
-                color: rgb(211, 79, 193);
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                margin: 0;
-                line-height: 50px;
-                text-align: center;
-                /* Starting position */
-                -moz-transform: translateX(100%);
-                -webkit-transform: translateX(100%);
-                transform: translateX(100%);
-                /* Apply animation to this element */
-                -moz-animation: example1 15s linear infinite;
-                -webkit-animation: example1 15s linear infinite;
-                animation: example1 15s linear infinite;
-            }
-
-            /* Move it (define the animation) */
-            @-moz-keyframes example1 {
-                0% {
-                    -moz-transform: translateX(100%);
-                }
-
-                100% {
-                    -moz-transform: translateX(-100%);
-                }
-            }
-
-            @-webkit-keyframes example1 {
-                0% {
-                    -webkit-transform: translateX(100%);
-                }
-
-                100% {
-                    -webkit-transform: translateX(-100%);
-                }
-            }
-
-            @keyframes example1 {
-                0% {
-                    -moz-transform: translateX(100%);
-                    /* Firefox bug fix */
-                    -webkit-transform: translateX(100%);
-                    /* Firefox bug fix */
-                    transform: translateX(100%);
-                }
-
-                100% {
-                    -moz-transform: translateX(-100%);
-                    /* Firefox bug fix */
-                    -webkit-transform: translateX(-100%);
-                    /* Firefox bug fix */
-                    transform: translateX(-100%);
-                }
-            }
-        </style>
-        <!-- <div style="margin:-80px 34vw; width: 76vw" class="example1">
-            <h3><a href="#">${USER_NOTIFICATION}$</a></h3>
-        </div> -->
 
     </header>
 
@@ -143,12 +61,13 @@
         <div class="container-wrap">
             <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar"
                 aria-expanded="false" aria-controls="navbar"><i></i></a>
-            <aside style="margin: 0 -75px; background-color: transparent;" id="colorlib-aside" role="complementary"
+            <aside style="margin: 0 -10vw; background-color: transparent;" id="colorlib-aside" role="complementary"
                 class="border js-fullheight">
                 <div class="text-center">
-                    <div class="author-img"
-                        style="background-image: url(./Assets/images/DP.jpg); height: 128px; width: 128px;"></div>
-
+                    <a target="_blank" href="./Assets/images/DP1.JPG">
+                        <div class="author-img"
+                        style="background-image: url(./Assets/images/DP1.jpg); height: 256px; width: 256px;"></div>
+                    </a>
                     <span id="blog_description" style="background-color: darkgray; border-radius: 3%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;" class="position">
 
                     </span>
@@ -168,26 +87,27 @@
 
                     <div style="background-color: darkgray; border-radius: 3%">
                         <h1 id="colorlib-logo"><a href="./index.html"
-                                style="color: whitesmoke;">${AUTHOR_NAME}$<br /><text
-                                    style="color:purple;">${PEN_NAME}$</text></a></h1>
+                                style="color: whitesmoke;">XinYaanZyoy<br /><text
+                                    style="color:darkslategray;">The Helper Boy</text></a></h1>
                         <span style="font-size: 11px" class="position">
-                            ${BIO}$
-                            <!-- A boy who;
+                            A boy who;
                             by nature, <br />
                             is a helper and an explorer; <br />
                             by education; a
                             mathematician and a
                             Physicist; <br />
                             by observations and self-learning ; <br />
-                            a metaphysicist, a Philosopher, and an Engineer! -->
+                            a metaphysicist, a Philosopher, and an Engineer;
+                            and above all An Earthian Human!!
                         </span>
                     </div>
                 </div>
                 <nav style="background-color:gray;" id="colorlib-main-menu" role="navigation" class="navbar">
                     <div id="navbar" class="collapse">
                         <ul>
-                            <li class="active"><a href="#" data-nav-section="home">Home</a></li>
-                            <!-- ${Xbooks_nav}$ -->
+                            <li class="active"><a onclick="document.getElementById('Xdisplay').contentWindow.location.replace('notebooks/welcome.html'); updateExplorer('notebooks/welcome.html')" data-nav-section="home">Home</a></li>
+                            <li><a onclick="document.getElementById('Xdisplay').contentWindow.location.replace('notebooks/nb001/index.html'); updateExplorer('notebooks/nb001/index.html')">nb001</a></li>
+							<!-- ${Xbooks_nav}$ -->
                         </ul>
                     </div>
                 </nav>
@@ -207,9 +127,9 @@
 
             <div id="colorlib-main">
                 <div>
-                    <iframe id="Xdisplay" src="./WebBooks/index.html"
-                        style="margin: 0 -75px; outline: none; border: none; height: 98vh; width: 75vw;">
-                    </iframe>
+                    <object id="Xdisplay" data="./notebooks/welcome.html"
+                        style="margin: 0 -10vw; outline: none; border: none; height: 87vh; width: 77.5vw;">
+                    </object>
                 </div>
             </div><!-- end:colorlib-main -->
         </div><!-- end:container-wrap -->

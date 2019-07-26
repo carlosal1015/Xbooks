@@ -1,0 +1,36 @@
+html {
+    overflow-x: hidden;
+    padding-bottom: 100px;
+}
+
+::-webkit-scrollbar {
+    border-radius: 5%;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+    background-color: rgb(24, 27, 177);
+    border: 4px solid rgb(55, 64, 150);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5%;
+    background-color: rgba(14, 90, 230, 0.7);
+    width: 1px;
+}
+
+body {
+    background-color: transparent;
+    margin: 0 30px;
+
+}
+
+
+tbody tr:hover {
+    color: black;
+    cursor: pointer;
+}
+
+tbody tr:active {
+    color: whitesmoke;
+}

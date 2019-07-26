@@ -11,7 +11,7 @@
     "on_CI_test": "node ./tests/on_CI_test.js",
     "test": "npm run-script on_CI_test",
     "prepublish": "npm test",
-    "convert": "python ./lib/converter/Xbooks.py $REPO_URL $GH_TOKEN"
+    "convert": "python ./app/Xbooks.py %REPO_URL% %GH_TOKEN%"
   },
   "author": "XinYaanZyoy",
   "license": "MIT",
@@ -23,11 +23,11 @@
     "commander": "^2.20.0",
     "fs-extra": "^8.0.1",
     "inquirer": "^6.3.1",
-    "inquirer-select-directory": "^1.2.0"
+    "inquirer-select-directory": "^1.2.0",
+    "rimraf": "^2.6.3"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/xsoft-technologies/Xbooks.git"
-  },
-  "devDependencies": {}
+  }
 }
