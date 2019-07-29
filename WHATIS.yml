@@ -1,0 +1,36 @@
+root/ :
+    - bin/ :
+        - Xbooks.js   : entry point of Xbooks_CLI
+    - docs/ :
+        - index.html : main page of Xbooks website
+    - lib/ :
+        - converter/ : smt
+        - installer/ :
+        - server/ :
+        - updater/ :
+        - common_cli_conventions.js :
+        - common_cli_conventions.py :
+        - initiator.js :
+    - templates/ :
+        - CI/ :
+            - CircleCI :
+                - .circleci/  :
+                    - config.yml :
+            - GitLabCI :
+                - .gitlab-ci.yml :
+            - JenkinsCI :
+            - TravisCI :
+            - CI.list :
+        - themes/ :
+            - GreyBoy :
+            - themes.list :
+    - .editorconfig :
+    - .gitignore :
+    - .gitpod.yml :
+    - .npmignore :
+    - .Xbooksrc :
+    - package-lock.json :
+    - package.json :
+    - README.md :
+    - WHATIS.yml :
+    - Xbooks-logo.png :

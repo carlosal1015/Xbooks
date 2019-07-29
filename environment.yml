@@ -1,0 +1,7 @@
+name: Xbooks_env
+dependencies:
+  - gitpython
+  - colorama
+  - nbformat
+  - beautifulsoup4
+  - nbconvert

@@ -2,16 +2,19 @@
 
 'use strict';
 
-const pkg = require('../package.json');
-const initiator = require('../lib/initiator.js');
-const ccc = require("../lib/common_cli_conventions.js");
+const pkg = require('../package');
+const initiator = require('../lib/initiator');
+const ccc = require("../lib/common_cli_conventions");
+const installer = require("../lib/installer/initiator");
+const server = require("../lib/server/server");
+const uninstaller = require("../lib/uninstaller/Xbooks_uninstaller");
 
 const cmd = require('commander');
 const path = require('path');
 
-const Xbooks_root = path.join(process.argv[1].replace('\\xbooks\\bin\\Xbooks.js', '\\xbooks'));
-
-ccc.alert("Xbooks is under development process!!");
+ccc.greet("hola! lots of hopes and wishes for your project! from the writter of Xbooks; XinYaanZyoy! \
+       \nhttps://GitHub.com/XinYaanZyoy")
+ccc.alert(ccc.logo("Xbooks" + pkg.version)+" is under development process!!");
 
 cmd
     .command('initialize')
@@ -20,6 +23,31 @@ cmd
     .action(()=>{
         initiator.initiate();
     });
+
+cmd
+    .command("install")
+    .alias('i')
+    .description("to install dependencies defined in .Xbooksrc")
+    .action(()=>{
+        installer.install(process.argv[1].replace(path.join("bin","Xbooks.js"), ""), path.resolve());
+    })
+
+cmd
+    .command("uninstall")
+    .alias('uni')
+    .description("to uninstall all Xbooks and all those Xbooks releated and created by Xbooks files!")
+    .option('-f, --full', "to fully uninstall Xbooks")
+    .action((cmd)=>{
+        uninstaller.uninstall(cmd.full);
+    })
+
+cmd
+    .command("serve")
+    .alias("s")
+    .description("serve your blog on port:1969||xxxx")
+    .action(()=>{
+        server.serve();
+    })
 
 cmd
     .version(pkg.version, '-v, --version')
@@ -40,8 +68,9 @@ cmd
             ]);
   });
 
+
 if((!process.argv.slice(2).length)){
-    ccc.note("Xbooks " + pkg.version + " is a cli based cloud pipelined software\r\nto produce a website out of a repo of jupyter notebooks on GitHub.com repo hosting service! " + "\nas of now Git-GitHub-GitLab is prefrenced! but there's more to work on!\n");
+    ccc.note(ccc.logo("Xbooks" + pkg.version) + " is a cli based cloud pipelined software\r\nto produce a website out of a repo of jupyter notebooks on GitHub.com repo hosting service! " + "\nas of now Git-GitHub-GitLab-[GitPod-Binder] is prefrenced! but there's more to work on!\n");
     cmd.help();
 }
 
