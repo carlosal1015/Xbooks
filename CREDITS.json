@@ -1,16 +1,42 @@
 {
-    "https://bootswatch.com/journal/": {
-        "title": "theme",
-        "usage": [
-            "index.html"
-        ],
-        "description": "this themes' cards, Breadcrumbs, and Tables are used in root index.html and in sub inde.htmls"
-    },
-
-    "http://www.bestfunforall.com/better/imgs/*princess-purple*%20wallpaper%20%205.jpg": "",
-    "https://hdwallpapers.cat/wallpaper/follow-the-yellow-brick-road-goodbye-94Jl.jpg": "",
-    "https://wallpaperstream.com/wallpapers/full/sweets-and-candies/Red-Heart-Candies-HD-Wallpaper.jpg": "",
-    "https://wallpaper21.com/wp-content/uploads/2017/08/Fantasy-Woman-Art-Array-Wallwuzz-Hd-wallpaper-wpt7004428.jpg": "",
-    "http://2.bp.blogspot.com/-5juX2ZP5g6c/VnugOIWaQYI/AAAAAAAAAOo/834dwI-kRgo/s1600/3d-little-Krishna-1920x1080.jpg": "",
-    "http://paperlief.com/images/abstract-paintings-of-love-wallpaper-4.jpg": ""
+    "sources": {
+        "Xthemes": {
+            "referances": [
+                {
+                    "url": "https://bootswatch.com/journal/",
+                    "title": "theme",
+                    "description": "this themes' cards, Breadcrumbs, and Tables are used",
+                    "usage": [
+                        "root_index.html",
+                        "sub_index.html"
+                    ]
+                },
+        
+                {
+                    "url": "https://codepen.io/ssk7833/pen/mVOXXp",
+                    "title": "snippet",
+                    "description": "this pen's JS part is used",
+                    "usage": [
+                        "root_index.html"
+                    ]
+                }
+            ]
+        },
+    
+        "Xbooks_py": {
+            
+        },
+    
+        "Xbooks_nodejs": {
+    
+        },
+    
+        "Xplugins": {
+    
+        },
+    
+        "Xextensions": {
+    
+        }    
+    }
 }
