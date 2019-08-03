@@ -45,8 +45,9 @@ cmd
    .command("publish")
    .alias('pub')
    .description("to publish your blog to GitHub-Pages")
-   .action(()=>{
-       publisher.publish();       
+   .option("-i, --initial", "to pubish for the first time")
+   .action((cmd)=>{
+       publisher.publish(cmd.initial);
    })
 
 cmd
