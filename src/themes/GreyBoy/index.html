@@ -2,113 +2,130 @@
 
 <head>
     <!-- installed by Xbooks.js node app-->
-
-    <!-- mob check http://detectmobilebrowser.com/mobile -->
     <script>
         (function (a, b) {
             if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i
                 .test(a) ||
                 /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i
                 .test(a.substr(0, 4))) window.location = b
-        })(navigator.userAgent || navigator.vendor || window.opera, '\\$REPO$/Assets/html/Xbooks_mobile.html');
+        })(navigator.userAgent || navigator.vendor || window.opera, '\\$$REPO$/Assets/html/Xbooks_mobile.html');
     </script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>$TITLE$</title>
+    <title>test1341</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="$BOLG_DESCRIPTION$" />
+    <meta name="description" content="$BLOG_DESCRIPTION$" />
     <meta name="keywords" content="$KEYWORDS$" />
     <meta name="author" content="$AUTHOR$" />
 
     <link rel="shortcut icon" href="\$REPO$/Assets/images/logo.png">
-
-    <link rel="stylesheet" href="\$REPO$/Assets/css/root_index.css" />
     <link rel="stylesheet" href="\$REPO$/Assets/css/bootstrap.css">
     <link rel="stylesheet" href="\$REPO$/Assets/css/style.css">
     
     <script src="\$REPO$/Assets/js/index.js"></script>
+
+    <!-- tools -->
+    <script src="\$REPO$/Assets/js/tools/binder.js"></script>
+    <script src="\$REPO$/Assets/js/tools/colab.js"></script>
+    <script src="\$REPO$/Assets/js/tools/gitpod.js"></script>
 </head>
 
-<body>
-    <header>
-        <ol id="explorer" class="breadcrumb">
-            <li id="real" class="breadcrumb-item">
-                <a id="real-a-explorer"
-                    onclick="document.getElementById('Xdisplay').contentWindow.location.replace('\\$REPO$/notebooks/welcome.html'); updateExplorer('\\$REPO$/notebooks/welcome.html')">
-                    <text id="blog-home-explorer">
+<body style="background-color: rgb(32, 32, 32);">
+    <header style="height:60px;">
+        <ol id="explorer" class="breadcrumb"
+            style="background-color: rgb(24, 26, 27,0.5) !important; color: rgb(200, 192, 188) !important;">
+            <li style="cursor: pointer" class="breadcrumb-item">
+                <a onclick="document.getElementById('Xdisplay').contentWindow.location.replace('./notebooks/welcome.html'); updateExplorer('./notebooks/welcome.html')"
+                    style="--link-color:rgb(100, 172, 232) !important; --link-color-hover:rgb(126, 187, 236) !important;
+					--link-color-active:rgb(100, 172, 232) !important; --visited-color:rgb(148, 100, 232) !important;
+					--visited-color-hover:rgb(29, 28, 32) !important; --visited-color-active:rgb(148, 100, 232)
+                    !important;">
+                    <text
+                        style="color:grey; font-size: 24px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
                         <img height="40px" src="\$REPO$/Assets/images/logo.png" />
-                    ~/$REPO$
+                        ~/$REPO$/
                     </text>
                 </a>
             </li>
 
             <!-- this following div, kindly to help others discover Xbooks do not remove; but if you want you certainly can! -->
-            <div id="Xbooks-ad" onclick="window.open('https\://xsoft-technologies.github.io/Xbooks', '_blank')">
+            <div onclick="(window.open('https://xsoft-technologies.github.io/Xbooks', '_blank'))" style="float: right; cursor: pointer;; color: snow; font-size: 18px; font-family:'Courier New', Courier, monospace">
                 Transformed By -
-                <text id="Xbooks-logo-text">Xbooks</text>
+                <text style="font-family: fantasy; color: grey;">Xbooks</text>
                 <img src="\$REPO$/Assets/images/Xbooks-logo_96x48.png" />
-            </div>        
+            </div>
         </ol>
     </header>
 
     <div id="colorlib-page">
         <div class="container-wrap">
-            <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
+            <aside style="margin: 0 -10vw; background-color: transparent;" id="colorlib-aside" role="complementary"
+                class="border js-fullheight">
                 <div class="text-center">
                     <a target="_blank" href="\$REPO$/Assets/images/DP.png">
-                        <div class="author-img"></div>
+                        <div class="author-img"
+                            style="background-image: url(\\$REPO$/Assets/images/DP.png); height: 256px; width: 256px;"></div>
                     </a>
 
-                    <!-- capacity of any 10 buttons -->
-                    <div id="follow-btns" class="a2a_kit a2a_kit_size_26 a2a_default_style a2a_follow">
-                            <a class="a2a_button_email" href="$EMAIL$"></a>
-                            <a class="a2a_button_github" data-a2a-follow="$GH$"></a>
+                    <!-- looks better with 10 or 20 links -->
+                    <div class="a2a_kit a2a_kit_size_26 a2a_default_style a2a_follow">
+                        <a class="a2a_button_email" href="$EMAIL$"></a>
+                        <a class="a2a_button_github" data-a2a-follow="$GH$"></a>
 
-                            <!-- which ever you want uncomment and write right thing within "$xyz$" -->
+                        <!-- which ever you want uncomment and write right thing within "$xyz$" -->
 
-                            <!-- <a class="a2a_button_twitter" data-a2a-follow="$TWITTER$"></a> -->
-                            <!-- <a class="a2a_button_facebook" data-a2a-follow="$FB$"></a> -->
-                            <!-- <a class="a2a_button_instagram" data-a2a-follow="$INSTA$"></a> -->
-                            <!-- <a class="a2a_button_pinterest" data-a2a-follow="$PNTREST$"></a> -->
-                            <!-- <a class="a2a_button_linkedin" data-a2a-follow="$LIN$"></a> -->
-                            <!-- <a class="a2a_button_linkedin_company" data-a2a-follow="$LIN_COMP$"></a> -->
-                            <!-- <a class="a2a_button_vimeo" data-a2a-follow="$VIMEO$"></a> -->
-                            <!-- <a class="a2a_button_youtube_channel" data-a2a-follow="$YT_CHANNEL$"></a> -->
-                            <!-- <a class="a2a_button_tumblr" data-a2a-follow="$TUMBLR$"></a> -->
-                            <!-- <a class="a2a_button_foursquare" data-a2a-follow="$FS$"></a> -->
-                            <!-- <a class="a2a_button_snapchat" data-a2a-follow="$SNAP$"></a> -->
-                            <!-- <a class="a2a_button_medium" data-a2a-follow="$MEDIUM$"></a> -->
-                            <!-- <a class="a2a_button_behance" data-a2a-follow="$BEHANCE$"></a> -->
-                            <!-- <a class="a2a_button_flickr" data-a2a-follow="$FLICKR$"></a> -->
+                        <!-- <a class="a2a_button_twitter" data-a2a-follow="$TWITTER$"></a> -->
+                        <!-- <a class="a2a_button_facebook" data-a2a-follow="$FB$"></a> -->
+                        <!-- <a class="a2a_button_instagram" data-a2a-follow="$INSTA$"></a> -->
+                        <!-- <a class="a2a_button_pinterest" data-a2a-follow="$PNTREST$"></a> -->
+                        <!-- <a class="a2a_button_linkedin" data-a2a-follow="$LIN$"></a> -->
+                        <!-- <a class="a2a_button_linkedin_company" data-a2a-follow="$LIN_COMP$"></a> -->
+                        <!-- <a class="a2a_button_vimeo" data-a2a-follow="$VIMEO$"></a> -->
+                        <!-- <a class="a2a_button_youtube_channel" data-a2a-follow="$YT_CHANNEL$"></a> -->
+                        <!-- <a class="a2a_button_tumblr" data-a2a-follow="$TUMBLR$"></a> -->
+                        <!-- <a class="a2a_button_foursquare" data-a2a-follow="$FS$"></a> -->
+                        <!-- <a class="a2a_button_snapchat" data-a2a-follow="$SNAP$"></a> -->
+                        <!-- <a class="a2a_button_medium" data-a2a-follow="$MEDIUM$"></a> -->
+                        <!-- <a class="a2a_button_behance" data-a2a-follow="$BEHANCE$"></a> -->
+                        <!-- <a class="a2a_button_flickr" data-a2a-follow="$FLICKR$"></a> -->
 
-                            <!-- <a class="a2a_button_wordpress" href="https://$WORDPRESS$.wordpress.com"></a> -->
-                            <!-- <a class="a2a_button_blogger" href="http://$GBLOG$.blogspot.com/"></a> -->
-                            <!-- <a class="a2a_button_sina_weibo" href="http://weibo.com/$WEIBO$"></a> -->
-                            <!-- <a class="a2a_button_vk" href="https://vk.com/$VK$"></a> -->
+                        <!-- <a class="a2a_button_wordpress" href="https://$WORDPRESS$.wordpress.com"></a> -->
+                        <!-- <a class="a2a_button_blogger" href="http://$GBLOG$.blogspot.com/"></a> -->
+                        <!-- <a class="a2a_button_sina_weibo" href="http://weibo.com/$WEIBO$"></a> -->
+                        <!-- <a class="a2a_button_vk" href="https://vk.com/$VK$"></a> -->
                     </div>
 
-                    <div id="description-pallete">
-                        <h1 id="colorlib-logo"><a id="author-name" href="aboutme.html">$AUTHOR$<br />
-                                <text id="pen-name">$PEN$</text></a>
-                        </h1>
-                        <span id="blog_description" class="position">
-                             $BOLG_DESCRIPTION$
+                    <div style="background-color: darkgray; border-radius: 3%">
+                        <h1 id="colorlib-logo"><a href="./index.html"
+                                style="color: whitesmoke;">Avril Lavigne<br /><text
+                                    style="color:darkslategray;">abby down</text></a></h1>
+                        <span id="blog_description"
+                            style="font-size: 11px; background-color: darkgray; border-radius: 3%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;"
+                            class="position">
+                            this is desc
                         </span>
                     </div>
                 </div>
-
-                <nav id="colorlib-main-menu" role="navigation" class="navbar">
+                <nav style="background-color:gray;" id="colorlib-main-menu" role="navigation" class="navbar">
                     <div id="navbar" class="collapse">
                         <ul>
-                            <li class="active"><a class="navs" onclick="document.getElementById('Xdisplay').contentWindow.location.replace('\\$REPO$/notebooks/welcome.html'); updateExplorer('\\$REPO$/notebooks/welcome.html')">Home</a></li>
+                            <li class="active"><a style="cursor: pointer" onclick="document.getElementById('Xdisplay').contentWindow.location.replace('./notebooks/welcome.html'); updateExplorer('./notebooks/welcome.html')">Home</a></li>
+                            <li><a style='cursor: pointer' onclick="document.getElementById('Xdisplay').contentWindow.location.replace('notebooks/scatter.html'); updateExplorer('notebooks/scatter.html');">scatter</a></li>
+							<li><a style='cursor: pointer' onclick="document.getElementById('Xdisplay').contentWindow.location.replace('notebooks/stories/index.html'); updateExplorer('notebooks/scatter.html');">stories</a></li>
+							<li><a style='cursor: pointer' onclick="document.getElementById('Xdisplay').contentWindow.location.replace('notebooks/bps/index.html'); updateExplorer('notebooks/bps/index.html');">bps</a></li>
+							<li><a style='cursor: pointer' onclick="document.getElementById('Xdisplay').contentWindow.location.replace('notebooks/bps/index.html'); updateExplorer('notebooks/bps/index.html');">bps</a></li>
+							<li><a style='cursor: pointer' onclick="document.getElementById('Xdisplay').contentWindow.location.replace('notebooks/bps/index.html'); updateExplorer('notebooks/bps/index.html');">bps</a></li>
+							<li><a style='cursor: pointer' onclick="document.getElementById('Xdisplay').contentWindow.location.replace('notebooks/bps/index.html'); updateExplorer('notebooks/bps/index.html');">bps</a></li>
+							<li><a style='cursor: pointer' onclick="document.getElementById('Xdisplay').contentWindow.location.replace('notebooks/bps/index.html'); updateExplorer('notebooks/bps/index.html');">bps</a></li>
 							<!-- ${Xbooks_nav}$ -->
                         </ul>
                     </div>
                 </nav>
 
+
                 <div class="colorlib-footer">
-                    <p style="font-size: 4px;"><small>&copy;
+                    <p style="font-size: 7px;"><small>&copy;
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             Copyright &copy;<script>
                                 document.write(new Date().getFullYear());
@@ -120,35 +137,62 @@
             </aside>
 
             <div id="colorlib-main">
-
                 <div id="loadImg">
-                    <h1 id="loading-text">Please wait, Xbooks is learning!</h1>
-                    <div><img id="loading-img" src="\$REPO$/Assets/images/loading.gif" alt="loading ..." /></div>
+                    <h1 style="color: white;" align="center">Please wait, Xbooks is learning!</h1>
+                    <div><img style="display: block; margin-left: auto; margin-right: auto; width: 512px; margin-top: auto; margin-bottom: auto; height: 512px;" src="\$REPO$/Assets/images/loading.gif" alt="loading ..." /></div>
                 </div>
-
-                <iframe id="Xdisplay" src="notebooks/welcome.html" onload="document.getElementById('loadImg').style.display='none'; document.getElementById('Xdisplay').style.display='block';">
+                <iframe id="Xdisplay" src="./notebooks/welcome.html" width="400" height="400"
+                    onload="document.getElementById('loadImg').style.display='none'; document.getElementById('Xdisplay').style.display='block';"
+                    style="display: none; margin: 0 -10vw; outline: none; border: none; height: 87vh; width: 77.5vw;">
                 </iframe>
-
             </div><!-- end:colorlib-main -->
         </div><!-- end:container-wrap -->
     </div><!-- end:colorlib-page -->
 
-    <!-- capacity of 8 buttons -->
-    <div id="bottom-bar">
-        <div id="tools-pallete">
-            <button class="tool_buttons" id="fscrn" onclick="fscreen();" title="Read this Book on FullScreen">FullScreen</button>
+    <div style="background-color: rgb(24, 26, 27,0.5);">
+        <div style="margin: 5px 22vw;">
+            <button id="fscrn" style="border-radius: 5px 5px; border: rgb(63, 63, 63) solid 4px; box-shadow: black 3px 3px 3px; color: black; background-color: rgb(136, 135, 135); font-family: monospace; width: 93px; height: 37px;"
+            onclick="fscreen();" title="Read this Book on FullScreen">
+            FullScreen
+            </button>
+
+            <button class="tools" id="onbinder" style="display: none; border-radius: 5px 5px; border: rgb(63, 63, 63) solid 4px; box-shadow: black 3px 3px 3px; color: black; background-color: rgb(136, 135, 135); font-family: monospace; width: 93px; height: 37px;"
+            onclick="onBinder();" title="open this notebook on binder">
+            onBinder
+            </button>
+
+            <button class="tools" id="onColab" style="display: none; border-radius: 5px 5px; border: rgb(63, 63, 63) solid 4px; box-shadow: black 3px 3px 3px; color: black; background-color: rgb(136, 135, 135); font-family: monospace; width: 93px; height: 37px;"
+            onclick="onColab();" title="open this notebook on google colaboratory">
+            onColab
+            </button>
+
+            <button class="tools" id="onGitPod" style="display: none; border-radius: 5px 5px; border: rgb(63, 63, 63) solid 4px; box-shadow: black 3px 3px 3px; color: black; background-color: rgb(136, 135, 135); font-family: monospace; width: 93px; height: 37px;"
+            onclick="onGitPod();" title="Open this notebook on GitPod.io environment">
+            onGitPod
+            </button>
+
+            <!-- <button class="tools" id="toPDF" style="display: none; border-radius: 5px 5px; border: rgb(63, 63, 63) solid 4px; box-shadow: black 3px 3px 3px; color: black; background-color: rgb(136, 135, 135); font-family: monospace; width: 93px; height: 37px;"
+            onclick="toPDF();" title="Print this notebook as a PDF file">
+            toPDF
+            </button>
+
+            <button class="tools" id="downIpynb" style="display: none; border-radius: 5px 5px; border: rgb(63, 63, 63) solid 4px; box-shadow: black 3px 3px 3px; color: black; background-color: rgb(136, 135, 135); font-family: monospace; width: 93px; height: 37px;"
+            onclick="downIpynb();" title="Download this ipynb (jupyter) notebook"
+            download="Xbook.ipynb">
+            downIpynb
+            </button> -->
         </div>
-    
+
         <!-- jQuery -->
-        <script src="Assets/js/jquery.min.js"></script>
+        <script src="\$REPO$/Assets/js/jquery.min.js"></script>
         <!-- MAIN JS -->
-        <script src="Assets/js/main.js"></script>
+        <script src="\$REPO$/Assets/js/main.js"></script>
     
         <!-- share btns -->
-        <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_default_style"
+        <div class="a2a_kit a2a_kit_size_28 a2a_floating_style a2a_default_style"
             style="bottom:0px; right:0px; background-color: transparent;">
-            <a title="share this blog" class="a2a_dd" href="https://www.addtoany.com/share"></a>
-            <a title="copy link to this blog" class="a2a_button_copy_link"></a>
+            <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+            <a class="a2a_button_copy_link"></a>
             <a class="a2a_button_reddit"></a>
             <a class="a2a_button_twitter"></a>
             <a class="a2a_button_facebook"></a>
@@ -159,6 +203,7 @@
             <a class="a2a_button_tumblr"></a>
         </div>
     </div>
+    
     <script>
         var a2a_config = a2a_config || {};
 
@@ -226,7 +271,6 @@
             ele[1].addEventListener("click", ()=>{
                 let crnt = document.getElementsByClassName('active')[0];
                 crnt.className = crnt.className.replace("active", '');
-                console.log(ele[1]);
                 ele[1].className = 'active';
             });
         });

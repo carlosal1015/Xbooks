@@ -19,10 +19,19 @@
                     "usage": [
                         "root_index.html"
                     ]
+                },
+                
+                {
+                    "url": "http://detectmobilebrowser.com/mobile",
+                    "title": "snippet",
+                    "description": "this is used to block Xbooks on mobiles",
+                    "usage": [
+                        "root_index.html"
+                    ]
                 }
             ]
         },
-    
+
         "Xbooks_py": {
             
         },

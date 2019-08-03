@@ -1,4 +1,4 @@
-function fscreen(){
+function fscreen() {
     if (document.fullscreenEnabled ||
         document.webkitFullscreenEnabled ||
         document.mozFullScreenEnabled ||
@@ -17,8 +17,7 @@ function fscreen(){
         }
 
         Xdisplay.src = Xdisplay.src;
-    }
-    else console.log("unsupported browser!")
+    } else console.log("unsupported browser!")
 }
 
 function updateExplorer(des) {
@@ -42,9 +41,21 @@ function updateExplorer(des) {
             if (!ele.includes(".html")) {
                 a.setAttribute("onclick", `document.getElementById('Xdisplay').contentWindow.location.replace("${par}/${ele}/index.html"); updateExplorer("${par}/${ele}/index.html")`);
                 par = `${par}/${ele}`
+
+                let obj = Array(document.getElementsByClassName("tools"))[0]
+                for (let key of Object.keys(obj)){
+                    obj[key].style.display = "none";
+                }
+
             } else {
                 a.setAttribute("onclick", `document.getElementById('Xdisplay').contentWindow.location.replace("${par}/${ele}"); updateExplorer("${par}/${ele}")`);
                 par = `${par}/${ele.replace(".html", "")}`
+
+                let obj = Array(document.getElementsByClassName("tools"))[0]
+                for (let key of Object.keys(obj)){
+                    obj[key].style.display = "";
+                }
+
             }
             let textnode = document.createTextNode(ele.replace(".html", ""));
             a.appendChild(textnode);
@@ -76,9 +87,21 @@ function updateExplorer_IFrame(des) {
             if (!ele.includes(".html")) {
                 a.setAttribute("onclick", `document.getElementById('Xdisplay').contentWindow.location.replace("${par}/${ele}/index.html"); updateExplorer("${par}/${ele}/index.html")`);
                 par = `${par}/${ele}`
+
+                let obj = Array(document.getElementsByClassName("tools"))[0]
+                for (let key of Object.keys(obj)){
+                    obj[key].style.display = "none";
+                }
+
             } else {
                 a.setAttribute("onclick", `document.getElementById('Xdisplay').contentWindow.location.replace("${par}/${ele}"); updateExplorer("${par}/${ele}")`);
                 par = `${par}/${ele.replace(".html", "")}`
+
+                let obj = Array(document.getElementsByClassName("tools"))[0]
+                for (let key of Object.keys(obj)){
+                    obj[key].style.display = "";
+                }
+
             }
             let textnode = window.parent.document.createTextNode(ele.replace(".html", ""));
             a.appendChild(textnode);
