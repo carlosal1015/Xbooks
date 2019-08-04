@@ -11,7 +11,7 @@
     "start": "npm run-script Xtest_nodejs",
     "on_CI_test": "node ./tests/on_CI_test.js",
     "test": "npm run-script on_CI_test",
-    "Xtest_py": "python ./app/Xbooks.py %REPO_URL% %GH_TOKEN%",
+    "Xtest_py": "python ./app/Xbooks.py %REPO% %PAT%",
     "prepublish": "npm test"
   },
   "author": "XinYaanZyoy",

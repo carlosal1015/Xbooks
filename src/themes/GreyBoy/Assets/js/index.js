@@ -1,25 +1,3 @@
-function fscreen() {
-    if (document.fullscreenEnabled ||
-        document.webkitFullscreenEnabled ||
-        document.mozFullScreenEnabled ||
-        document.msFullscreenEnabled) {
-
-        let Xdisplay = document.getElementById('Xdisplay');
-
-        if (Xdisplay.requestFullscreen) {
-            Xdisplay.requestFullscreen();
-        } else if (Xdisplay.webkitRequestFullscreen) {
-            Xdisplay.webkitRequestFullscreen();
-        } else if (Xdisplay.mozRequestFullScreen) {
-            Xdisplay.mozRequestFullScreen();
-        } else if (Xdisplay.msRequestFullscreen) {
-            Xdisplay.msRequestFullscreen();
-        }
-
-        Xdisplay.src = Xdisplay.src;
-    } else console.log("unsupported browser!")
-}
-
 function updateExplorer(des) {
 
     document.getElementById('loadImg').style.display = 'block';
@@ -33,7 +11,7 @@ function updateExplorer(des) {
     }
     par = "notebooks/";
     des.split("/").forEach((ele) => {
-        if (ele != "notebooks" && ele != "welcome.html" && ele != "index.html") {
+        if (ele != "notebooks" && ele != "welcome.html" && ele != "index.html" && ele != "\\$REPO$") {
             let node = document.createElement("LI");
             node.setAttribute("class", "breadcrumb-item virtual");
             node.style.cursor = "pointer";
@@ -79,7 +57,7 @@ function updateExplorer_IFrame(des) {
     }
     par = "notebooks/";
     des.split("/").forEach((ele) => {
-        if (ele != "notebooks" && ele != "welcome.html" && ele != "index.html") {
+        if (ele != "notebooks" && ele != "welcome.html" && ele != "index.html" && ele != "\\$REPO$") {
             let node = window.parent.document.createElement("LI");
             node.setAttribute("class", "breadcrumb-item virtual");
             node.style.cursor = "pointer";

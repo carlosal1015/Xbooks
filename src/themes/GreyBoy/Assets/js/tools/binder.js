@@ -2,11 +2,15 @@
 // ?filepath=notebooks/stories/a2_avg_w2v.ipynb
 function onBinder(){
     let binder_url = "https://mybinder.org/v2/";
-    let repo = "gh/$AUTHOR$/$REPO$/master";
+    let repo = "gh/$GH$/$REPO$/master";
     let connector = "?filepath=";
     let root = "notebooks/";
     let pathpoints = Object.entries(document.getElementsByClassName('virtual'));
-    let notebook = pathpoints.join("/");
+    let pointnames = []
+    for(let ele of pathpoints){
+        pointnames.push(ele[1].innerText);
+    }
+    let notebook = pointnames.join("/") + '.ipynb';
     let url = binder_url + repo + connector + root + notebook;
     window.open(url, '_blank').focus();   
 }

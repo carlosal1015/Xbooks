@@ -13,7 +13,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>test1341</title>
+    <title>$TITLE$</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="$BLOG_DESCRIPTION$" />
     <meta name="keywords" content="$KEYWORDS$" />
@@ -22,12 +22,13 @@
     <link rel="shortcut icon" href="\$REPO$/Assets/images/logo.png">
     <link rel="stylesheet" href="\$REPO$/Assets/css/bootstrap.css">
     <link rel="stylesheet" href="\$REPO$/Assets/css/style.css">
-    
+
     <script src="\$REPO$/Assets/js/index.js"></script>
 
     <!-- tools -->
     <script src="\$REPO$/Assets/js/tools/binder.js"></script>
     <script src="\$REPO$/Assets/js/tools/colab.js"></script>
+    <script src="\$REPO$/Assets/js/tools/fullscreen.js"></script>
     <script src="\$REPO$/Assets/js/tools/gitpod.js"></script>
 </head>
 
@@ -50,7 +51,8 @@
             </li>
 
             <!-- this following div, kindly to help others discover Xbooks do not remove; but if you want you certainly can! -->
-            <div onclick="(window.open('https://xsoft-technologies.github.io/Xbooks', '_blank'))" style="float: right; cursor: pointer;; color: snow; font-size: 18px; font-family:'Courier New', Courier, monospace">
+            <div onclick="(window.open('https://xsoft-technologies.github.io/Xbooks', '_blank'))"
+                style="float: right; cursor: pointer;; color: snow; font-size: 18px; font-family:'Courier New', Courier, monospace">
                 Transformed By -
                 <text style="font-family: fantasy; color: grey;">Xbooks</text>
                 <img src="\$REPO$/Assets/images/Xbooks-logo_96x48.png" />
@@ -65,12 +67,14 @@
                 <div class="text-center">
                     <a target="_blank" href="\$REPO$/Assets/images/DP.png">
                         <div class="author-img"
-                            style="background-image: url(\\$REPO$/Assets/images/DP.png); height: 256px; width: 256px;"></div>
+                            style="background-image: url(\\$REPO$/Assets/images/DP.png); height: 256px; width: 256px;">
+                        </div>
                     </a>
 
                     <!-- looks better with 10 or 20 links -->
                     <div class="a2a_kit a2a_kit_size_26 a2a_default_style a2a_follow">
-                        <a class="a2a_button_email" href="$EMAIL$"></a>
+                        <a class="a2a_button_email" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=$EMAIL$"
+                            target="_blank"></a>
                         <a class="a2a_button_github" data-a2a-follow="$GH$"></a>
 
                         <!-- which ever you want uncomment and write right thing within "$xyz$" -->
@@ -97,28 +101,26 @@
                     </div>
 
                     <div style="background-color: darkgray; border-radius: 3%">
-                        <h1 id="colorlib-logo"><a href="./index.html"
-                                style="color: whitesmoke;">Avril Lavigne<br /><text
-                                    style="color:darkslategray;">abby down</text></a></h1>
+                            <h1 id="colorlib-logo">
+                                <a style="color: whitesmoke; text-decoration: none;" href="$WEB$" target="_blank"
+                                    $AUTHOR$<br />
+                                    <text style="color:darkslategray;">$PEN$</text>
+                                </a>
+                            </h1>
                         <span id="blog_description"
                             style="font-size: 11px; background-color: darkgray; border-radius: 3%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;"
                             class="position">
-                            this is desc
+                            $BLOG_DESCRIPTION$
                         </span>
                     </div>
                 </div>
                 <nav style="background-color:gray;" id="colorlib-main-menu" role="navigation" class="navbar">
                     <div id="navbar" class="collapse">
-                        <ul>
-                            <li class="active"><a style="cursor: pointer" onclick="document.getElementById('Xdisplay').contentWindow.location.replace('./notebooks/welcome.html'); updateExplorer('./notebooks/welcome.html')">Home</a></li>
-                            <li><a style='cursor: pointer' onclick="document.getElementById('Xdisplay').contentWindow.location.replace('notebooks/scatter.html'); updateExplorer('notebooks/scatter.html');">scatter</a></li>
-							<li><a style='cursor: pointer' onclick="document.getElementById('Xdisplay').contentWindow.location.replace('notebooks/stories/index.html'); updateExplorer('notebooks/scatter.html');">stories</a></li>
-							<li><a style='cursor: pointer' onclick="document.getElementById('Xdisplay').contentWindow.location.replace('notebooks/bps/index.html'); updateExplorer('notebooks/bps/index.html');">bps</a></li>
-							<li><a style='cursor: pointer' onclick="document.getElementById('Xdisplay').contentWindow.location.replace('notebooks/bps/index.html'); updateExplorer('notebooks/bps/index.html');">bps</a></li>
-							<li><a style='cursor: pointer' onclick="document.getElementById('Xdisplay').contentWindow.location.replace('notebooks/bps/index.html'); updateExplorer('notebooks/bps/index.html');">bps</a></li>
-							<li><a style='cursor: pointer' onclick="document.getElementById('Xdisplay').contentWindow.location.replace('notebooks/bps/index.html'); updateExplorer('notebooks/bps/index.html');">bps</a></li>
-							<li><a style='cursor: pointer' onclick="document.getElementById('Xdisplay').contentWindow.location.replace('notebooks/bps/index.html'); updateExplorer('notebooks/bps/index.html');">bps</a></li>
-							<!-- ${Xbooks_nav}$ -->
+                        <ul style="color: white;">
+                            <li class="active"><a style="cursor: pointer"
+                                    onclick="document.getElementById('Xdisplay').contentWindow.location.replace('./notebooks/welcome.html'); updateExplorer('./notebooks/welcome.html')">Home</a>
+                            </li>
+                            <!-- $XBOOKS_NAV$ -->
                         </ul>
                     </div>
                 </nav>
@@ -138,8 +140,10 @@
 
             <div id="colorlib-main">
                 <div id="loadImg">
-                    <h1 style="color: white;" align="center">Please wait, Xbooks is learning!</h1>
-                    <div><img style="display: block; margin-left: auto; margin-right: auto; width: 512px; margin-top: auto; margin-bottom: auto; height: 512px;" src="\$REPO$/Assets/images/loading.gif" alt="loading ..." /></div>
+                    <h1 style="color: white;" align="center">Kindly; wait, Xbooks is learning!</h1>
+                    <div><img
+                            style="display: block; margin-left: auto; margin-right: auto; width: 512px; margin-top: auto; margin-bottom: auto; height: 512px;"
+                            src="\$REPO$/Assets/images/loading.gif" alt="loading ..." /></div>
                 </div>
                 <iframe id="Xdisplay" src="./notebooks/welcome.html" width="400" height="400"
                     onload="document.getElementById('loadImg').style.display='none'; document.getElementById('Xdisplay').style.display='block';"
@@ -151,24 +155,28 @@
 
     <div style="background-color: rgb(24, 26, 27,0.5);">
         <div style="margin: 5px 22vw;">
-            <button id="fscrn" style="border-radius: 5px 5px; border: rgb(63, 63, 63) solid 4px; box-shadow: black 3px 3px 3px; color: black; background-color: rgb(136, 135, 135); font-family: monospace; width: 93px; height: 37px;"
-            onclick="fscreen();" title="Read this Book on FullScreen">
-            FullScreen
+            <button id="fscrn"
+                style="border-radius: 5px 5px; border: rgb(63, 63, 63) solid 4px; box-shadow: black 3px 3px 3px; color: black; background-color: rgb(136, 135, 135); font-family: monospace; width: 93px; height: 37px;"
+                onclick="fscreen();" title="Read this Book on FullScreen">
+                FullScreen
             </button>
 
-            <button class="tools" id="onbinder" style="display: none; border-radius: 5px 5px; border: rgb(63, 63, 63) solid 4px; box-shadow: black 3px 3px 3px; color: black; background-color: rgb(136, 135, 135); font-family: monospace; width: 93px; height: 37px;"
-            onclick="onBinder();" title="open this notebook on binder">
-            onBinder
+            <button class="tools" id="onbinder"
+                style="display: none; border-radius: 5px 5px; border: rgb(63, 63, 63) solid 4px; box-shadow: black 3px 3px 3px; color: black; background-color: rgb(136, 135, 135); font-family: monospace; width: 93px; height: 37px;"
+                onclick="onBinder();" title="open this notebook on binder">
+                onBinder
             </button>
 
-            <button class="tools" id="onColab" style="display: none; border-radius: 5px 5px; border: rgb(63, 63, 63) solid 4px; box-shadow: black 3px 3px 3px; color: black; background-color: rgb(136, 135, 135); font-family: monospace; width: 93px; height: 37px;"
-            onclick="onColab();" title="open this notebook on google colaboratory">
-            onColab
+            <button class="tools" id="onColab"
+                style="display: none; border-radius: 5px 5px; border: rgb(63, 63, 63) solid 4px; box-shadow: black 3px 3px 3px; color: black; background-color: rgb(136, 135, 135); font-family: monospace; width: 93px; height: 37px;"
+                onclick="onColab();" title="open this notebook on google colaboratory">
+                onColab
             </button>
 
-            <button class="tools" id="onGitPod" style="display: none; border-radius: 5px 5px; border: rgb(63, 63, 63) solid 4px; box-shadow: black 3px 3px 3px; color: black; background-color: rgb(136, 135, 135); font-family: monospace; width: 93px; height: 37px;"
-            onclick="onGitPod();" title="Open this notebook on GitPod.io environment">
-            onGitPod
+            <button class="tools" id="onGitPod"
+                style="display: none; border-radius: 5px 5px; border: rgb(63, 63, 63) solid 4px; box-shadow: black 3px 3px 3px; color: black; background-color: rgb(136, 135, 135); font-family: monospace; width: 93px; height: 37px;"
+                onclick="onGitPod();" title="Open this notebook on GitPod.io environment">
+                onGitPod
             </button>
 
             <!-- <button class="tools" id="toPDF" style="display: none; border-radius: 5px 5px; border: rgb(63, 63, 63) solid 4px; box-shadow: black 3px 3px 3px; color: black; background-color: rgb(136, 135, 135); font-family: monospace; width: 93px; height: 37px;"
@@ -187,7 +195,7 @@
         <script src="\$REPO$/Assets/js/jquery.min.js"></script>
         <!-- MAIN JS -->
         <script src="\$REPO$/Assets/js/main.js"></script>
-    
+
         <!-- share btns -->
         <div class="a2a_kit a2a_kit_size_28 a2a_floating_style a2a_default_style"
             style="bottom:0px; right:0px; background-color: transparent;">
@@ -203,7 +211,7 @@
             <a class="a2a_button_tumblr"></a>
         </div>
     </div>
-    
+
     <script>
         var a2a_config = a2a_config || {};
 
@@ -234,41 +242,39 @@
         var a2a_config = a2a_config || {};
         a2a_config.callbacks = a2a_config.callbacks || [];
         a2a_config.callbacks.push({
-            share: (share_data)=>{
+            share: (share_data) => {
                 let pathpoints = Object.entries(document.getElementsByClassName('virtual'));
                 let patharray = [];
                 let new_url = "";
 
                 let lastpoint = pathpoints.pop();
                 let tipe;
-                if(lastpoint[1].children[0].getAttribute('onclick').includes('index.html')) tipe = 'Xbook'
+                if (lastpoint[1].children[0].getAttribute('onclick').includes('index.html')) tipe = 'Xbook'
                 else tipe = 'Xpage'
 
-                if(pathpoints.length){
+                if (pathpoints.length) {
                     console.log('here')
-                    pathpoints.forEach((ppoint)=>{
+                    pathpoints.forEach((ppoint) => {
                         let a = ppoint[1].children[0];
                         let point = a.innerText;
                         patharray.push(point);
                     })
-                    if(tipe == 'Xbook')
-                    new_url = share_data.url + "notebooks/" + patharray.join('/') + '/index.html';
-                    if(tipe == 'Xpage')
-                    new_url = share_data.url + "notebooks/" + patharray.join('/') + '.html';
-                }
-                else new_url = share_data.url;
+                    if (tipe == 'Xbook')
+                        new_url = share_data.url + "notebooks/" + patharray.join('/') + '/index.html';
+                    if (tipe == 'Xpage')
+                        new_url = share_data.url + "notebooks/" + patharray.join('/') + '.html';
+                } else new_url = share_data.url;
                 return {
                     url: new_url
                 };
             }
         });
-
     </script>
     <script async src="https://static.addtoany.com/menu/page.js"></script>
     <script>
         navs = Object.entries(document.getElementById('navbar').children[0].children);
-        navs.forEach((ele)=>{
-            ele[1].addEventListener("click", ()=>{
+        navs.forEach((ele) => {
+            ele[1].addEventListener("click", () => {
                 let crnt = document.getElementsByClassName('active')[0];
                 crnt.className = crnt.className.replace("active", '');
                 ele[1].className = 'active';

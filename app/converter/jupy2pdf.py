@@ -29,14 +29,3 @@ def convert(src, des):
         print("something went wrong!")
     finally:
         print("success convert")
-
-if __name__ == "__main__":
-    """
-    convert verbosely if two arguments were given
-    """
-    import sys
-    if len(sys.argv) == 3:
-        print("converting...")
-        convert(sys.argv[1], sys.argv[2])
-    else:
-        print("kindly specify the source file and destination directory names respectively!")

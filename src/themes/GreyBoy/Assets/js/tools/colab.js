@@ -27,10 +27,14 @@
 function onColab() {
     const colab_url = 'https://colab.research.google.com/';
 
-    let repo = "github/$AUTHOR$/$REPO$/"
+    let repo = "github/$GH$/$REPO$/"
     let root = "blob/master/notebooks/"
     let pathpoints = Object.entries(document.getElementsByClassName('virtual'));
-    let notebook = pathpoints.join("/");
+    let pointnames = []
+    for(let ele of pathpoints){
+        pointnames.push(ele[1].innerText);
+    }
+    let notebook = pointnames.join("/");
     let url = colab_url + repo + root + notebook + '.ipynb';
     window.open(url, '_blank').focus();
 }
