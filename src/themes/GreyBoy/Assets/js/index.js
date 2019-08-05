@@ -11,7 +11,7 @@ function updateExplorer(des) {
     }
     par = "notebooks/";
     des.split("/").forEach((ele) => {
-        if (ele != "notebooks" && ele != "welcome.html" && ele != "index.html" && ele != "\\$REPO$") {
+        if (ele != "notebooks" && ele != "welcome.html" && ele != "index.html" && ele != "\\$REPO$" && ele != "") {
             let node = document.createElement("LI");
             node.setAttribute("class", "breadcrumb-item virtual");
             node.style.cursor = "pointer";
@@ -57,7 +57,7 @@ function updateExplorer_IFrame(des) {
     }
     par = "notebooks/";
     des.split("/").forEach((ele) => {
-        if (ele != "notebooks" && ele != "welcome.html" && ele != "index.html" && ele != "\\$REPO$") {
+        if (ele != "notebooks" && ele != "welcome.html" && ele != "index.html" && ele != "\\$REPO$" && ele != "") {
             let node = window.parent.document.createElement("LI");
             node.setAttribute("class", "breadcrumb-item virtual");
             node.style.cursor = "pointer";
@@ -66,7 +66,7 @@ function updateExplorer_IFrame(des) {
                 a.setAttribute("onclick", `document.getElementById('Xdisplay').contentWindow.location.replace("${par}/${ele}/index.html"); updateExplorer("${par}/${ele}/index.html")`);
                 par = `${par}/${ele}`
 
-                let obj = Array(document.getElementsByClassName("tools"))[0]
+                let obj = Array(window.parent.document.getElementsByClassName("tools"))[0]
                 for (let key of Object.keys(obj)){
                     obj[key].style.display = "none";
                 }
@@ -75,7 +75,7 @@ function updateExplorer_IFrame(des) {
                 a.setAttribute("onclick", `document.getElementById('Xdisplay').contentWindow.location.replace("${par}/${ele}"); updateExplorer("${par}/${ele}")`);
                 par = `${par}/${ele.replace(".html", "")}`
 
-                let obj = Array(document.getElementsByClassName("tools"))[0]
+                let obj = Array(window.parent.document.getElementsByClassName("tools"))[0]
                 for (let key of Object.keys(obj)){
                     obj[key].style.display = "";
                 }

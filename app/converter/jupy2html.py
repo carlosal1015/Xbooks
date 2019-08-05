@@ -28,18 +28,18 @@ def convert(src):
 
     if hasread:
         try:
-            des = src.replace(".ipynb",".html").replace("Xblog", "Xblog/docs").replace("/", "\\")
+            des = src.replace(".ipynb",".html").replace("Xblog", "Xblog/docs")
             des_folder = des.replace(os.path.basename(des), "")
             if not os.path.exists(des_folder):
-                parent = ""
-                for folder in des_folder.split(os.path.sep)[3:]:
-                    path = os.path.join("Xblog", "docs", "notebooks", parent, folder)
+                parent = "/"
+                for folder in des_folder.split("/")[3:]:
+                    path = "Xblog/docs/notebooks" + parent + folder
                     if not os.path.exists(path):
                         ccc.note("creating " + path)
                         os.mkdir(path)
-                        if path != "Xblog\\docs\\notebooks\\":
+                        if path != os.path.join("Xblog", "docs", "notebooks"):
                             II.install(path, "Xbook")
-                    parent = os.path.join(parent, folder)
+                    parent = parent + folder + "/"
             with open(des, 'w') as f:
                 f.write(index)
             f.close()

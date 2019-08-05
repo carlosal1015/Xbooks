@@ -53,7 +53,7 @@ if __name__ == "__main__":
                         if all(sr0) and all(sr1):
                             sc = []
                             for tbc in fetched_data["to_be_converted"]:
-                                sc.append(jupy2html.convert(os.path.join("Xblog", tbc)))
+                                sc.append(jupy2html.convert("Xblog/" + tbc))
 
                         if(all(sc)):
                             sd = []
@@ -66,6 +66,7 @@ if __name__ == "__main__":
                                 if candp.commit(fetched_data):
                                     if candp.push():
                                         wc.cleanXblog()
+                                    # print("woodoo!")
                 else:
                     ccc.note("skipping conversion process since latest commit is not authored by the owner " + xrc["GitHub_Username"] + " but is by " + clonned_repo.author)
                     wc.cleanXblog()

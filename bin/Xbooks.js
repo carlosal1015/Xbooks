@@ -8,6 +8,7 @@ const initiator = require('../lib/initiator');
 const installer = require("../lib/installer/install");
 const placifier  = require("../lib/placifier/placify");
 const publisher = require("../lib/publisher/publish");
+const syncer = require("../lib/publisher/syncer");
 const uninstaller = require("../lib/uninstaller/uninstall");
 
 const cmd = require('commander');
@@ -48,6 +49,14 @@ cmd
    .option("-i, --initial", "to pubish for the first time")
    .action((cmd)=>{
        publisher.publish(cmd.initial);
+   })
+
+cmd
+   .command("synchronize")
+   .alias("sync")
+   .description("to sync with the remote if needed (though before every commit it's done)")
+   .action(()=>{
+       syncer.sync();
    })
 
 cmd
