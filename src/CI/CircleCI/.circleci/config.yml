@@ -1,0 +1,9 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: xinyaanzyoy/pipelinetest2351:latest
+    steps:
+      - run:
+          name: Transformation by Xbooks
+          command: cd /Xbooks/ && source activate Xbooks_env && python Xbooks.py $REPO $PAT

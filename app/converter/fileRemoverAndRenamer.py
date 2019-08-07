@@ -1,7 +1,6 @@
 import os
 import sys
-
-from indexer import indexUninstaller
+import shutil
 
 from Xlib import ccc
 from Xlib import workspaceCleaner as wc
@@ -9,48 +8,43 @@ from Xlib import workspaceCleaner as wc
 from indexer import indexUpdater as IUp
 from indexer import indexUninstaller as IUn
 
-def rename(tbr):
+def rename(tbr, tipe):
     """
     renames Xpage or Xbook and returns True if success; False otherwise
     """
     try:
-        src = tbr[0].replace(".ipynb", ".html").replace("/", "\\")
-        des = tbr[1].replace(".ipynb", ".html").replace("/", "\\")
-        os.renames(os.path.join("Xblog\\docs", src), os.path.join("Xblog\\docs", des))
+        src = tbr[0].replace(".ipynb", ".html")
+        des = tbr[1].replace(".ipynb", ".html")
+        os.renames(os.path.join("Xblog/docs", src), os.path.join("Xblog/docs", des))
         ccc.success("renaming " + src + " to " + des)
-        IUp.update(des, "000")
+        IUp.update(src, des, tipe)
+        src_pdf = tbr[0].replace(".ipynb", ".pdf").replace("notebooks", "pdfs")
+        des_pdf = tbr[1].replace(".ipynb", ".pdf").replace("notebooks", "pdfs")
+        os.renames("Xblog/docs/" + src_pdf, "Xblog/docs/" + des_pdf)
+        ccc.success("renaming " + src_pdf + " to " + des_pdf)
         return True
     except:
-        ccc.fail("while renaming " + src + " to " + des)
+        ccc.fail("while renaming " + tbr[0] + " to " + tbr[1])
         wc.cleanXblog()
         sys.exit()
 
-def delete(tbd):
+def delete(tbd, tipe):
     """
     deletes and returns True if success; False otherwise
     """
     try:
-        des = os.path.join("Xblog\\docs", tbd.replace(".ipynb", ".html")).replace("/", "\\")
-        print("\ndes ", des)
-        os.remove(des)
-        ccc.success("removing " + des)
-        IUn.uninstall(des, "Xpage")
-        direcs = des.split(os.path.sep)[3:-1]
-        print("direcs ", direcs)
-        root = os.path.join("Xblog", "docs", "notebooks", os.path.sep.join(direcs[:-1]))
-        print("root ", root)
-        direcs.reverse()
-        print("reversed direcs " ,direcs)
-        for direc in direcs:
-            path = os.path.join(root, direc)
-            if os.listdir(path) == ["index.html"]:
-                indexUninstaller.uninstall(path)
-                os.rmdir(path)
-                ccc.success("removing " + path)
-                IUn.uninstall(des, "Xbook")
-                root = root.replace(os.path.basename(root), "")
-            else:
-                break
+        des = "Xblog/docs/" + tbd.replace(".ipynb", ".html")
+        print("des ", des)
+        IUn.uninstall(des)
+        if tipe == "Xpage":
+            os.remove(des)
+            ccc.success("deleting " + des)
+            des_pdf = des.replace(".html",".pdf").replace("notebooks", "pdfs")
+            os.remove(des_pdf)
+            ccc.success("deleting " + des_pdf)
+        if tipe == "Xbook":
+            shutil.rmtree(des)
+            ccc.success("deleting " + des)
         return True
     except:
         ccc.fail("while deleting " + des)
