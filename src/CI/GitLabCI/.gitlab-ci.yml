@@ -4,7 +4,7 @@ variables:
 stages:
     - deploy
 
-image: xinyaanzyoy/pipelinetest2351:latest
+image: xsoft/xbooks:latest
 
 Xbooks_Transformation:
     stage: deploy

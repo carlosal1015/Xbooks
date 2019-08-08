@@ -1,7 +1,10 @@
 name: Xbooks_env
+channels:
+  - defaults
 dependencies:
-  - gitpython
-  - colorama
-  - nbformat
-  - beautifulsoup4
-  - nbconvert
+  - beautifulsoup4=4.6.3
+  - colorama=0.3.9
+  - gitdb2==2.0.5
+  - GitPython==2.1.13
+  - nbconvert=5.5.0
+  - nbformat=4.4.0
