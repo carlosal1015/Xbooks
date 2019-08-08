@@ -2,24 +2,32 @@
 <!-- installed by Xbooks.py -->
 
 <head>
-    <title>$title$</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-ciphE0NCAlD2/N6NUApXAN2dAs/vcSAOTzyE202jJx3oS8n4tAQezRgnlHqcJ59C" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Assets/css/index.css">
+    <title>$TITLE$</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/journal/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ciphE0NCAlD2/N6NUApXAN2dAs/vcSAOTzyE202jJx3oS8n4tAQezRgnlHqcJ59C" crossorigin="anonymous">
+    <link rel="stylesheet" href="\$REPO$/Assets/css/sub_index.css">
+    <script src="\$REPO$/Assets/js/index.js"></script>
 </head>
 
 <body>
-    <table class="table table-hover" style="color: rgb(209, 203, 199)">
-        <thead>
+    <table class="table">
+        <tr>
+            <!-- $CARD$ -->
+        </tr>
+    </table>
+
+    <table class="table" style="color: rgb(209, 203, 199); border-spacing: 0 10px; border-collapse: separate;">
+        <thead style="color: white;">
             <tr>
                 <th scope="col">
-                    Subject</th>
+                    Title</th>
 
                 <th scope="col">
-                    Description</th>
+                    Last Transformed on</th>
             </tr>
         </thead>
         <tbody>
-            <!-- $band$ -->
+            <!-- $BAND$ -->
         </tbody>
     </table>
 </body>

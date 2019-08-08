@@ -74,6 +74,3 @@ class CommiterAndPusher():
                 ccc.fail("while pushing Xbooks' commit")
                 wc.cleanXblog()
                 sys.exit()
-
-if __name__ == "__main__":
-    ccc.greet("hola!")

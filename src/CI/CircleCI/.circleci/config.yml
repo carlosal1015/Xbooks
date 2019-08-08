@@ -1,0 +1,11 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: xsoft/xbooks:latest
+    steps:
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          name: Xbooks_Transformation
+          command: cd /Xbooks/ && source activate Xbooks_env && python Xbooks.py $REPO $PAT

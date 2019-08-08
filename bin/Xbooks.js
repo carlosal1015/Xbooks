@@ -3,11 +3,13 @@
 'use strict';
 
 const pkg = require('../package');
-const initiator = require('../lib/initiator');
 const ccc = require("../lib/common_cli_conventions");
-const installer = require("../lib/installer/initiator");
-const server = require("../lib/server/server");
-const uninstaller = require("../lib/uninstaller/Xbooks_uninstaller");
+const initiator = require('../lib/initiator');
+const installer = require("../lib/installer/install");
+const placifier  = require("../lib/placifier/placify");
+const publisher = require("../lib/publisher/publish");
+const syncer = require("../lib/publisher/syncer");
+const uninstaller = require("../lib/uninstaller/uninstall");
 
 const cmd = require('commander');
 const path = require('path');
@@ -33,6 +35,31 @@ cmd
     })
 
 cmd
+   .command("placify")
+   .alias('p')
+   .description("to placify your blog according to .Xbooksrc")
+   .action(()=>{
+       placifier.placify();
+   }) 
+
+cmd
+   .command("publish")
+   .alias('pub')
+   .description("to publish your blog to GitHub-Pages")
+   .option("-i, --initial", "to pubish for the first time")
+   .action((cmd)=>{
+       publisher.publish(cmd.initial);
+   })
+
+cmd
+   .command("synchronize")
+   .alias("sync")
+   .description("to sync with the remote if needed (though before every commit it's done)")
+   .action(()=>{
+       syncer.sync();
+   })
+
+cmd
     .command("uninstall")
     .alias('uni')
     .description("to uninstall all Xbooks and all those Xbooks releated and created by Xbooks files!")
@@ -41,13 +68,13 @@ cmd
         uninstaller.uninstall(cmd.full);
     })
 
-cmd
-    .command("serve")
-    .alias("s")
-    .description("serve your blog on port:1969||xxxx")
-    .action(()=>{
-        server.serve();
-    })
+// cmd
+//     .command("serve")
+//     .alias("s")
+//     .description("serve your blog on port:1969||xxxx")
+//     .action(()=>{
+//         server.serve();
+//     })
 
 cmd
     .version(pkg.version, '-v, --version')
@@ -69,9 +96,6 @@ cmd
   });
 
 
-if((!process.argv.slice(2).length)){
-    ccc.note(ccc.logo("Xbooks" + pkg.version) + " is a cli based cloud pipelined software\r\nto produce a website out of a repo of jupyter notebooks on GitHub.com repo hosting service! " + "\nas of now Git-GitHub-GitLab-[GitPod-Binder] is prefrenced! but there's more to work on!\n");
-    cmd.help();
-}
+if(!process.argv.slice(2).length) cmd.help();
 
 cmd.parse(process.argv)

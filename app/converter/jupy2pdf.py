@@ -2,41 +2,41 @@
 
 # https://stackoverflow.com/questions/39732784/minimal-example-of-how-to-export-a-jupyter-notebook-to-pdf-using-nbconvert-and-p
 
-import os
+import os, sys
 import nbformat
 from nbconvert.preprocessors import ExecutePreprocessor
-from nbconvert import PDFExporter
+from nbconvert.exporters import PDFExporter
 pdf_exporter = PDFExporter()
 
-def convert(src, des):
+from Xlib import ccc
+from Xlib import workspaceCleaner as wc
+
+
+def convert(src):
     """
     converts .ipynb to pdf
     """
     try:
-        with open(src) as f:
+        des = src.replace(".ipynb",".pdf").replace("Xblog", "Xblog/docs").replace("notebooks", "pdfs")
+
+        ccc.note("preparing " + str(src) + " for pdf conversion")
+
+        with open(src, "r") as f:
             nb = nbformat.read(f, as_version=4)
-
-        ep = ExecutePreprocessor(timeout=600, kernel_name='python3')
-
-        ep.preprocess(nb, {})
-
+        ccc.success("reading " + src)
+        
+        if not os.path.isdir(des.replace(os.path.basename(des), "")):
+            os.makedirs(des.replace(os.path.basename(des), ""))
         pdf_data, resources = pdf_exporter.from_notebook_node(nb)
-
-        with open(os.path.join(des,os.path.basename(src).replace(".ipynb",".pdf")), "wb") as f:
+        ccc.note("finished processing for " + des)
+        
+        with open(des, "wb") as f:
             f.write(pdf_data)
             f.close()
+        
+        ccc.success("converting " + str(src) + "to " + os.path.join(des,os.path.basename(src).replace(".ipynb",".pdf")))
+        return True
     except:
-        print("something went wrong!")
-    finally:
-        print("success convert")
-
-if __name__ == "__main__":
-    """
-    convert verbosely if two arguments were given
-    """
-    import sys
-    if len(sys.argv) == 3:
-        print("converting...")
-        convert(sys.argv[1], sys.argv[2])
-    else:
-        print("kindly specify the source file and destination directory names respectively!")
+        ccc.fail("while converting " + str(src) + " to " + str(des))
+        wc.cleanXblog()
+        sys.exit()

@@ -1,37 +1,12 @@
+variables:
+  GIT_STRATEGY: none
+
 stages:
-  - deploy
+    - deploy
 
-image: xinyaanzyoy/test-py
+image: xsoft/xbooks:latest
 
-before_script:
-  - git pull https://XinYaanZyoy:$GITHUB_PAK@github.com/XinYaanZyoy/verbose.git master
-  - git checkout master
-
-building:
-  stage: deploy
-  script:
-    - conda --version
-    - jupyter --version
-    - git --version
-    - ls
-    # - cd Xbooks/.
-    - ls
-    # - jupyter nbconvert --to html index.ipynb
-    - python __Pipeline-Script.py
-    # - ls
-    # - cd \
-    - ls
-    - git status
-    - git config user.email "0lovesenergy@engineer.com"
-    - git config user.name "XinYaanZyoy"
-    - git add ./
-    - git status
-    - export STAMP=$(date +%s)
-    - echo $STAMP
-    - git commit -m $STAMP
-    - git remote -v
-    - git status
-    - git branch -l
-    - echo https://XinYaanZyoy:$GITHUB_PAK@github.com/XinYaanZyoy/verbose.git master
-    - git push -u https://XinYaanZyoy:$GITHUB_PAK@github.com/XinYaanZyoy/verbose.git master
-    - git status
+Xbooks_Transformation:
+    stage: deploy
+    script:
+        - cd /Xbooks/ && source activate Xbooks_env && python Xbooks.py $REPO $PAT

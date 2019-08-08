@@ -56,7 +56,7 @@ class ClonnerAndFetcher:
             toConvert = []
             ccc.white("Fetching", str(self.repo.head.commit)[:7])
             for fn, fd in list(self.repo.head.commit.stats.files.items()):
-                if fn.startswith("notebooks") and fn not in []:
+                if fn.startswith("notebooks") and fn not in [] and "checkpoint" not in fn and ".ipynb" in fn:
                     status = fstatus(fd['insertions'], fd['deletions'], fd['lines'])
                     ccc.note("fetched " + fn + " with status " + status)
                     if status != "110" and status != "100" and status != "010":
@@ -69,6 +69,7 @@ class ClonnerAndFetcher:
                         if status == "000":
                             src = os.path.join(fn.split("{")[0], fn.split("{")[1].split(" => ")[0])
                             des = os.path.join(fn.split("{")[0], fn.split("{")[1].split(" => ")[1].split("}")[0])
+                            # if src.endswith(".ipynb") and des.endswith(".ipynb"):
                             toRename.append((src, des))
                     else:
                         ccc.fail("while decoding status code")
@@ -84,6 +85,3 @@ class ClonnerAndFetcher:
             ccc.fail("while fetching latest commit changes")
             wc.cleanXblog()
             sys.exit()
-
-if __name__ == "__main__":
-    ccc.greet("hola!")
