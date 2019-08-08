@@ -5,5 +5,5 @@ jobs:
       - image: xinyaanzyoy/pipelinetest2351:latest
     steps:
       - run:
-          name: Transformation by Xbooks
+          name: Xbooks_Transformation
           command: cd /Xbooks/ && source activate Xbooks_env && python Xbooks.py $REPO $PAT

@@ -1,13 +1,12 @@
+variables:
+  GIT_STRATEGY: none
+
 stages:
     - deploy
 
-image: xsoft/xbooks
+image: xinyaanzyoy/pipelinetest2351:latest
 
-before_script:
-    - git pull https://$AUTHOR$:$PAT@github.com/$AUTHOR$/$REPO$.git master
-    - git checkout master
-
-transformation:
+Xbooks_Transformation:
     stage: deploy
     script:
-        - pwd
+        - cd /Xbooks/ && source activate Xbooks_env && python Xbooks.py $REPO $PAT

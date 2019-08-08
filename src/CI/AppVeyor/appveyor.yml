@@ -1,0 +1,5 @@
+version: 19H15
+
+branches:
+  only:
+    - master
