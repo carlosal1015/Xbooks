@@ -1,7 +1,7 @@
 {
   "name": "@xsoft/xbooks",
-  "version": "0.0.0-development",
-  "description": "***\r ## a software for Scientists, Engineers, and Technicians who produces or communicates innovative ideas and thoughts through written mathematical statements and analysis of its results through python3 like popular data science language using jupyter like most used notebook environments!!",
+  "version": "0.9.0",
+  "description": "***\n ## a software for thought producers!!",
   "main": "bin/Xbooks.js",
   "bin": {
     "Xbooks": "bin/Xbooks.js"
@@ -14,6 +14,28 @@
     "Xtest_py": "python ./app/Xbooks.py %REPO% %PAT%",
     "prepublish": "npm test"
   },
+  "keywords": [
+    "data-science",
+    "jupyter-notebook",
+    "binder",
+    "blogging",
+    "python3",
+    "pipelines",
+    "data-analysis",
+    "data-visualization",
+    "machinelearning-python",
+    "nodejs",
+    "docker-container",
+    "repo2docker",
+    "mathematical-analysis",
+    "html5-css3-javascript-website",
+    "continuous-integration",
+    "customizable",
+    "gitpod",
+    "thoughts",
+    "cloud",
+    "jupyter-kernels"
+  ],
   "author": "XinYaanZyoy",
   "license": "MIT",
   "dependencies": {
@@ -28,5 +50,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/xsoft-technologies/Xbooks.git"
+  },
+  "devDependencies": {
+    "semantic-release": "^15.13.19"
   }
 }
