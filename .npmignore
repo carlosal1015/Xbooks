@@ -1,9 +1,8 @@
-docs/
+app/
 node_modules/
-tests/
 .editorconfig
 .gitignore
 .gitpod.dockerfile
 .gitpod.yml
+dockerfile
 environment.yml
-WHATIS.yml

@@ -105,7 +105,7 @@ if __name__ == "__main__":
                                         wc.cleanXblog()
                                     # print("woodoo!")
                 else:
-                    ccc.note("skipping conversion process since latest commit is not authored by the owner " + xrc["GitHub_Username"] + " but is by " + clonned_repo.author)
+                    ccc.note("skipping transformation process since latest commit is not authored by the owner " + xrc["GitHub_Username"] + " but is by " + clonned_repo.author)
                     wc.cleanXblog()
                     sys.exit()
     else:

@@ -1,36 +1,97 @@
 root/ :
+    - .circleci/ : 
+        - config.yml : to publish node packages
+    - .vscode/ :
+        - .ropeproject/ :
+            - config.py : i've no idea WTH is this!
+    - app/ :
+        - Xbooks.py : entry point of pipeline script
+        - converter : pipeline python app package to convert ipynbs
+        - indexer : pipeline python app package to index webpages
+        - Xlib : modules used and created by Xbooks devs
     - bin/ :
-        - Xbooks.js   : entry point of Xbooks_CLI
+        - Xbooks.js : entry point of Xbooks_CLI
     - docs/ :
         - index.html : main page of Xbooks website
     - lib/ :
-        - converter/ : smt
+        - initiator.js : init command
+        - common_cli_conventions.js : github.com/XinYaanZyoy/ccc
         - installer/ :
-        - server/ :
-        - updater/ :
-        - common_cli_conventions.js :
-        - common_cli_conventions.py :
-        - initiator.js :
-    - templates/ :
+            - copier.js : module to copy file and dir
+            - install.js : install command
+        - placifier : 
+            - placify.js : placify command
+        - publisher : 
+            - publish.js : publish command
+            - syncer.js : sync command
+        - uninstaller : 
+            - uninstall.js : uninstall command
+    - src/ :
         - CI/ :
-            - CircleCI :
+            - AppVeyor/ : 
+                - appveyor.yml : pipeline script template
+            - CircleCI/ :
                 - .circleci/  :
-                    - config.yml :
-            - GitLabCI :
+                    - config.yml : pipeline script template
+            - CodeShip/ : 
+                - codeship-services.yml : pipeline setup script
+                - codeship-steps.yml : pipeline script template
+            - GitLabCI/ :
                 - .gitlab-ci.yml :
-            - JenkinsCI :
-            - TravisCI :
-            - CI.list :
+            - JenkinsCI/ :
+            - TravisCI/ :
+                - .travis.yml : pipeline script template
+            - CI.list : list of usable templates
+        - extensions/ : 
+            - extensions.list : list of usable extensions
+        - plugins/ :
+            - plugins.list : list of usable plugins
         - themes/ :
-            - GreyBoy :
-            - themes.list :
-    - .editorconfig :
-    - .gitignore :
-    - .gitpod.yml :
-    - .npmignore :
-    - .Xbooksrc :
-    - package-lock.json :
-    - package.json :
-    - README.md :
-    - WHATIS.yml :
-    - Xbooks-logo.png :
+            - GreyBoy/ :
+                - Assets/ :
+                    - css/ :
+                        - bootstrap.css : library
+                        - custom.css : jupyter notebook theme
+                        - style.css : root index style
+                        - sub_index.css : sub index style
+                    - html/ : 
+                        - index.html : sub index template
+                        - Xbooks_mobile.html : unsupport page for mobiles
+                    - images/ : 
+                        - computer_surfing_hg_clr.gif : used in html/Xbooks_mobile.html
+                        - DP.png : author's display picture place holder
+                        - loading.gif : loading gif for blog
+                        - logo.png : blog's logo placeholder
+                        - Xbooks-logo_96x48.png : used on the upper-right corner of web app
+                        - Xbooks-logo.png : used in notebooks/welcome.html
+                    - js/ :
+                        - index.js : main script for web app
+                        - jquery.min.js : library
+                        - tools/ :
+                            - binder.js : script to open jupyter notebooks on binder
+                            - colab.js : script to open jupyter notebooks on colaboratory
+                            - fullscreen.js : script to view jupyter notebooks in fullscreen mode
+                            - gitpod.js : script to open jupyter notebooks on gitpod
+                            - pdf.js : to download printed pdfs of jupyter notebooks from source repo
+                - notebooks/ :
+                    - welcome.html : welcome page of xbooks web app
+                - .Xtheme.json : GreyBoy theme's metadata
+                - index.html : entry point of server
+            - themes.list : list of usable thmese
+    - tests/ :
+        - on_CI_test.js : meant to test node app on CI but there's nothing right now!
+    - .editorconfig : vscode editor configurations
+    - .gitignore : ignore list for git
+    - .gitpod.dockerfile : docker image for gitpod workspace
+    - .gitpod.yml : configuration of gitpod workspace
+    - .npmignore : ignore list for npm
+    - .releaserc : config file for sematic-release
+    - CREDITS.json : Xbooks credits in JSON file
+    - Dockerfile : Xbooks docker image xsoft/xbooks
+    - environment.yml : for conda env in xsoft/xbooks container
+    - LICENSE : MIT license for Xbooks
+    - package-lock.json : abstraction of node dependencies of xbooks
+    - package.json : entry point of Xbooks node app
+    - README.md : Xbooks intro
+    - WHATIS.yml : purposefile of Xbooks
+    - Xbooks-logo.png : logo of Xbooks
