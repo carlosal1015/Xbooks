@@ -26,5 +26,5 @@
 16. xbooks publish
 17. and your notebooks will be converted and indexed on your blog!
 
-### read wiki for short intro and
+### read [wiki](https://github.com/xsoft-technologies/Xbooks/wiki) for short intro and
 ### visit Xbooks docs [website](https://xsoft-technologies.GitHub.io/Xbooks) to get more information about installation, setup and usage!
