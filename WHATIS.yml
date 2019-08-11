@@ -26,6 +26,7 @@ root/ :
             - syncer.js : sync command
         - uninstaller : 
             - uninstall.js : uninstall command
+    - notebooks/ : ipynbs which is transformed into docs by Xbooks itself!
     - src/ :
         - CI/ :
             - AppVeyor/ : 
