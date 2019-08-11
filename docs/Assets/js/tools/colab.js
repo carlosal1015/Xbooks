@@ -27,7 +27,7 @@
 function onColab() {
     const colab_url = 'https://colab.research.google.com/';
 
-    let repo = "github/$GH$/$REPO$/"
+    let repo = "github/xsoft-technologies/Xbooks/"
     let root = "blob/master/notebooks/"
     let pathpoints = Object.entries(document.getElementsByClassName('virtual'));
     let pointnames = []

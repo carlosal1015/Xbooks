@@ -1,7 +1,7 @@
 function onGitPod(){
     let gitpod_url = "https://gitpod.io/";
     let connector = "#https://";
-    let repo = "github.com/$GH$/$REPO$/";
+    let repo = "github.com/xsoft-technologies/Xbooks/";
     let root = "blob/master/notebooks/";
     let pathpoints = Object.entries(document.getElementsByClassName('virtual'));
     let pointnames = [];
