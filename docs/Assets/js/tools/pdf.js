@@ -1,7 +1,7 @@
 function toPDF() {
     const gh_url = 'https://github.com/';
 
-    let repo = "$GH$/$REPO$/"
+    let repo = "xsoft-technologies/Xbooks/"
     let connector = "raw/"
     let root = "master/docs/pdfs/"
     let pathpoints = Object.entries(document.getElementsByClassName('virtual'));

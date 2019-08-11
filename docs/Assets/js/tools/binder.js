@@ -2,7 +2,7 @@
 // ?filepath=notebooks/stories/a2_avg_w2v.ipynb
 function onBinder(){
     let binder_url = "https://mybinder.org/v2/";
-    let repo = "gh/$GH$/$REPO$/master";
+    let repo = "gh/xsoft-technologies/Xbooks/master";
     let connector = "?filepath=";
     let root = "notebooks/";
     let pathpoints = Object.entries(document.getElementsByClassName('virtual'));

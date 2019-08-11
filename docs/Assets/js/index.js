@@ -11,7 +11,7 @@ function updateExplorer(des) {
     }
     par = "notebooks/";
     des.split("/").forEach((ele) => {
-        if (ele != "notebooks" && ele != "welcome.html" && ele != "index.html" && ele != "\\$REPO$" && ele != "") {
+        if (ele != "notebooks" && ele != "welcome.html" && ele != "index.html" && ele != "\\Xbooks" && ele != "") {
             let node = document.createElement("LI");
             node.setAttribute("class", "breadcrumb-item virtual");
             node.style.cursor = "pointer";
@@ -57,7 +57,7 @@ function updateExplorer_IFrame(des) {
     }
     par = "notebooks/";
     des.split("/").forEach((ele) => {
-        if (ele != "notebooks" && ele != "welcome.html" && ele != "index.html" && ele != "\\$REPO$" && ele != "") {
+        if (ele != "notebooks" && ele != "welcome.html" && ele != "index.html" && ele != "\\Xbooks" && ele != "") {
             let node = window.parent.document.createElement("LI");
             node.setAttribute("class", "breadcrumb-item virtual");
             node.style.cursor = "pointer";
