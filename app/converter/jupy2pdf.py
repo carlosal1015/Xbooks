@@ -27,6 +27,7 @@ def convert(src):
         
         if not os.path.isdir(des.replace(os.path.basename(des), "")):
             os.makedirs(des.replace(os.path.basename(des), ""))
+            ccc.note("created " + des.replace(os.path.basename(des), ""))
         pdf_data, resources = pdf_exporter.from_notebook_node(nb)
         ccc.note("finished processing for " + des)
         
