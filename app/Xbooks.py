@@ -101,9 +101,9 @@ if __name__ == "__main__":
                                 push_url = "https://"+xrc["GitHub_Username"]+":"+sys.argv[2]+"@github.com/"+xrc["GitHub_Username"]+"/"+xrc["gh_repo_name"]+".git"
                                 candp = CommiterAndPusher(push_url, xrc["GitHub_Username"], xrc["Email"])
                                 if candp.commit(fetched_data):
-                                    # if candp.push():
-                                    #     wc.cleanXblog()
-                                    print("woodoo!")
+                                    if candp.push():
+                                        wc.cleanXblog()
+                                    # print("woodoo!")
                 else:
                     ccc.note("skipping transformation process since latest commit is not authored by the owner " + xrc["GitHub_Username"] + " but is by " + clonned_repo.author)
                     wc.cleanXblog()
