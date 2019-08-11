@@ -21,11 +21,11 @@ def convert(src):
         ccc.success("reading " + str(src))
         global hasread
         hasread = True
-    except:
+    except Exception as err:
         ccc.fail("reading " + str(src))
         wc.cleanXblog()
-        sys.exit()
-
+        sys.exit(ccc.stderr(err))
+        
     if hasread:
         try:
             des = src.replace(".ipynb",".html").replace("Xblog", "Xblog/docs")
@@ -46,7 +46,7 @@ def convert(src):
             ccc.success("converting " + str(src) + " to " + str(des))
             II.install(des, "Xpage")
             return True
-        except:
+        except Exception as err:
             ccc.fail("while converting " + str(src) + " to " + str(des))
             wc.cleanXblog()
-            sys.exit()
+            sys.exit(ccc.stderr(err))

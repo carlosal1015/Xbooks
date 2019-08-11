@@ -23,10 +23,10 @@ def removeFromNavBar(des):
             f.close()
         ccc.success("removing " + des + " from navigation pallete")
 
-    except:
+    except Exception as err:
         ccc.fail("while removing " + des + " from navigation pallete")
         wc.cleanXblog()
-        sys.exit()
+        sys.exit(ccc.stderr(err))
 
 def removeFromParentIndex(des):
     """
@@ -46,10 +46,10 @@ def removeFromParentIndex(des):
             f.write(soup.prettify(formatter="html"))
             f.close()
         ccc.success("removing " + des + " from parent index")
-    except:
+    except Exception as err:
         ccc.fail("while removing " + des + " from parent index")
         wc.cleanXblog()
-        sys.exit()
+        sys.exit(ccc.stderr(err))
 
 def uninstall(des):
     """
@@ -62,7 +62,7 @@ def uninstall(des):
         else:
             removeFromParentIndex(des)
         ccc.success("uninstallation procedures for " + des)
-    except:
+    except Exception as err:
         ccc.fail("while uninstallation procedures for " + des)
         wc.cleanXblog()
-        sys.exit()
+        sys.exit(ccc.stderr(err))

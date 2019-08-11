@@ -14,6 +14,6 @@ def read(folder):
                 XrcFile.close()
         ccc.success("reading Xbooksrc")
         return eval(XrcData)
-    except:
+    except Exception as err:
         ccc.fail("while reading Xbooksrc")
-        sys.exit()
+        sys.exit(ccc.stderr(err))

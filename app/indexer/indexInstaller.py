@@ -77,10 +77,10 @@ def addToNavBar(des, tipe, Xrc):
             f.write(index)
             f.close()
         ccc.success("adding " + title + " to navigation pallete")
-    except:
+    except Exception as err:
         ccc.fail("adding " + title + " to navigation pallete")
         wc.cleanXblog()
-        sys.exit()
+        sys.exit(ccc.stderr(err))
 
 def addToParentIndex(des, tipe, Xrc):
     """
@@ -121,10 +121,10 @@ def addToParentIndex(des, tipe, Xrc):
             f.write(body)
             f.close()
         ccc.success("adding " + des + " to parent index")
-    except:
+    except Exception as err:
         ccc.fail("adding " + des + " to parent index")
         wc.cleanXblog()
-        sys.exit()
+        sys.exit(ccc.stderr(err))
 
 
 def install(des, tipe):
@@ -150,7 +150,7 @@ def install(des, tipe):
             else:
                 addToParentIndex(des, tipe, Xrc)
         ccc.success("installtion procedures for " + des)
-    except:
+    except Exception as err:
         ccc.fail("while installation procedures for " + des)
         wc.cleanXblog()
-        sys.exit()
+        sys.exit(ccc.stderr(err))

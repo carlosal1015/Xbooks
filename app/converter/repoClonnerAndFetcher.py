@@ -40,14 +40,14 @@ class ClonnerAndFetcher:
         """
         try:
             ccc.white("Clonning", self.url)
-            self.repo = Repo.clone_from(self.url, "./Xblog", branch="master")
+            self.repo = Repo.clone_from(self.url, "./Xblog", branch="mater")
             self.author = self.repo.head.commit.author.name
             ccc.success("clonning " + self.url)
             return self
-        except:
+        except Exception as err:
             ccc.fail("clonning repo " + self.url)
             ccc.note("kindly first delete the repo which(if) already exist!\nor check if the remote repo exists!")
-            sys.exit()
+            sys.exit(ccc.stderr(err))
 
     def fetch(self):
         try:
@@ -81,7 +81,7 @@ class ClonnerAndFetcher:
                     "to_be_deleted": toDelete,
                     "to_be_renamed": list(set(toRename))
                     }
-        except:
+        except Exception as err:
             ccc.fail("while fetching latest commit changes")
             wc.cleanXblog()
-            sys.exit()
+            sys.exit(ccc.stderr(err))

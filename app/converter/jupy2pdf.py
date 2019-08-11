@@ -37,7 +37,7 @@ def convert(src):
         
         ccc.success("converting " + str(src) + "to " + os.path.join(des,os.path.basename(src).replace(".ipynb",".pdf")))
         return True
-    except:
+    except Exception as err:
         ccc.fail("while converting " + str(src) + " to " + str(des))
         wc.cleanXblog()
-        sys.exit()
+        sys.exit(ccc.stderr(err))

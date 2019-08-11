@@ -15,7 +15,7 @@ def rename(tbr, tipe):
     try:
         src = tbr[0].replace(".ipynb", ".html")
         des = tbr[1].replace(".ipynb", ".html")
-        os.renames(os.path.join("Xblog/docs", src), os.path.join("Xblog/docs", des))
+        os.renames(os.path.join("blog/docs", src), os.path.join("Xblog/docs", des))
         ccc.success("renaming " + src + " to " + des)
         IUp.update(src, des, tipe)
         src_pdf = tbr[0].replace(".ipynb", ".pdf").replace("notebooks", "pdfs")
@@ -23,10 +23,10 @@ def rename(tbr, tipe):
         os.renames("Xblog/docs/" + src_pdf, "Xblog/docs/" + des_pdf)
         ccc.success("renaming " + src_pdf + " to " + des_pdf)
         return True
-    except:
+    except Exception as err:
         ccc.fail("while renaming " + tbr[0] + " to " + tbr[1])
         wc.cleanXblog()
-        sys.exit()
+        sys.exit(ccc.stderr(err))
 
 def delete(tbd, tipe):
     """
@@ -46,7 +46,7 @@ def delete(tbd, tipe):
             shutil.rmtree(des)
             ccc.success("deleting " + des)
         return True
-    except:
+    except Exception as err:
         ccc.fail("while deleting " + des)
         wc.cleanXblog()
-        sys.exit()
+        sys.exit(ccc.stderr(err))
