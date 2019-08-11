@@ -1,6 +1,13 @@
 version: 2
 jobs:
   build:
+    docker:
+      - image: xsoft/xbooks:latest
+    steps:
+      - run:
+          name: Xbooks_Transformation
+          command: cd /Xbooks/ && source activate Xbooks_env && python Xbooks.py $REPO $PAT
+  deploy:
     branches:
       only:
         - master
@@ -10,3 +17,11 @@ jobs:
       - checkout
       - run: npm i
       - run: npx semantic-release
+workflows:
+  version: 2
+  Xbooks_transformation:
+    jobs:
+      - build
+  Xbooks_deployment:
+    jobs:
+      - deploy
