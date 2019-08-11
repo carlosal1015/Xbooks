@@ -4,6 +4,9 @@ from colorama import init as initcolor
 initcolor(autoreset=True)
 from colorama import Fore, Back
 
+def stderr(txt):
+    print(Back.LIGHTRED_EX+"|STDERR|", Back.BLACK+Fore.LIGHTRED_EX+'> '+str(txt))
+
 def success(txt):
     print(Back.GREEN+"|Success|", Fore.GREEN+'> '+txt)
 

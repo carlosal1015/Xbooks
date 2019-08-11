@@ -52,11 +52,11 @@ class CommiterAndPusher():
                 ccc.white("Committer:", str({"username": str(self.committer.name), "email": str(self.committer.email)}))
                 ccc.white("Commit message", str(self.commit_message))
                 return True
-            except:
+            except Exception as err:
                 self.commit_message = ""
                 ccc.fail("while commiting Xbooks' changes")
                 wc.cleanXblog()
-                sys.exit()
+                sys.exit(ccc.stderr(err))
         else:
             ccc.alert("there's nothing to commit")
             self.commit_message = ""
@@ -70,7 +70,7 @@ class CommiterAndPusher():
                 Xorigin.push()
                 ccc.success("pushing " + str(self.repo.head.commit)[:7])
                 return True
-            except:
+            except Exception as err:
                 ccc.fail("while pushing Xbooks' commit")
                 wc.cleanXblog()
-                sys.exit()
+                sys.exit(ccc.stderr(err))

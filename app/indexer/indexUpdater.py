@@ -66,10 +66,10 @@ def editNavBar(src, des, tipe, Xrc):
             f.write(soup.prettify(formatter="html"))
             f.close()
         ccc.success("updating " + des + " from navigation pallete")
-    except:
+    except Exception as err:
         ccc.fail("while updating " + des + " from navigation pallete")
         wc.cleanXblog()
-        sys.exit()
+        sys.exit(ccc.stderr(err))
 
 
 def editParentIndex(src, des, tipe, Xrc):
@@ -103,10 +103,10 @@ def editParentIndex(src, des, tipe, Xrc):
             f.write(soup.prettify(formatter="html"))
             f.close()
         ccc.success("updating " + des + " from parent index")
-    except:
+    except Exception as err:
         ccc.fail("while updating " + des + " from parent index")
         wc.cleanXblog()
-        sys.exit()
+        sys.exit(ccc.stderr(err))
 
 
 def update(src, des, tipe):
@@ -124,7 +124,7 @@ def update(src, des, tipe):
         else:
             editParentIndex(src, des, tipe, Xrc)
         ccc.success("updatation procedures for " + des)
-    except:
+    except Exception as err:
         ccc.fail("while updatation procedures for " + des)
         wc.cleanXblog()
-        sys.exit()
+        sys.exit(ccc.stderr(err))
