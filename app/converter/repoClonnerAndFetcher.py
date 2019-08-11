@@ -40,7 +40,7 @@ class ClonnerAndFetcher:
         """
         try:
             ccc.white("Clonning", self.url)
-            self.repo = Repo.clone_from(self.url, "./Xblog", branch="mater")
+            self.repo = Repo.clone_from(self.url, "./Xblog", branch="master")
             self.author = self.repo.head.commit.author.name
             ccc.success("clonning " + self.url)
             return self
