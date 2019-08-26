@@ -1,9 +1,9 @@
 version: 2
 jobs:
   Xbooks_Transformation:
-    branches:
-      only:
-        - master
+    filters:
+      branches:
+        only: master
     docker:
       - image: xsoft/xbooks:latest
     steps:
@@ -11,9 +11,9 @@ jobs:
           name: running_Xbooks_Container_App
           command: cd /Xbooks/ && source activate Xbooks_env && python Xbooks.py $REPO $GH_TOKEN
   Semantic_Versioning:
-    branches:
-      only:
-        - master
+    filters:
+      branches:
+        only: master
     docker:
       - image: circleci/node:8
     steps:
