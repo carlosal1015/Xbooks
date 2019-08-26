@@ -22,10 +22,10 @@ from converter.repoCommiterAndPusher import CommiterAndPusher
 from indexer import indexUpdater as IUp
 from indexer import indexUninstaller as IUn
 
-# the problem here is, there's not need for tracking 
+# the problem here is, there's not need for tracking
 # tipe == "Xbook" beacuse git doesn't report it!(perhaps)
 
-# this script can be run only on cli    
+# this script can be run only on cli
 if __name__ == "__main__":
     import sys
     if len(sys.argv) == 3:
@@ -93,12 +93,12 @@ if __name__ == "__main__":
                                     ccc.success("deleting " + root)
                                     root_pdf = root.replace("notebooks", "pdfs")
                                     os.rmdir(root_pdf)
-                                
+
                                 for tbddir in tbddirs:
                                     sd1.append(frandr.delete(tbddir, "Xbook"))
-                            
+
                             if(all(sd0) and all(sd1)):
-                                push_url = "https://"+xrc["GitHub_Username"]+":"+sys.argv[2]+"@github.com/"+xrc["GitHub_Username"]+"/"+xrc["gh_repo_name"]+".git"
+                                push_url = "https://"+xrc["GitHub_Username"]+":"+sys.argv[2]+"@github.com/"+xrc["gh_repo_namespace"]+"/"+xrc["gh_repo_name"]+".git"
                                 candp = CommiterAndPusher(push_url, xrc["GitHub_Username"], xrc["Email"])
                                 if candp.commit(fetched_data):
                                     if candp.push():
