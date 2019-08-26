@@ -15,5 +15,9 @@ jobs:
       - image: circleci/node:8
     steps:
       - checkout
-      - run: npm i
-      - run: npx semantic-release
+      - run: 
+          name: Dependencies_Installation
+          command: npm i
+      - run: 
+          name: Versioning
+          command: npx semantic-release
