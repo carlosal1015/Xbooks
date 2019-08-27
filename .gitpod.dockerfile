@@ -1,4 +1,7 @@
 FROM gitpod/workspace-full:latest
 USER gitpod
-RUN pyenv uninstall --force 2.7.15 && pyenv uninstall --force 3.7.2 && pyenv install anaconda3-5.3.1 && pyenv global anaconda3-5.3.1
+RUN cd /tmp && curl -O https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh && \
+sha256sum Anaconda3-2019.03-Linux-x86_64.sh && \
+bash Anaconda3-2019.03-Linux-x86_64.sh -y
+ENV PATH=$PATH:$HOME/anaconda3:$HOME/anaconda3/bin
 USER root
