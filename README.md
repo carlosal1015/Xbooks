@@ -1,10 +1,10 @@
+# a software for thought producers!
 <h4 align="center">information engenders thoughts for the next generation</h4>
 <p align="center"><a href="https://xsoft-technologies.github.io/Xbooks"><img src="https://raw.githubusercontent.com/xsoft-technologies/Xbooks/master/Xbooks-logo.png" width="512px;" height="256px;" alt="Xbooks Project LOGO"/><br/><sub><h1 align="center">Xbooks</a></p>
 
 ***
 [![play in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/xsoft-technologies/Xbooks)
 ***
-# a software for thought producers!
 ## a software for Scientists, Engineers, and Technicians who produces or communicates innovative ideas and thoughts through written mathematical statements and analysis of its results through python3 like popular data science language using jupyter like most used notebook environments!!
 
 ### Easy 17 steps!
