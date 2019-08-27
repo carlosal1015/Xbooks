@@ -6,7 +6,7 @@ RUN rm Anaconda3-5.0.1-Linux-x86_64.sh
 ENV PATH=$PATH:$HOME/anaconda3
 ENV PATH=$PATH:$HOME/anaconda3/bin
 RUN conda update conda
-RUN conda update anaconda
+# RUN conda update anaconda
 RUN conda update --all
 RUN mkdir $HOME/notebooks
 RUN jupyter notebook --generate-config --allow-root
