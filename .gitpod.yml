@@ -7,3 +7,4 @@ ports:
   onOpen: notify
 tasks:
 - command: npm i -g npm && ((rm -r node_modules && rm -f package-lock.json && npm i && npm i -g ./) || npm i && npm i -g ./)
+- command: conda activate base && jupyter notebook notebooks/ --NotebookApp.allow_origin=\'$(gp url 8888)\' --ip='*' --NotebookApp.token='' --NotebookApp.password=''
