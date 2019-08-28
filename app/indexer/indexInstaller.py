@@ -166,7 +166,6 @@ def install(des, tipe):
                 addToNavBar(des, tipe, Xrc)
             else:
                 addToParentIndex(des, tipe, Xrc)
-
         if tipe == "Xpage":
             linkAssets(des, Xrc)
             if des.replace(os.path.basename(des), "") == "Xblog/docs/notebooks/":
