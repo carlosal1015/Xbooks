@@ -40,7 +40,7 @@ cmd
    .description("to placify your blog according to .Xbooksrc")
    .action(()=>{
        placifier.placify();
-   }) 
+   })
 
 cmd
    .command("publish")
@@ -83,15 +83,12 @@ cmd
     .on('--help', ()=>{
     console.log('')
     console.log('Example:');
-    ccc.code(["npm i -g @xsoft/xbooks  (if weak internet connection)",
-              "npx @xsoft/xbooks  (if strong internet connection)",
+    ccc.code(["npm i -g @xsoft/xbooks",
               "mkdir example_blog && chdir example_blog",
-              "Xbooks init  (to configure example_blog)",
-              "Xbooks install  (to install configured dependencies)",
-              "Xbooks convert  (to convert ipynbs to webpages)",
-              "Xbooks serve  (to have a look at your blog)",
-              "Xbooks edit  (to reconfigure example_blog)",
-              "git add && commit && push  (to publish example_blog)",
+              "Xbooks init",
+              "Xbooks placify",
+              "Xbooks install",
+              "Xbooks pub -i"
             ]);
   });
 

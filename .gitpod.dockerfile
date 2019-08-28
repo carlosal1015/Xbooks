@@ -7,5 +7,5 @@ ENV PATH=$PATH:$HOME/anaconda3
 ENV PATH=$PATH:$HOME/anaconda3/bin
 RUN conda install conda
 RUN conda init
-ENV jpynb="jupyter notebook notebooks/ --NotebookApp.allow_origin=\'$(gp url 8888)\' --ip='*' --NotebookApp.token='' --NotebookApp.password=''"
+ENV jupynb="jupyter notebook notebooks/ --NotebookApp.allow_origin=\'$(gp url 8888)\' --ip='*' --NotebookApp.token='' --NotebookApp.password=''"
 USER root
