@@ -5,10 +5,10 @@
 ***
 [![play in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/xsoft-technologies/Xbooks)
 ***
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/xsoft-technologies/Xbooks)
-![GitHub repo size](https://img.shields.io/github/repo-size/xsoft-technologies/Xbooks)
-![Docker Pulls](https://img.shields.io/docker/pulls/xsoft/xbooks)
-![npm](https://img.shields.io/npm/dt/@xsoft/xbooks)
+[![](https://img.shields.io/github/v/release/xsoft-technologies/Xbooks)](https://github.com/xsoft-technologies/Xbooks/releases/latest)
+[![](https://img.shields.io/github/repo-size/xsoft-technologies/Xbooks)](#)
+[![](https://img.shields.io/docker/pulls/xsoft/xbooks)](https://hub.docker.com/r/xsoft/xbooks)
+[![](https://img.shields.io/npm/dt/@xsoft/xbooks)](https://www.npmjs.com/package/@xsoft/xbooks)
 ***
 ## a software for Scientists, Engineers, and Technicians who produces or communicates innovative ideas and thoughts through written mathematical statements and analysis of its results through python3 like popular data science language using jupyter like most used notebook environments!!
 
