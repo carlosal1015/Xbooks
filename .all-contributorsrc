@@ -9,6 +9,22 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "eslint",
-  "contributors": [],
+  "contributors": [
+    {
+      "login": "XinYaanZyoy",
+      "name": "XinYaanZyoy",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/32465479?v=4",
+      "profile": "https://xinyaanzyoy.github.io/THB/",
+      "contributions": [
+        "code",
+        "bug",
+        "doc",
+        "ideas",
+        "maintenance",
+        "tutorial",
+        "design"
+      ]
+    }
+  ],
   "contributorsPerLine": 7
 }
