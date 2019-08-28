@@ -52,6 +52,7 @@
     "url": "https://github.com/xsoft-technologies/Xbooks.git"
   },
   "devDependencies": {
+    "@semantic-release/git": "^7.0.16",
     "semantic-release": "^15.13.19"
   }
 }
