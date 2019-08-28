@@ -1,40 +1,56 @@
 root/ :
-    - .circleci/ : 
+    - .circleci/ :
         - config.yml : to publish node packages
     - .vscode/ :
         - .ropeproject/ :
             - config.py : i've no idea WTH is this!
+            - launch.json : same!
     - app/ :
         - Xbooks.py : entry point of pipeline script
-        - converter : pipeline python app package to convert ipynbs
-        - indexer : pipeline python app package to index webpages
-        - Xlib : modules used and created by Xbooks devs
+        - transformer.py : pipeline python app module to transfrom commits
+        - converter/ :
+            - __init__.py : you know!
+            - fileRemoverAndRenamer.py : that's what it is!
+            - jupy2html.py : a module to convert ipynbs to htmls
+            - jupy2pdf.py : a module to convert ipynbs to pdfs
+            - repoClonnerAndFetcher.py : module heavily written on top of gitpython
+            - repoCommiterAndPusher.py : same!
+        - indexer/ :
+            - __init__.py : YKT!
+            - indexInstaller.py : module to install index.html in Xbooks
+            - indexUninstaller.py : module to uninstall the same!
+            - indexUpdater.py : module to update the same!
+        - Xlib/ :
+            - __init__.py : you know this!
+            - ccc.py : github.com/XinYaanZyoy/ccc
+            - ignoreReader.py : module to read .Xbooksignore files
+            - workspaceCleaner.py : module to clean pipeline workspace(which everytie fails!)
+            - XbooksrcReader.py : modules to read .Xbooksrc files
     - bin/ :
         - Xbooks.js : entry point of Xbooks_CLI
-    - docs/ :
-        - index.html : main page of Xbooks website
+    - docs/ : Xbooks website which itself is Xbooks project!
     - lib/ :
         - initiator.js : init command
         - common_cli_conventions.js : github.com/XinYaanZyoy/ccc
         - installer/ :
             - copier.js : module to copy file and dir
             - install.js : install command
-        - placifier : 
+        - placifier :
             - placify.js : placify command
-        - publisher : 
+        - publisher :
             - publish.js : publish command
             - syncer.js : sync command
-        - uninstaller : 
+        - uninstaller :
             - uninstall.js : uninstall command
     - notebooks/ : ipynbs which is transformed into docs by Xbooks itself!
     - src/ :
         - CI/ :
-            - AppVeyor/ : 
+            - AppVeyor/ :
                 - appveyor.yml : pipeline script template
             - CircleCI/ :
                 - .circleci/  :
                     - config.yml : pipeline script template
-            - CodeShip/ : 
+            - CodeShip/ :
                 - codeship-services.yml : pipeline setup script
                 - codeship-steps.yml : pipeline script template
             - GitLabCI/ :
@@ -43,7 +59,7 @@ root/ :
             - TravisCI/ :
                 - .travis.yml : pipeline script template
             - CI.list : list of usable templates
-        - extensions/ : 
+        - extensions/ :
             - extensions.list : list of usable extensions
         - plugins/ :
             - plugins.list : list of usable plugins
@@ -55,10 +71,10 @@ root/ :
                         - custom.css : jupyter notebook theme
                         - style.css : root index style
                         - sub_index.css : sub index style
-                    - html/ : 
+                    - html/ :
                         - index.html : sub index template
                         - Xbooks_mobile.html : unsupport page for mobiles
-                    - images/ : 
+                    - images/ :
                         - computer_surfing_hg_clr.gif : used in html/Xbooks_mobile.html
                         - DP.png : author's display picture place holder
                         - loading.gif : loading gif for blog
@@ -87,6 +103,8 @@ root/ :
     - .gitpod.yml : configuration of gitpod workspace
     - .npmignore : ignore list for npm
     - .releaserc : config file for sematic-release
+    - .Xbooksignore : ignore list for Xbooks CI app
+    - .Xbooksrc : config file for Xbooks CI app
     - CREDITS.json : Xbooks credits in JSON file
     - Dockerfile : Xbooks docker image xsoft/xbooks
     - environment.yml : for conda env in xsoft/xbooks container
