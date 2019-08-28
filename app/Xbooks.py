@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 
 from Xlib import ccc
-
+import urllib.request as www
+version = eval(www.urlopen("https://api.github.com/repos/xsoft-technologies/Xbooks/tags").read())[0]["name"]
 ccc.greet("hola! lots of hopes and wishes for your project! from the writter of Xbooks; XinYaanZyoy! \
        \nhttps://GitHub.com/XinYaanZyoy")
-ccc.alert("Xbooks is still under development process!!")
+ccc.alert("Xbooks "+version+" is still under development process!!")
 
 from Xlib import workspaceCleaner as wc
 from Xlib import XbooksrcReader

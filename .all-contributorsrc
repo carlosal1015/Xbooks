@@ -1,0 +1,14 @@
+{
+  "projectName": "Xbooks",
+  "projectOwner": "xsoft-technologies",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "CONTRIBUTORS.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "eslint",
+  "contributors": [],
+  "contributorsPerLine": 7
+}
