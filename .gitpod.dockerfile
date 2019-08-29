@@ -1,5 +1,4 @@
 FROM gitpod/workspace-full:latest
-RUN apt install docker.io
 USER gitpod
 RUN wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
 RUN bash Anaconda3-5.0.1-Linux-x86_64.sh -b
