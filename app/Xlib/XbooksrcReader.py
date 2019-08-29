@@ -2,7 +2,7 @@
 
 import os
 import sys
-import ccc
+from . import ccc
 
 def read(folder):
     """

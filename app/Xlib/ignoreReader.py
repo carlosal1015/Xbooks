@@ -2,8 +2,8 @@
 
 import os
 import sys
-import ccc
-import XbooksrcReader
+from . import ccc
+from . import XbooksrcReader
 
 def read():
     """
