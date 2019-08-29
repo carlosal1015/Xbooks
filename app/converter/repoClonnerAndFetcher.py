@@ -41,7 +41,7 @@ def fetch_untransformed_commits():
     try:
         ccc.note("fetching untransformed commits")
         xrc = XbooksrcReader.read("Xblog")
-        if xrc["transfrom"]:
+        if "transform" in xrc:
             return xrc["transform"]
         else:
             return []
@@ -55,9 +55,9 @@ def update_Xrc_transform(hexsha7):
     try:
         ccc.note('logging ' + hexsha7)
         xrc = XbooksrcReader.read("Xblog")
-        if not xrc["transfrom"]:
-            xrc.update({"transfrom":[]})
-        xrc["transfrom"].append(hexsha7)
+        if not "transform" in xrc:
+            xrc.update({"transform":[]})
+        xrc["transform"].append(hexsha7)
         with open(".Xbooksrc", 'w') as f:
             f.write(json.dumps(xrc))
             f.close()
