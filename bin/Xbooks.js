@@ -14,6 +14,9 @@ const uninstaller = require("../lib/uninstaller/uninstall");
 const cmd = require('commander');
 const path = require('path');
 
+const {getInstalledPathSync} = require('get-installed-path');
+const Xbooks_PATH = getInstalledPathSync('@xsoft/xbooks');
+
 ccc.greet("hola! lots of hopes and wishes for your project! from the writter of Xbooks; XinYaanZyoy! \
        \nhttps://GitHub.com/XinYaanZyoy")
 ccc.alert(ccc.logo("Xbooks" + pkg.version)+" is under development process!!");
@@ -31,7 +34,7 @@ cmd
     .alias('i')
     .description("to install dependencies defined in .Xbooksrc")
     .action(()=>{
-        installer.install(process.argv[1].replace(path.join("bin","Xbooks.js"), ""), path.resolve());
+        installer.install(Xbooks_PATH, path.resolve());
     })
 
 cmd
@@ -92,7 +95,5 @@ cmd
             ]);
   });
 
-
 if(!process.argv.slice(2).length) cmd.help();
-
 cmd.parse(process.argv)
