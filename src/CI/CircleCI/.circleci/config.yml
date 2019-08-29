@@ -1,9 +1,17 @@
 version: 2
 jobs:
-  build:
+  Xbooks_Transformation:
+    filters:
+      branches:
+        only: master
     docker:
       - image: xsoft/xbooks:latest
     steps:
       - run:
-          name: Xbooks_Transformation
-          command: cd /Xbooks/ && source activate Xbooks_env && python Xbooks.py $REPO $PAT
+          name: running_Xbooks_Container_App
+          command: cd /Xbooks/ && source activate Xbooks_env && python Xbooks.py $REPO $GH_TOKEN
+workflows:
+  version: 2
+  build:
+    jobs:
+      - Xbooks_Transformation
