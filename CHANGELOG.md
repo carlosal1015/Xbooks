@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/xsoft-technologies/Xbooks/compare/v1.3.1...v1.3.2) (2019-08-29)
+
+
+### Bug Fixes
+
+* [#68](https://github.com/xsoft-technologies/Xbooks/issues/68) resolved Xbooksrc file fetching error ([05fdd39](https://github.com/xsoft-technologies/Xbooks/commit/05fdd39))
+
 ## [1.3.1](https://github.com/xsoft-technologies/Xbooks/compare/v1.3.0...v1.3.1) (2019-08-29)
 
 
