@@ -46,6 +46,7 @@ def fetch_untransformed_commits():
         else:
             return []
     except Exception as err:
+        ccc.fail("fetching untransformed commits")
         sys.exit(ccc.stderr(err))
 
 def update_Xrc_transform(hexsha7):
@@ -63,6 +64,7 @@ def update_Xrc_transform(hexsha7):
             f.close()
         ccc.success("updating transform key in .Xbooksrc")
     except Exception as err:
+        ccc.fail("updating transform key in .Xbooksrc")
         sys.exit(ccc.stderr(err))
 
 def fetch_from_commit(hexsha7):
@@ -102,6 +104,7 @@ def fetch_from_commit(hexsha7):
             "to_be_renamed": list(set(to_rename))
             }
     except Exception as err:
+        ccc.fail("fetching " + hexsha7)
         sys.exit(ccc.fail(err))
 
 

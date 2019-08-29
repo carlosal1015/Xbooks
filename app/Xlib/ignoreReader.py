@@ -2,8 +2,8 @@
 
 import os
 import sys
-from . import ccc
-from . import XbooksrcReader
+import ccc
+import XbooksrcReader
 
 def read():
     """
@@ -16,12 +16,20 @@ def read():
                 IgnoreData = Xignore.read()
                 Xignore.close()
             ccc.success("reading Xbooksignore")
+            ccc.blue("Xbooksignore", IgnoreData)
             return IgnoreData.split("\n")
         except Exception as err:
             ccc.fail("while reading Xbooksignore")
             sys.exit(ccc.stderr(err))
     else:
         try:
-            return XbooksrcReader.read("Xblog")["ignore"]
+            xrc = XbooksrcReader.read("Xblog")
+            ccc.success("reading Xbooksrc")
+            if "ignore" in xrc:
+                ccc.blue("ignorelist", xrc["ignore"])
+                return xrc["ignore"]
+            return []
         except Exception as err:
             sys.exit(ccc.stderr(err))
+
+read()

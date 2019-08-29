@@ -21,6 +21,9 @@ ccc.greet("hola! lots of hopes and wishes for your project! from the writter of 
        \nhttps://GitHub.com/XinYaanZyoy")
 ccc.alert(ccc.logo("Xbooks" + pkg.version)+" is under development process!!");
 
+const updateNotifier = require('update-notifier');
+updateNotifier({pkg}).notify();
+
 cmd
     .command('initialize')
     .alias('init')
