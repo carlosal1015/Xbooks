@@ -9,6 +9,7 @@
 [![](https://img.shields.io/github/repo-size/xsoft-technologies/Xbooks)](#)
 [![](https://img.shields.io/docker/pulls/xsoft/xbooks)](https://hub.docker.com/r/xsoft/xbooks)
 [![](https://img.shields.io/npm/dt/@xsoft/xbooks)](https://www.npmjs.com/package/@xsoft/xbooks)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 ***
 ## a software for Scientists, Engineers, and Technicians who produces or communicates innovative ideas and thoughts through written mathematical statements and analysis of its results through python3 like popular data science language using jupyter like most used notebook environments!!
 
