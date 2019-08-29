@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/xsoft-technologies/Xbooks/compare/v1.3.0...v1.3.1) (2019-08-29)
+
+
+### Bug Fixes
+
+* importing path of ccc ([a1289a2](https://github.com/xsoft-technologies/Xbooks/commit/a1289a2))
+
 # [1.3.0](https://github.com/xsoft-technologies/Xbooks/compare/v1.2.2...v1.3.0) (2019-08-29)
 
 
