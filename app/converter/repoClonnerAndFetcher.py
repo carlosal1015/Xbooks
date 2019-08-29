@@ -41,9 +41,10 @@ def fetch_untransformed_commits():
     try:
         ccc.note("fetching untransformed commits")
         xrc = XbooksrcReader.read("Xblog")
-        if not xrc["transfrom"]:
+        if xrc["transfrom"]:
+            return xrc["transform"]
+        else:
             return []
-        return xrc["transform"]
     except Exception as err:
         sys.exit(ccc.stderr(err))
 
