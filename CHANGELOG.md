@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/xsoft-technologies/Xbooks/compare/v1.2.2...v1.3.0) (2019-08-29)
+
+
+### Bug Fixes
+
+* [#66](https://github.com/xsoft-technologies/Xbooks/issues/66) just a try! ([2562824](https://github.com/xsoft-technologies/Xbooks/commit/2562824))
+
+
+### Features
+
+* Xbooks update notifications ([2040183](https://github.com/xsoft-technologies/Xbooks/commit/2040183))
+
 ## [1.2.2](https://github.com/xsoft-technologies/Xbooks/compare/v1.2.1...v1.2.2) (2019-08-29)
 
 
