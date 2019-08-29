@@ -1,3 +1,11 @@
+## [1.3.3](https://github.com/xsoft-technologies/Xbooks/compare/v1.3.2...v1.3.3) (2019-08-29)
+
+
+### Bug Fixes
+
+* [#70](https://github.com/xsoft-technologies/Xbooks/issues/70) hexsha7 as a string and an object are introduced seperately ([11f4361](https://github.com/xsoft-technologies/Xbooks/commit/11f4361))
+* [#71](https://github.com/xsoft-technologies/Xbooks/issues/71) better temp workspace cleaning script ([fb08db2](https://github.com/xsoft-technologies/Xbooks/commit/fb08db2))
+
 ## [1.3.2](https://github.com/xsoft-technologies/Xbooks/compare/v1.3.1...v1.3.2) (2019-08-29)
 
 
