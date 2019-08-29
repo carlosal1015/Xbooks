@@ -34,6 +34,7 @@ def update_Xrc_transform(hexsha7):
             f.close()
         ccc.success("updating transform key in .Xbooksrc")
     except Exception as err:
+        ccc.fail("updating transform key in .Xbooksrc")
         sys.exit(ccc.stderr(err))
 
 
@@ -112,4 +113,5 @@ def transform(hexsha7, fetched_data):
                         update_Xrc_transform(hexsha7)
                         # print("woodoo!")
     except Exception as err:
+        ccc.fail("transforming "+hexsha7)
         sys.exit(ccc.stderr(err))
