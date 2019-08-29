@@ -67,7 +67,7 @@ def update_Xrc_transform(hexsha7):
         ccc.fail("updating transform key in .Xbooksrc")
         sys.exit(ccc.stderr(err))
 
-def fetch_from_commit(hexsha7):
+def fetch_from_commit(Obj_hexsha7, hexsha7):
     """
     returns dict of data of analysis of given commit hexsha7
     """
@@ -77,7 +77,7 @@ def fetch_from_commit(hexsha7):
         to_rename = []
         to_convert = []
         ccc.white("Fetching", hexsha7)
-        for fn, fd in list(hexsha7.stats.files.items()):
+        for fn, fd in list(Obj_hexsha7.stats.files.items()):
             if fn.startswith("notebooks") and fn not in ignore_list and "checkpoint" not in fn and ".ipynb" in fn:
                 status = fstatus(fd['insertions'], fd['deletions'], fd['lines'])
                 ccc.note("fetched " + fn + " with status " + status)
@@ -139,12 +139,12 @@ class ClonnerAndFetcher:
         try:
             to_be_transformed = []
             for commit in fetch_untransformed_commits():
-                to_be_transformed.append({"hexsha7":commit, "tree":fetch_from_commit(commit)})
+                to_be_transformed.append({"hexsha7":commit, "tree":fetch_from_commit(self.repo.commit(commit), commit)})
             latest = str(self.repo.head.ref.commit.hexsha[:7])
             update_Xrc_transform(latest)
-            to_be_transformed.append({"hexsha7":latest, "tree":fetch_from_commit(latest)})
+            to_be_transformed.append({"hexsha7":latest, "tree":fetch_from_commit(self.repo.commit(latest), latest)})
             return to_be_transformed
         except Exception as err:
-            ccc.fail("while fetching latest commit changes")
+            ccc.fail("while fetching commits")
             wc.cleanXblog()
             sys.exit(ccc.stderr(err))

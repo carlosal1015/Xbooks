@@ -60,6 +60,7 @@ class CommiterAndPusher():
         else:
             ccc.alert("there's nothing to commit")
             self.commit_message = ""
+            wc.cleanXblog()
             sys.exit()
 
     def push(self):
