@@ -31,5 +31,3 @@ def read():
             return []
         except Exception as err:
             sys.exit(ccc.stderr(err))
-
-read()
