@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/xsoft-technologies/Xbooks/compare/v1.2.1...v1.2.2) (2019-08-29)
+
+
+### Bug Fixes
+
+* [#60](https://github.com/xsoft-technologies/Xbooks/issues/60) fixes problem of fetching untransformed commits ([7c545b9](https://github.com/xsoft-technologies/Xbooks/commit/7c545b9))
+
 ## [1.2.1](https://github.com/xsoft-technologies/Xbooks/compare/v1.2.0...v1.2.1) (2019-08-29)
 
 
