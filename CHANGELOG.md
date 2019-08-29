@@ -4,3 +4,34 @@
 ### Bug Fixes
 
 * [#58](https://github.com/xsoft-technologies/Xbooks/issues/58) and [#56](https://github.com/xsoft-technologies/Xbooks/issues/56) allows to run Xbooks on any machines ([536ed20](https://github.com/xsoft-technologies/Xbooks/commit/536ed20))
+
+
+
+## [1.2.0](https://github.com/xsoft-technologies/Xbooks/compare/v1.1.0...v1.2.0) (2019-08-28)
+
+
+### Features
+
+multicommmit analysis, and transformation, patch to [#45](https://github.com/xsoft-technologies/Xbooks/issues/45) 
+[(546f0a3)](https://github.com/xsoft-technologies/Xbooks/commit/546f0a3)
+
+
+
+## [1.1.0](https://github.com/xsoft-technologies/Xbooks/compare/v1.0.0...v1.1.0) (2019-08-27)
+
+### Features
+tabular cards for subdirs, newly created first order; fix [#19](https://github.com/xsoft-technologies/Xbooks/issues/19) [(8c2e67e)](https://github.com/xsoft-technologies/Xbooks/commit/8c2e67e)
+
+
+
+## [1.1.0](https://github.com/xsoft-technologies/Xbooks/releases/tag/v1.0.0) (2019-08-08)
+
+### Features
+- add new Xtheme; just an temp [(da9249f)](https://github.com/xsoft-technologies/Xbooks/commit/da9249f)
+- basic installer and server [(62fb83a)](https://github.com/xsoft-technologies/Xbooks/commit/62fb83a)
+- basic Xbooks_cli\r\nonly an 'init' command is developed [(ce605be)](https://github.com/xsoft-technologies/Xbooks/commit/ce605be)
+- converter is developed and is ready to use! [(0ade118)](https://github.com/xsoft-technologies/Xbooks/commit/0ade118)
+
+
+## [0.9.0](https://github.com/xsoft-technologies/Xbooks/releases/tag/0.9.0)
+DEPRECATED INITIAL RELEASE
