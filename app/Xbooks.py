@@ -1,14 +1,16 @@
 #!/usr/bin/env python
 
+from Xlib import closer
 from Xlib import ccc
+from Xlib import XbooksrcReader
+
 import urllib.request as www
+
 version = eval(www.urlopen("https://api.github.com/repos/xsoft-technologies/Xbooks/tags").read())[0]["name"]
 ccc.greet("hola! lots of hopes and wishes for your project! from the writter of Xbooks; XinYaanZyoy! \
        \nhttps://GitHub.com/XinYaanZyoy")
 ccc.alert("Xbooks "+version+" is still under development process!!")
 
-from Xlib import workspaceCleaner as wc
-from Xlib import XbooksrcReader
 
 from converter.repoClonnerAndFetcher import ClonnerAndFetcher
 
@@ -29,11 +31,9 @@ if __name__ == "__main__":
                     if commits:
                         for commit in commits:
                             transformer.transform(commit["hexsha7"], commit["tree"])
-                        ccc.cyan("THANKS", "for using Xbooks!, visit me @ XinYaanZyoy.github.io")
+                        closer.close(cyan=["THANKS", "for using Xbooks!, visit me @ XinYaanZyoy.github.io"])
                 else:
-                    ccc.note("skipping transformation process since latest commit is not authored by the owner " + xrc["GitHub_Username"] + " but is by " + clonned_repo.author)
-                    wc.cleanXblog()
-                    sys.exit()
+                    closer.close(note="skipping transformation process since latest commit is not authored by the owner " + xrc["GitHub_Username"] + " but is by " + clonned_repo.author)
     else:
         ccc.fail("kindly recheck your argumentation!")
         ccc.note("check whether env vars set properly! or check your CI script if it's not currepted")

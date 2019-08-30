@@ -3,6 +3,7 @@
 import os
 import sys
 from . import ccc
+from . import closer
 
 def read(folder):
     """
@@ -15,5 +16,4 @@ def read(folder):
         ccc.success("reading Xbooksrc")
         return eval(XrcData)
     except Exception as err:
-        ccc.fail("while reading Xbooksrc")
-        sys.exit(ccc.stderr(err))
+        closer.close(err=err, fail="while reading Xbooksrc")

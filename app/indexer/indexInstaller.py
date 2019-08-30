@@ -8,8 +8,7 @@ import shutil
 
 from Xlib import ccc
 from Xlib import XbooksrcReader
-from Xlib import workspaceCleaner as wc
-
+from Xlib import closer
 
 def chooseMonth(num):
     """
@@ -56,8 +55,7 @@ def linkAssets(des, Xrc):
             f.close()
         ccc.success("linking assets to " + des)
     except Exception as err:
-        wc.cleanXblog()
-        sys.exit(ccc.stderr(err))
+        closer.close(err=err)
 
 
 def addToNavBar(des, tipe, Xrc):
@@ -82,9 +80,7 @@ def addToNavBar(des, tipe, Xrc):
             f.close()
         ccc.success("adding " + title + " to navigation pallete")
     except Exception as err:
-        ccc.fail("adding " + title + " to navigation pallete")
-        wc.cleanXblog()
-        sys.exit(ccc.stderr(err))
+        closer.close(err=err, fail="adding " + title + " to navigation pallete")
 
 
 def addToParentIndex(des, tipe, Xrc):
@@ -147,9 +143,7 @@ def addToParentIndex(des, tipe, Xrc):
             f.close()
         ccc.success("adding " + des + " to parent index")
     except Exception as err:
-        ccc.fail("adding " + des + " to parent index")
-        wc.cleanXblog()
-        sys.exit(ccc.stderr(err))
+        closer.close(err=err, fail="adding " + des + " to parent index")
 
 
 def install(des, tipe):
@@ -175,6 +169,4 @@ def install(des, tipe):
                 addToParentIndex(des, tipe, Xrc)
         ccc.success("installtion procedures for " + des)
     except Exception as err:
-        ccc.fail("while installation procedures for " + des)
-        wc.cleanXblog()
-        sys.exit(ccc.stderr(err))
+        closer.close(err=err, fail="while installation procedures for " + des)

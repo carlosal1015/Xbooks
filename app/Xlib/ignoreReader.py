@@ -4,6 +4,7 @@ import os
 import sys
 from . import ccc
 from . import XbooksrcReader
+from . import closer
 
 def read():
     """
@@ -19,8 +20,7 @@ def read():
             ccc.blue("Xbooksignore", IgnoreData)
             return IgnoreData.split("\n")
         except Exception as err:
-            ccc.fail("while reading Xbooksignore")
-            sys.exit(ccc.stderr(err))
+            closer.close(err=err, fail="while reading Xbooksignore")
     else:
         try:
             xrc = XbooksrcReader.read("Xblog")
@@ -30,4 +30,4 @@ def read():
                 return xrc["ignore"]
             return []
         except Exception as err:
-            sys.exit(ccc.stderr(err))
+            closer.close(err=err, fail="while fetching ignore key of .Xbooksrc")
