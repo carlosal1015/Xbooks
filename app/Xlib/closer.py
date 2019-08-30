@@ -5,6 +5,8 @@ import time, datetime
 
 from . import ccc
 
+closeCode = 0
+
 months = {
     "[01]": "A",
     "[02]": "B",
@@ -25,6 +27,7 @@ def update_Xbooksrc_transform():
     """
     commits and pushes updated Xbooksrc at every failure but before cleaning and exiting
     """
+    global closeCode
     try:
         print("\n\nproceeding to closing script...")
         repo = Repo("./Xblog")
@@ -55,6 +58,7 @@ def update_Xbooksrc_transform():
             ccc.note("no chores to be commited and pushed")
     except Exception as err:
         ccc.fail(err+"\n the stable flow has been broken kindly handle untransformd commits manually!")
+        closeCode = 1
 
 def close(err="", fail="", note="", success="", cyan=[], alert=""):
     """
@@ -62,16 +66,21 @@ def close(err="", fail="", note="", success="", cyan=[], alert=""):
     clean workspace
     exit with stderr
     """
+    global closeCode
+
     if err != "":
         ccc.stderr(err)
+        closeCode = 1
     if cyan != []:
         ccc.cyan(cyan[0], cyan[1])
     if note != "":
         ccc.note(note)
     if fail != "":
         ccc.fail(fail)
+        closeCode = 1
     if alert != "":
         ccc.alert(alert)
+        closeCode = 1
     if success != "":
         ccc.success(success)
     update_Xbooksrc_transform()
@@ -80,7 +89,10 @@ def close(err="", fail="", note="", success="", cyan=[], alert=""):
             os.system("rm -r -f ./Xblog/")
             ccc.success("cleaning temp workspace")
         except Exception as err:
-            close(err=err, fail="cleaning temp workspace")
+            ccc.fail=("cleaning temp workspace")
+            closeCode = 1
     else:
-        close(fail="this ain't linux machine!")
-    sys.exit("closed with close code: 0")
+        ccc.note("aborted cleaning temp workspace")
+        closeCode = 1
+
+    sys.exit(closeCode)
