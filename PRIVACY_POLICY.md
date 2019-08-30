@@ -23,6 +23,8 @@ We value your trust, as informed in CLI app, pipeline app, and documentation of 
 PATs however are stored on your CI runner by yourself, your username and social information is stored in .Xbooksrc file in the root of your blog and this app doesn't transmit it anywhere, after initializing, installing and working flow of Xbooks in your repo on
 your namespace belongs to you and hence all those files in your blog including those of Xbooks generated do not correspond either to Xbooks or xsoft-technologies.
 
+check out [SSECURITY POLICY](https://github.com/xsoft-technologies/Xbooks/edit/master/SECURITY.md) for more on reporting and finnding solutions!
+
 **Changes to This Privacy Policy**
 
 We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.
