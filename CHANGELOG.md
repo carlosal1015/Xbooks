@@ -1,3 +1,17 @@
+# [1.4.0](https://github.com/xsoft-technologies/Xbooks/compare/v1.3.3...v1.4.0) (2019-08-30)
+
+
+### Bug Fixes
+
+* solves logical errors produced by multicommit transformation fixes [#72](https://github.com/xsoft-technologies/Xbooks/issues/72) and fixes [#16](https://github.com/xsoft-technologies/Xbooks/issues/16) ([5e3a4da](https://github.com/xsoft-technologies/Xbooks/commit/5e3a4da))
+
+
+### Features
+
+* a stable chore mechanism for multicommit transformtion ([ac6294e](https://github.com/xsoft-technologies/Xbooks/commit/ac6294e))
+* completely new way of multicommit transformation it gives a way to ([277a43f](https://github.com/xsoft-technologies/Xbooks/commit/277a43f))
+* introduces chores mechanism to support multicommit transformation ([f2235ea](https://github.com/xsoft-technologies/Xbooks/commit/f2235ea))
+
 ## [1.3.3](https://github.com/xsoft-technologies/Xbooks/compare/v1.3.2...v1.3.3) (2019-08-29)
 
 
