@@ -1,3 +1,16 @@
+# [1.5.0](https://github.com/xsoft-technologies/Xbooks/compare/v1.4.0...v1.5.0) (2019-08-30)
+
+
+### Bug Fixes
+
+* introduces logical Close Codes for realistic CI pipeline statuses, fixes [#77](https://github.com/xsoft-technologies/Xbooks/issues/77) ([6c5a262](https://github.com/xsoft-technologies/Xbooks/commit/6c5a262))
+
+
+### Features
+
+* automatically enebles README.md file as homepage if notebooks/welcome.ipynb doesn't exist, fixes [#57](https://github.com/xsoft-technologies/Xbooks/issues/57) ([088285e](https://github.com/xsoft-technologies/Xbooks/commit/088285e))
+* introduces fetching of PAT ENV VAR for publish scripts, fixes [#75](https://github.com/xsoft-technologies/Xbooks/issues/75) ([84e8cbf](https://github.com/xsoft-technologies/Xbooks/commit/84e8cbf))
+
 # [1.4.0](https://github.com/xsoft-technologies/Xbooks/compare/v1.3.3...v1.4.0) (2019-08-30)
 
 
