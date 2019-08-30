@@ -23,4 +23,5 @@ maintainers would certainly look at your report and find a solution to it, but k
 worth wasting time on; such reports will also gain respect but will be solved either by patch or automated fixes, in other cases however we try to solve it manually on branch [SecPatch](https://github.com/xsoft-technologies/Xbooks/tree/SecPatch);
 so if this branch exists you know that this project is under Security Patching phase!
 
+### for other security concers checkout Security section of [Privacy Policy](https://github.com/xsoft-technologies/Xbooks/blob/master/PRIVACY_POLICY.md)
 ### for more information checkout [Xbooks-docs](http://xsoft-technologies.github.io/Xbooks)
