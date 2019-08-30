@@ -10,6 +10,7 @@ from Xlib import ignoreReader
 from Xlib import XbooksrcReader
 from Xlib import closer
 
+from . import md2html
 
 def fstatus(plus, minus, lines):
     """
@@ -77,7 +78,11 @@ def fetch_from_commit(Obj_hexsha7, hexsha7):
         to_rename = []
         to_convert = []
         ccc.white("Fetching", hexsha7)
-        for fn, fd in list(Obj_hexsha7.stats.files.items()):
+        commited_tree = list(Obj_hexsha7.stats.files.items())
+        welcome_ipynb = "notebooks/welcome.ipynb" in commited_tree or os.path.isfile("Xblog/notebooks/welcome.ipynb")
+        if "README.md" in commited_tree and not welcome_ipynb:
+            md2html.convert()
+        for fn, fd in commited_tree:
             if fn.startswith("notebooks") and fn not in ignore_list and "checkpoint" not in fn and ".ipynb" in fn:
                 status = fstatus(fd['insertions'], fd['deletions'], fd['lines'])
                 ccc.note("fetched " + fn + " with status " + status)
