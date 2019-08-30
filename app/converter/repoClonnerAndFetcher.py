@@ -8,7 +8,7 @@ import json
 from Xlib import ccc
 from Xlib import ignoreReader
 from Xlib import XbooksrcReader
-from Xlib import workspaceCleaner as wc
+from Xlib import closer
 
 
 def fstatus(plus, minus, lines):
@@ -31,7 +31,7 @@ def fstatus(plus, minus, lines):
     if len(status) == 3:
         return str().join(status)
     else:
-        ccc.fail("while parsing file status code")
+        closer.close(fail="while parsing file status code")
 
 
 def fetch_untransformed_commits():
@@ -46,8 +46,8 @@ def fetch_untransformed_commits():
         else:
             return []
     except Exception as err:
-        ccc.fail("fetching untransformed commits")
-        sys.exit(ccc.stderr(err))
+        closer.close(err=err, fail="fetching untransformed commits")
+
 
 def update_Xrc_transform(hexsha7):
     """
@@ -59,13 +59,13 @@ def update_Xrc_transform(hexsha7):
         if not "transform" in xrc:
             xrc.update({"transform":[]})
         xrc["transform"].append(hexsha7)
-        with open(".Xbooksrc", 'w') as f:
-            f.write(json.dumps(xrc))
+        with open("Xblog/.Xbooksrc", 'w') as f:
+            f.write(json.dumps(xrc, sort_keys=True, indent=4))
             f.close()
         ccc.success("updating transform key in .Xbooksrc")
     except Exception as err:
-        ccc.fail("updating transform key in .Xbooksrc")
-        sys.exit(ccc.stderr(err))
+        closer.close(err=err, fail="updating transform key in .Xbooksrc")
+
 
 def fetch_from_commit(Obj_hexsha7, hexsha7):
     """
@@ -94,9 +94,7 @@ def fetch_from_commit(Obj_hexsha7, hexsha7):
                         # if src.endswith(".ipynb") and des.endswith(".ipynb"):
                         to_rename.append((src, des))
                 else:
-                    ccc.fail("while decoding status code")
-                    wc.cleanXblog()
-                    sys.exit()
+                    closer.close(fail="while decoding status code")
         ccc.success("fetching " + hexsha7)
         return {
             "to_be_converted": to_convert,
@@ -104,8 +102,7 @@ def fetch_from_commit(Obj_hexsha7, hexsha7):
             "to_be_renamed": list(set(to_rename))
             }
     except Exception as err:
-        ccc.fail("fetching " + hexsha7)
-        sys.exit(ccc.fail(err))
+        closer.close(err=err, fail="fetching " + hexsha7)
 
 
 class ClonnerAndFetcher:
@@ -128,9 +125,8 @@ class ClonnerAndFetcher:
             ccc.success("clonning " + self.url)
             return self
         except Exception as err:
-            ccc.fail("clonning repo " + self.url)
-            ccc.note("kindly first delete the repo which(if) already exist!\nor check if the remote repo exists!")
-            sys.exit(ccc.stderr(err))
+            closer.close(err=err, fail="clonning repo " + self.url, note="kindly first delete the repo which(if) already exist!\nor check if the remote repo exists!")
+
 
     def fetch(self):
         """
@@ -145,6 +141,4 @@ class ClonnerAndFetcher:
             to_be_transformed.append({"hexsha7":latest, "tree":fetch_from_commit(self.repo.commit(latest), latest)})
             return to_be_transformed
         except Exception as err:
-            ccc.fail("while fetching commits")
-            wc.cleanXblog()
-            sys.exit(ccc.stderr(err))
+            closer.close(err=err, fail="while fetching commits")

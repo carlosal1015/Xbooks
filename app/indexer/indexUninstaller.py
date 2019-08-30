@@ -4,8 +4,7 @@ import os, sys
 from bs4 import BeautifulSoup
 
 from Xlib import ccc
-from Xlib import workspaceCleaner as wc
-
+from Xlib import closer
 
 def removeFromNavBar(des):
     """
@@ -24,9 +23,7 @@ def removeFromNavBar(des):
         ccc.success("removing " + des + " from navigation pallete")
 
     except Exception as err:
-        ccc.fail("while removing " + des + " from navigation pallete")
-        wc.cleanXblog()
-        sys.exit(ccc.stderr(err))
+        closer.close(err=err, fail="while removing " + des + " from navigation pallete")
 
 def removeFromParentIndex(des):
     """
@@ -47,9 +44,7 @@ def removeFromParentIndex(des):
             f.close()
         ccc.success("removing " + des + " from parent index")
     except Exception as err:
-        ccc.fail("while removing " + des + " from parent index")
-        wc.cleanXblog()
-        sys.exit(ccc.stderr(err))
+        closer.close(err=err, fail="while removing " + des + " from parent index")
 
 def uninstall(des):
     """
@@ -63,6 +58,4 @@ def uninstall(des):
             removeFromParentIndex(des)
         ccc.success("uninstallation procedures for " + des)
     except Exception as err:
-        ccc.fail("while uninstallation procedures for " + des)
-        wc.cleanXblog()
-        sys.exit(ccc.stderr(err))
+        closer.close(err, fail="while uninstallation procedures for " + des)

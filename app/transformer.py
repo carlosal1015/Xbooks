@@ -5,13 +5,12 @@ import sys
 import json
 
 from Xlib import ccc
-from Xlib import workspaceCleaner as wc
 from Xlib import XbooksrcReader
+from Xlib import closer
 
 import converter.fileRemoverAndRenamer as frandr
 import converter.jupy2html as jupy2html
 import converter.jupy2pdf as jupy2pdf
-from converter.repoClonnerAndFetcher import ClonnerAndFetcher
 from converter.repoCommiterAndPusher import CommiterAndPusher
 
 from indexer import indexUninstaller as IUn
@@ -28,16 +27,13 @@ def update_Xrc_transform(hexsha7):
     try:
         ccc.note('untracking ' + hexsha7)
         xrc = XbooksrcReader.read("Xblog")
-        xrc["transfrom"].pop(hexsha7)
-        with open(".Xbooksrc", 'w') as f:
-            f.write(json.dumps(xrc))
+        xrc["transform"].pop(hexsha7)
+        with open("Xblog/.Xbooksrc", 'w') as f:
+            f.write(json.dumps(xrc, sort_keys=True, indent=4))
             f.close()
         ccc.success("updating transform key in .Xbooksrc")
     except Exception as err:
-        ccc.fail("updating transform key in .Xbooksrc")
-        sys.exit(ccc.stderr(err))
-
-
+        closer.close(err=err, fail="updating transform key in .Xbooksrc")
 
 def transform(hexsha7, fetched_data):
     """
@@ -59,16 +55,13 @@ def transform(hexsha7, fetched_data):
                     ccc.fail("something is wrong in file naming of" + str(tbr))
         for tbrdir in tbrdirs:
             sr0.append(frandr.rename(tbrdir, 'Xbook'))
-
         for tbrfile in tbrfiles:
             sr1.append(frandr.rename(tbrfile, 'Xpage'))
-
         if all(sr0) and all(sr1):
             sc = []
             for tbc in fetched_data["to_be_converted"]:
                 sc.append(jupy2html.convert("Xblog/" + tbc))
                 sc.append(jupy2pdf.convert("Xblog/" + tbc))
-
         if(all(sc)):
             sd0 = []
             sd1 = []
@@ -100,10 +93,8 @@ def transform(hexsha7, fetched_data):
                     ccc.success("deleting " + root)
                     root_pdf = root.replace("notebooks", "pdfs")
                     os.rmdir(root_pdf)
-
                 for tbddir in tbddirs:
                     sd1.append(frandr.delete(tbddir, "Xbook"))
-
             if(all(sd0) and all(sd1)):
                 push_url = "https://"+xrc["GitHub_Username"]+":"+sys.argv[2]+"@github.com/"+xrc["gh_repo_namespace"]+"/"+xrc["gh_repo_name"]+".git"
                 candp = CommiterAndPusher(push_url, xrc["GitHub_Username"], xrc["Email"])
@@ -113,5 +104,4 @@ def transform(hexsha7, fetched_data):
                         update_Xrc_transform(hexsha7)
                         # print("woodoo!")
     except Exception as err:
-        ccc.fail("transforming "+hexsha7)
-        sys.exit(ccc.stderr(err))
+        closer.close(err=err, fail="transforming "+hexsha7)

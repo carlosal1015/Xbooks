@@ -7,7 +7,7 @@ from git import Actor
 import time, datetime
 
 from Xlib import ccc
-from Xlib import workspaceCleaner as wc
+from Xlib import closer
 
 months = {
     "[01]": "A",
@@ -45,23 +45,20 @@ class CommiterAndPusher():
                                             months[datetime.datetime.fromtimestamp(time.time()) \
                                             .strftime('%H:%M.%S|%y[%m]%d')[-6:-2]])
                 msg = master.commit.message
-                self.commit_message = "Xbooks["+stamp+"]: " + str(msg.replace("\n", "") + " by ") + str(master.commit.author) + ":" + str(master.commit.hexsha[:7])
+                self.commit_message = "docs: Xbooks["+stamp+"] => " + str(msg.replace("\n", "") + " by ") + str(master.commit.author) + ":" + str(master.commit.hexsha[:7])
                 self.repo.index.commit(self.commit_message, author=self.author, committer=self.committer)
                 ccc.success("commiting changes by")
-                ccc.white("Author:", str({"username": str(self.author), "email": "<>"}))
+                ccc.white("Author:", str({"username": str(self.author), "email": ""}))
                 ccc.white("Committer:", str({"username": str(self.committer.name), "email": str(self.committer.email)}))
                 ccc.white("Commit message", str(self.commit_message))
                 return True
             except Exception as err:
                 self.commit_message = ""
-                ccc.fail("while commiting Xbooks' changes")
-                wc.cleanXblog()
-                sys.exit(ccc.stderr(err))
+                closer.close(err=err, fail="while commiting Xbooks' changes")
         else:
-            ccc.alert("there's nothing to commit")
             self.commit_message = ""
-            wc.cleanXblog()
-            sys.exit()
+            closer.close(alert="there's nothing to commit")
+
 
     def push(self):
         if self.commit_message != "":
@@ -72,6 +69,4 @@ class CommiterAndPusher():
                 ccc.success("pushing " + str(self.repo.head.commit)[:7])
                 return True
             except Exception as err:
-                ccc.fail("while pushing Xbooks' commit")
-                wc.cleanXblog()
-                sys.exit(ccc.stderr(err))
+                closer.close(err, fail="while pushing Xbooks' commit")

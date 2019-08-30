@@ -7,7 +7,7 @@ from nbconvert import HTMLExporter
 html_exprtr = HTMLExporter()
 
 from Xlib import ccc
-from Xlib import workspaceCleaner as wc
+from Xlib import closer
 
 from indexer import indexInstaller as II
 
@@ -22,10 +22,8 @@ def convert(src):
         global hasread
         hasread = True
     except Exception as err:
-        ccc.fail("reading " + str(src))
-        wc.cleanXblog()
-        sys.exit(ccc.stderr(err))
-        
+        closer.close(err=err, fail="reading " + str(src))
+
     if hasread:
         try:
             des = src.replace(".ipynb",".html").replace("Xblog", "Xblog/docs")
@@ -47,6 +45,4 @@ def convert(src):
             II.install(des, "Xpage")
             return True
         except Exception as err:
-            ccc.fail("while converting " + str(src) + " to " + str(des))
-            wc.cleanXblog()
-            sys.exit(ccc.stderr(err))
+            closer.close(err=err, fail="while converting " + str(src) + " to " + str(des))

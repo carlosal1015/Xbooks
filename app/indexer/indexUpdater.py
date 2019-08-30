@@ -6,8 +6,8 @@ from bs4 import BeautifulSoup
 import time, datetime
 
 from Xlib import ccc
-from Xlib import workspaceCleaner as wc
 from Xlib import XbooksrcReader
+from Xlib import closer
 
 
 def chooseMonth(num):
@@ -67,9 +67,7 @@ def editNavBar(src, des, tipe, Xrc):
             f.close()
         ccc.success("updating " + des + " from navigation pallete")
     except Exception as err:
-        ccc.fail("while updating " + des + " from navigation pallete")
-        wc.cleanXblog()
-        sys.exit(ccc.stderr(err))
+        closer.close(err=err, fail="while updating " + des + " from navigation pallete")
 
 
 def editParentIndex(src, des, tipe, Xrc):
@@ -104,9 +102,7 @@ def editParentIndex(src, des, tipe, Xrc):
             f.close()
         ccc.success("updating " + des + " from parent index")
     except Exception as err:
-        ccc.fail("while updating " + des + " from parent index")
-        wc.cleanXblog()
-        sys.exit(ccc.stderr(err))
+        closer.close(err=err, fail="while updating " + des + " from parent index")
 
 
 def update(src, des, tipe):
@@ -125,6 +121,4 @@ def update(src, des, tipe):
             editParentIndex(src, des, tipe, Xrc)
         ccc.success("updatation procedures for " + des)
     except Exception as err:
-        ccc.fail("while updatation procedures for " + des)
-        wc.cleanXblog()
-        sys.exit(ccc.stderr(err))
+        closer.close(err=err, fail="while updatation procedures for " + des)

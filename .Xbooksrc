@@ -1,1 +1,13 @@
-{"blog_name": "testv1.2.2", "Author_name": "vefv", "Pen_name": "vf", "Email": "cdc@cdced.cef", "Website": "fevcf.vfeve", "GitHub_Username": "XinYaanZyoy", "gh_repo_name": "testv1.2.2", "gh_repo_namespace": "XinYaanZyoy", "CI": "CircleCI", "Xtheme": "GreyBoy", "blog_description": "rrvgrvrvbgrbvrvb", "transform": ["96bdde6"]}
+{
+  "blog_name": "Xbooks|thought producers",
+  "Author_name": "XinYaanZyoy",
+  "Pen_name": "xsoft technologies",
+  "Email": "0lovesenergy@engineer.com",
+  "Website": "https://XinYaanZyoy.github.io/THB",
+  "GitHub_Username": "XinYaanZyoy",
+  "gh_repo_name": "Xbooks",
+  "gh_repo_namespace": "xsoft-technologies",
+  "CI": "CircleCI",
+  "Xtheme": "GreyBoy",
+  "blog_description": "Xbooks; for thought producers! <br/> this is Xbooks docs."
+}

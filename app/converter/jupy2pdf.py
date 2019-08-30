@@ -9,7 +9,7 @@ from nbconvert.exporters import PDFExporter
 pdf_exporter = PDFExporter()
 
 from Xlib import ccc
-from Xlib import workspaceCleaner as wc
+from Xlib import closer
 
 
 def convert(src):
@@ -24,20 +24,18 @@ def convert(src):
         with open(src, "r") as f:
             nb = nbformat.read(f, as_version=4)
         ccc.success("reading " + src)
-        
+
         if not os.path.isdir(des.replace(os.path.basename(des), "")):
             os.makedirs(des.replace(os.path.basename(des), ""))
             ccc.note("created " + des.replace(os.path.basename(des), ""))
         pdf_data, resources = pdf_exporter.from_notebook_node(nb)
         ccc.note("finished processing for " + des)
-        
+
         with open(des, "wb") as f:
             f.write(pdf_data)
             f.close()
-        
+
         ccc.success("converting " + str(src) + "to " + os.path.join(des,os.path.basename(src).replace(".ipynb",".pdf")))
         return True
     except Exception as err:
-        ccc.fail("while converting " + str(src) + " to " + str(des))
-        wc.cleanXblog()
-        sys.exit(ccc.stderr(err))
+        closer.close(err, fail="while converting " + str(src) + " to " + str(des))

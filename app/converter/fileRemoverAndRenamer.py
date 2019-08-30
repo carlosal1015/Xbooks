@@ -3,7 +3,7 @@ import sys
 import shutil
 
 from Xlib import ccc
-from Xlib import workspaceCleaner as wc
+from Xlib import closer
 
 from indexer import indexUpdater as IUp
 from indexer import indexUninstaller as IUn
@@ -24,9 +24,8 @@ def rename(tbr, tipe):
         ccc.success("renaming " + src_pdf + " to " + des_pdf)
         return True
     except Exception as err:
-        ccc.fail("while renaming " + tbr[0] + " to " + tbr[1])
-        wc.cleanXblog()
-        sys.exit(ccc.stderr(err))
+        closer.close(err=err, fail="while renaming " + tbr[0] + " to " + tbr[1])
+
 
 def delete(tbd, tipe):
     """
@@ -47,6 +46,4 @@ def delete(tbd, tipe):
             ccc.success("deleting " + des)
         return True
     except Exception as err:
-        ccc.fail("while deleting " + des)
-        wc.cleanXblog()
-        sys.exit(ccc.stderr(err))
+        closer.close(err=err, fail="while deleting " + des)
