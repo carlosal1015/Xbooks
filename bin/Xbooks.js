@@ -22,7 +22,17 @@ ccc.greet("hola! lots of hopes and wishes for your project! from the writter of 
 ccc.alert(ccc.logo("Xbooks" + pkg.version)+" is under development process!!");
 
 const updateNotifier = require('update-notifier');
-updateNotifier({pkg}).notify();
+const notifier = updateNotifier({pkg, updateCheckInterval: 1000 * 60 * 60 * 24}); //every day
+
+if(notifier.update){
+    ccc.code([
+        "update "+ notifier.update.name,
+        "from v" + notifier.update.current + " to " + notifier.update.latest,
+        "by running ",
+        "npm i -g @xsoft/xbooks",
+        "updtaes: " + notifier.update.type
+    ]);
+}
 
 cmd
     .command('initialize')
