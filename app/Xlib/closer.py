@@ -57,7 +57,7 @@ def update_Xbooksrc_transform():
         else:
             ccc.note("no chores to be commited and pushed")
     except Exception as err:
-        ccc.fail(err+"\n the stable flow has been broken kindly handle untransformd commits manually!")
+        ccc.fail(str(err)+"\n the stable flow has been broken kindly handle untransformd commits manually!")
         closeCode = 1
 
 def close(err="", fail="", note="", success="", cyan=[], alert=""):

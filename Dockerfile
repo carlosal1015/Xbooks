@@ -1,10 +1,10 @@
 FROM continuumio/miniconda:latest
 LABEL ProjectName="Xbooks" \
-      Author="XinYaanZyoy" \ 
+      Author="XinYaanZyoy" \
       Organization="Xsoft-technologies" \
       GitHub="xsoft-technologies/Xbooks" \
       website="https://xsoft-technologies.github.io/Xbooks" \
-      email="patelparth0937@gmail.com"
+      email="XinYaanZyoy@gmail.com"
 WORKDIR /
 RUN apt-get update -y && \
     apt-get upgrade -y && \
@@ -16,5 +16,5 @@ WORKDIR /Xbooks/
 COPY environment.yml ./
 COPY app/. ./
 RUN echo "conda activate" >> ~/.bashrc
-RUN conda env create -f environment.yml	
+RUN conda env create -f environment.yml
 ENV PATH /opt/conda/envs/Xbooks_env/bin:$PATH
