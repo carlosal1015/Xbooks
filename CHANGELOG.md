@@ -1,3 +1,25 @@
+# [1.5.0](https://github.com/xsoft-technologies/Xbooks/compare/v1.4.0...v1.5.0) (2019-09-06)
+
+
+### Bug Fixes
+
+* authorized post req for closing script, fixes [#86](https://github.com/xsoft-technologies/Xbooks/issues/86) ([7de2e24](https://github.com/xsoft-technologies/Xbooks/commit/7de2e24))
+* closing script failures, fixes [#88](https://github.com/xsoft-technologies/Xbooks/issues/88) ([11160d1](https://github.com/xsoft-technologies/Xbooks/commit/11160d1))
+* correction in update notifications, fixes [#80](https://github.com/xsoft-technologies/Xbooks/issues/80) ([5d57587](https://github.com/xsoft-technologies/Xbooks/commit/5d57587))
+* dependancy markdown2 installation on Xbooks container, fixes [#81](https://github.com/xsoft-technologies/Xbooks/issues/81) ([04c4bbe](https://github.com/xsoft-technologies/Xbooks/commit/04c4bbe))
+* introduces logical Close Codes for realistic CI pipeline statuses, fixes [#77](https://github.com/xsoft-technologies/Xbooks/issues/77) ([6c5a262](https://github.com/xsoft-technologies/Xbooks/commit/6c5a262))
+* Merge pull request [#89](https://github.com/xsoft-technologies/Xbooks/issues/89) from xsoft-technologies/next ([cd9ea76](https://github.com/xsoft-technologies/Xbooks/commit/cd9ea76)), closes [#88](https://github.com/xsoft-technologies/Xbooks/issues/88)
+* pipeline script failure due to unsupported concatenation[skip ci] ([6bcb4fa](https://github.com/xsoft-technologies/Xbooks/commit/6bcb4fa))
+* resolved Xbooks docker container dependancies for pip ([f5bcc9f](https://github.com/xsoft-technologies/Xbooks/commit/f5bcc9f))
+
+
+### Features
+
+* automatically enebles README.md file as homepage if notebooks/welcome.ipynb doesn't exist, fixes [#57](https://github.com/xsoft-technologies/Xbooks/issues/57) ([088285e](https://github.com/xsoft-technologies/Xbooks/commit/088285e))
+* automatically enebles README.md file as homepage if notebooks/welcome.ipynb doesn't exist, fixes [#57](https://github.com/xsoft-technologies/Xbooks/issues/57) ([cc1a318](https://github.com/xsoft-technologies/Xbooks/commit/cc1a318))
+* introduces 411641ef3f0a3212fcab50f8ccadf1c27980d211 for publish scripts, fixes [#75](https://github.com/xsoft-technologies/Xbooks/issues/75) ([bdb5b9c](https://github.com/xsoft-technologies/Xbooks/commit/bdb5b9c))
+* introduces fetching of PAT ENV VAR for publish scripts, fixes [#75](https://github.com/xsoft-technologies/Xbooks/issues/75) ([84e8cbf](https://github.com/xsoft-technologies/Xbooks/commit/84e8cbf))
+
 # [1.5.0](https://github.com/xsoft-technologies/Xbooks/compare/v1.4.0...v1.5.0) (2019-08-30)
 
 
