@@ -1,6 +1,6 @@
 {
   "name": "@xsoft/xbooks",
-  "version": "1.5.0",
+  "version": "1.4.0",
   "description": "***\n ## a software for thought producers!!",
   "main": "bin/Xbooks.js",
   "bin": {
