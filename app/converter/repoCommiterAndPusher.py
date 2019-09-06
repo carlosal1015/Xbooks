@@ -77,8 +77,9 @@ class CommiterAndPusher():
                 closer.close(err=err, fail="while commiting Xbooks' changes")
         else:
             self.commit_message = ""
-            closer.close(alert="there's nothing to commit", shouldPush=False)
+            ccc.alert("there's nothing to commit for " + str(master.commit.hexsha[:7]))
             update_Xrc_transform(str(master.commit.hexsha[:7]))
+            return False
 
     def push(self):
         if self.commit_message != "":
