@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/xsoft-technologies/Xbooks/compare/v1.5.1...v1.5.2) (2019-09-06)
+
+
+### Bug Fixes
+
+* resolves logical flow of closing script, fixes [#88](https://github.com/xsoft-technologies/Xbooks/issues/88) ([94e9366](https://github.com/xsoft-technologies/Xbooks/commit/94e9366))
+
 ## [1.5.1](https://github.com/xsoft-technologies/Xbooks/compare/v1.5.0...v1.5.1) (2019-09-06)
 
 
