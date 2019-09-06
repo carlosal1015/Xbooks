@@ -81,7 +81,6 @@ def close(shouldPush=True, err="", fail="", note="", success="", cyan=[], alert=
         closeCode = 1
     if alert != "":
         ccc.alert(alert)
-        closeCode = 1
     if success != "":
         ccc.success(success)
     if shouldPush:
