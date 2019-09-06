@@ -1,3 +1,11 @@
+## [1.5.3](https://github.com/xsoft-technologies/Xbooks/compare/v1.5.2...v1.5.3) (2019-09-06)
+
+
+### Bug Fixes
+
+* changed alert exit code 1 to 0 ([b069726](https://github.com/xsoft-technologies/Xbooks/commit/b069726))
+* resolves multicommit transformation flaw ([7d9d1aa](https://github.com/xsoft-technologies/Xbooks/commit/7d9d1aa))
+
 ## [1.5.2](https://github.com/xsoft-technologies/Xbooks/compare/v1.5.1...v1.5.2) (2019-09-06)
 
 
