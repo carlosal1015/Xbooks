@@ -4,14 +4,14 @@
   "description": "***\n ## a software for thought producers!!",
   "main": "bin/Xbooks.js",
   "bin": {
-    "Xbooks": "bin/Xbooks.js"
+    "xbooks": "bin/Xbooks.js"
   },
   "scripts": {
     "Xtest_nodejs": "node ./bin/xbooks",
     "start": "npm run-script Xtest_nodejs",
     "on_CI_test": "node ./tests/on_CI_test.js",
     "test": "npm run-script on_CI_test",
-    "Xtest_py": "python ./app/Xbooks.py $REPO $PAT",
+    "Xtest_py": "python ./app/script.py $REPO $PAT",
     "prepublish": "npm test"
   },
   "keywords": [
