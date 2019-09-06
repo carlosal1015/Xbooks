@@ -78,7 +78,7 @@ class CommiterAndPusher():
         else:
             self.commit_message = ""
             closer.close(alert="there's nothing to commit")
-            update_Xrc_transform(str(master.commit.hexsha[:7])
+            update_Xrc_transform(str(master.commit.hexsha[:7]))
 
     def push(self):
         if self.commit_message != "":
