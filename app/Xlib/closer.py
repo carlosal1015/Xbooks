@@ -52,7 +52,8 @@ def update_Xbooksrc_transform():
             ccc.white("Committer:", str({"username": str(committer.name), "email": str(committer.email)}))
             ccc.white("Commit message", str(commit_message))
             ccc.magenta("Pushing chores as ", str(repo.head.commit)[:7])
-            repo.remotes.origin.push()
+            tmp_origin = repo.create_remote("tmp_origin", url="https://{}:{}@{}".format(sys.argv[1].split("/")[-2], sys.argv[2], sys.argv[1].split("https://")[1]))
+            repo.remotes.tmp_origin.push()
             ccc.success("pushing chores as" + str(repo.head.commit)[:7])
         else:
             ccc.note("no chores to be commited and pushed")
