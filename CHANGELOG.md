@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/xsoft-technologies/Xbooks/compare/v1.5.0...v1.5.1) (2019-09-06)
+
+
+### Bug Fixes
+
+* syntax errors ([2ff5f36](https://github.com/xsoft-technologies/Xbooks/commit/2ff5f36))
+
 # [1.5.0](https://github.com/xsoft-technologies/Xbooks/compare/v1.4.0...v1.5.0) (2019-09-06)
 
 
