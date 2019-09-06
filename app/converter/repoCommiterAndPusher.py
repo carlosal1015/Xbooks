@@ -5,9 +5,11 @@ import sys
 from git import Repo
 from git import Actor
 import time, datetime
+import json
 
 from Xlib import ccc
 from Xlib import closer
+from Xlib import XbooksrcReader
 
 months = {
     "[01]": "A",
@@ -23,6 +25,24 @@ months = {
     "[11]": "K",
     "[12]": "L"
 }
+
+
+def update_Xrc_transform(hexsha7):
+    """
+    delets hexsha7 from transform key of .Xbooksrc
+    """
+    try:
+        ccc.note('untracking ' + hexsha7)
+        xrc = XbooksrcReader.read("Xblog")
+        xrc["transform"].pop(hexsha7)
+        with open("Xblog/.Xbooksrc", 'w') as f:
+            f.write(json.dumps(xrc, sort_keys=True, indent=4))
+            f.close()
+        ccc.success("updating transform key in .Xbooksrc")
+    except Exception as err:
+        closer.close(err=err, fail="updating transform key in .Xbooksrc")
+
+
 
 class CommiterAndPusher():
     def __init__(self, url, author, email):
@@ -58,7 +78,7 @@ class CommiterAndPusher():
         else:
             self.commit_message = ""
             closer.close(alert="there's nothing to commit")
-
+            update_Xrc_transform(str(master.commit.hexsha[:7])
 
     def push(self):
         if self.commit_message != "":

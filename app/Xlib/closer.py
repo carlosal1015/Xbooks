@@ -61,7 +61,7 @@ def update_Xbooksrc_transform():
         ccc.fail(str(err)+"\n the stable flow has been broken kindly handle untransformd commits manually!")
         closeCode = 1
 
-def close(err="", fail="", note="", success="", cyan=[], alert=""):
+def close(shouldPush=True, err="", fail="", note="", success="", cyan=[], alert=""):
     """
     print failure,
     clean workspace
@@ -84,7 +84,8 @@ def close(err="", fail="", note="", success="", cyan=[], alert=""):
         closeCode = 1
     if success != "":
         ccc.success(success)
-    update_Xbooksrc_transform()
+    if shouldPush:
+        update_Xbooksrc_transform()
     if "linux" in sys.platform:
         try:
             os.system("rm -r -f ./Xblog/")
