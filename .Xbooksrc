@@ -11,6 +11,7 @@
     "gh_repo_name": "Xbooks",
     "gh_repo_namespace": "xsoft-technologies",
     "transform": [
-        "667f585"
+        "667f585",
+        "cd9ea76"
     ]
 }
