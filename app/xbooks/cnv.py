@@ -52,9 +52,9 @@ def md2html():
         md = f.read()
         f.close()
     with open("Xblog/docs/notebooks/welcome.html", 'w') as f:
-        f.write(bsoup(str(md2.markdown(md))).prettify())
+        f.write(bsoup(str(md2.markdown(md)), "html.parser").prettify())
         f.close()
-
+    ccc.success("converting README.md to docs/notebooks/welcome.html")
 
 
 def jupy2pdf(src):

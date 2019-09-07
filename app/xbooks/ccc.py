@@ -5,7 +5,7 @@ initcolor(autoreset=True)
 from colorama import Fore, Back
 
 def stderr(txt):
-    print(Back.LIGHTRED_EX+"|STDERR|", Back.BLACK+Fore.LIGHTRED_EX+'> '+str(txt))
+    print(Back.LIGHTRED_EX+"|STDERR|", Fore.LIGHTRED_EX+'> '+str(txt))
 
 def success(txt):
     print(Back.GREEN+"|Success|", Fore.GREEN+'> '+txt)
@@ -44,7 +44,8 @@ def magenta(tag, txt):
     print(Back.MAGENTA+'|'+tag+'|', Fore.MAGENTA+'> '+txt)
 
 def white(tag, txt):
-    print(Fore.BLACK+Back.WHITE+'|'+tag+'|', Fore.WHITE+'> '+txt)
+    print('|'+tag+'|','> '+txt)
+    # print(Fore.BLACK+Back.WHITE+'|'+tag+'|', Fore.WHITE+'> '+txt)
 
 def test():
     success("this is success")

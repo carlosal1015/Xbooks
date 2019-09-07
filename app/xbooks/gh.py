@@ -57,9 +57,15 @@ def fetch_from_commit(Obj_hexsha7, str_hexsha7):
     to_convert = []
     ccc.white("Fetching", str_hexsha7)
     commited_tree = list(Obj_hexsha7.stats.files.items())
-    welcome_ipynb = "notebooks/welcome.ipynb" in commited_tree or os.path.isfile("Xblog/notebooks/welcome.ipynb")
-    if "README.md" in commited_tree and not welcome_ipynb:
-        cnv.md2html()
+    print(commited_tree)
+    l_of_fn = []
+    for fn, fd in commited_tree:
+        l_of_fn.append(fn)
+    print(l_of_fn)
+    welcome_ipynb = "notebooks/welcome.ipynb" in l_of_fn or os.path.isfile("Xblog/notebooks/welcome.ipynb")
+    print(welcome_ipynb)
+    if "README.md" in l_of_fn and not welcome_ipynb:
+        to_convert.append("README.md")
     for fn, fd in commited_tree:
         if fn.startswith("notebooks") and fn not in Xignore and "checkpoint" not in fn and ".ipynb" in fn:
             status = fstatus(fd['insertions'], fd['deletions'], fd['lines'])
@@ -104,6 +110,7 @@ def fetch():
     return to_be_transformed
 
 def commit(fetched_data):
+    from xbooks.Xinit import repo
     if len(fetched_data["to_be_converted"]) + len(fetched_data["to_be_deleted"]) + len(fetched_data["to_be_renamed"]) != 0:
         # try:
         repo.git.add(A=True)
@@ -125,16 +132,16 @@ def commit(fetched_data):
         ccc.white("Author:", str({"username": str(author), "email": ""}))
         ccc.white("Committer:", str({"username": str(committer.name), "email": str(committer.email)}))
         ccc.white("Commit message", str(commit_message))
+        push()
         # except Exception as err:
         #     commit_message = ""
         #     e.close(err=err, fail="while commiting Xbooks' changes")
     else:
-        commit_message = ""
         ccc.alert("there's nothing to commit for " + str(repo.head.ref.commit.hexsha[:7]))
         # update_Xrc_transform(str(master.commit.hexsha[:7]))
-        return False
 
 def push():
+    from xbooks.Xinit import repo, Xrc
     ccc.magenta("Pushing", str(repo.head.commit)[:7])
     # try:
     Xorigin = repo.create_remote("Xorigin", url="https://{}:{}@github.com/{}/{}.git".format(Xrc["GitHub_Username"], sys.argv[2], Xrc["gh_repo_namespace"], Xrc["gh_repo_name"]))

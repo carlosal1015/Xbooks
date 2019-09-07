@@ -32,6 +32,9 @@ def transform(hexsha7, fetched_data):
     if all(sr0) and all(sr1):
         sc = []
         for tbc in fetched_data["to_be_converted"]:
+            if tbc == "README.md":
+                cnv.md2html()
+                continue
             sc.append(cnv.jupy2html("Xblog/" + tbc))
             sc.append(cnv.jupy2pdf("Xblog/" + tbc))
     if(all(sc)):
@@ -70,7 +73,6 @@ def transform(hexsha7, fetched_data):
         if(all(sd0) and all(sd1)):
             push_url = "https://"+Xrc["GitHub_Username"]+":"+sys.argv[2]+"@github.com/"+Xrc["gh_repo_namespace"]+"/"+Xrc["gh_repo_name"]+".git"
             if gh.commit(fetched_data):
-                gh.push()
                 ccc.success("trans")
             # candp = CommiterAndPusher(push_url, Xrc["GitHub_Username"], Xrc["Email"])
             # if gh.commit(fetched_data):

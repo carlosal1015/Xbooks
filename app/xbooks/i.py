@@ -45,7 +45,7 @@ def rename(tbr, tipe):
     """
     src = tbr[0].replace(".ipynb", ".html")
     des = tbr[1].replace(".ipynb", ".html")
-    os.renames(os.path.join("blog/docs", src), os.path.join("Xblog/docs", des))
+    os.renames(os.path.join("Xblog/docs", src), os.path.join("Xblog/docs", des))
     ccc.success("renaming " + src + " to " + des)
     update(src, des, tipe)
     src_pdf = tbr[0].replace(".ipynb", ".pdf").replace("notebooks", "pdfs")
@@ -311,6 +311,7 @@ def update(src, des, tipe):
     """
     called at every rename of Xbook or Xpage
     """
+    from xbooks.Xinit import Xrc
     print(src, des, tipe)
     src = "Xblog/docs/" + src
     des = "Xblog/docs/" + des
