@@ -86,6 +86,7 @@ def transform(hexsha7, fetched_data):
 
 if __name__ == "__main__":
     import sys
+    print(sys.argv)
     if len(sys.argv) == 3:
         from xbooks import Xinit
         Xinit.init(sys.argv[1])
