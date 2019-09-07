@@ -1,0 +1,14 @@
+((*- extends 'article.tplx' -*))
+
+((* block author *))
+\author{XinYaanZyoy}
+((* endblock author *))
+
+((* block title *))
+\title{Books1}
+((* endblock title *))
+
+((* block bibliography *))
+\bibliographystyle{plain}
+\bibliography{ref}
+((* endblock bibliography *))
