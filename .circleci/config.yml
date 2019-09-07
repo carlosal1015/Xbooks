@@ -9,7 +9,7 @@ jobs:
     steps:
       - run:
           name: running_Xbooks_Container_App
-          command: cd /Xbooks/ && source activate Xbooks_env && python Xbooks.py $REPO $GH_TOKEN
+          command: cd /Xbooks/ && source activate Xbooks_env && python script.py $REPO $GH_TOKEN
   Semantic_Versioning:
     filters:
       branches:
