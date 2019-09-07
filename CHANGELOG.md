@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/xsoft-technologies/Xbooks/compare/v1.5.3...v1.6.0) (2019-09-07)
+
+
+### Bug Fixes
+
+* import errors in new styled code ([9bad1df](https://github.com/xsoft-technologies/Xbooks/commit/9bad1df))
+
+
+### Features
+
+* bibtex support for pdf files, fixes [#31](https://github.com/xsoft-technologies/Xbooks/issues/31), and deprecates [#91](https://github.com/xsoft-technologies/Xbooks/issues/91) ([eddd42e](https://github.com/xsoft-technologies/Xbooks/commit/eddd42e))
+
 ## [1.5.3](https://github.com/xsoft-technologies/Xbooks/compare/v1.5.2...v1.5.3) (2019-09-06)
 
 
