@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/xsoft-technologies/Xbooks/compare/v1.6.0...v1.6.1) (2019-09-08)
+
+
+### Bug Fixes
+
+* fixes [#28](https://github.com/xsoft-technologies/Xbooks/issues/28), new CI scripts, GreyBoy theme refactorization, and publish script PAT var changed ([b32d13f](https://github.com/xsoft-technologies/Xbooks/commit/b32d13f))
+
 # [1.6.0](https://github.com/xsoft-technologies/Xbooks/compare/v1.5.3...v1.6.0) (2019-09-07)
 
 
