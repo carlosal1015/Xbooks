@@ -1,0 +1,14 @@
+# add your dependencies below for binder
+
+name: $REPO$_env
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - numpy
+  - scipy
+  - beautifulsoup4
+  - pip
+  - pip:
+    - pandas
+    - matplotlib
