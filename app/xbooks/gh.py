@@ -57,13 +57,10 @@ def fetch_from_commit(Obj_hexsha7, str_hexsha7):
     to_convert = []
     ccc.white("Fetching", str_hexsha7)
     commited_tree = list(Obj_hexsha7.stats.files.items())
-    print(commited_tree)
     l_of_fn = []
     for fn, fd in commited_tree:
         l_of_fn.append(fn)
-    print(l_of_fn)
     welcome_ipynb = "notebooks/welcome.ipynb" in l_of_fn or os.path.isfile("Xblog/notebooks/welcome.ipynb")
-    print(welcome_ipynb)
     if "README.md" in l_of_fn and not welcome_ipynb:
         to_convert.append("README.md")
     for fn, fd in commited_tree:
@@ -90,9 +87,6 @@ def fetch_from_commit(Obj_hexsha7, str_hexsha7):
         "to_be_deleted": to_delete,
         "to_be_renamed": list(set(to_rename))
         }
-    # except Exception as err:
-    #     e.close(err=err, fail="fetching " + str_hexsha7)
-
 
 
 def fetch():
@@ -102,17 +96,13 @@ def fetch():
     from xbooks.Xinit import repo
 
     to_be_transformed = []
-    # for commit in fetch_untransformed_commits():
-    #     to_be_transformed.append({"hexsha7":commit, "tree":fetch_from_commit(repo.commit(commit), commit)})
     latest = str(repo.head.ref.commit.hexsha[:7])
-    # update_Xrc_transform(latest)
     to_be_transformed.append({"hexsha7":latest, "tree":fetch_from_commit(repo.commit(latest), latest)})
     return to_be_transformed
 
 def commit(fetched_data):
     from xbooks.Xinit import repo
     if len(fetched_data["to_be_converted"]) + len(fetched_data["to_be_deleted"]) + len(fetched_data["to_be_renamed"]) != 0:
-        # try:
         repo.git.add(A=True)
         ccc.white("Status" ,str(repo.git.status()))
         master = repo.head.reference
@@ -133,58 +123,13 @@ def commit(fetched_data):
         ccc.white("Committer:", str({"username": str(committer.name), "email": str(committer.email)}))
         ccc.white("Commit message", str(commit_message))
         push()
-        # except Exception as err:
-        #     commit_message = ""
-        #     e.close(err=err, fail="while commiting Xbooks' changes")
     else:
         ccc.alert("there's nothing to commit for " + str(repo.head.ref.commit.hexsha[:7]))
-        # update_Xrc_transform(str(master.commit.hexsha[:7]))
 
 def push():
     from xbooks.Xinit import repo, Xrc
     ccc.magenta("Pushing", str(repo.head.commit)[:7])
-    # try:
     Xorigin = repo.create_remote("Xorigin", url="https://{}:{}@github.com/{}/{}.git".format(Xrc["GitHub_Username"], sys.argv[2], Xrc["gh_repo_namespace"], Xrc["gh_repo_name"]))
     Xorigin.push()
     ccc.success("pushing " + str(repo.head.commit)[:7])
     return True
-        # except Exception as err:
-        #     e.close(err, fail="while pushing Xbooks' commit")
-
-
-# ##############################
-
-
-# def update_Xrc_transform(hexsha7):
-#     """
-#     delets hexsha7 from transform key of .Xbooksrc
-#     """
-#     ccc.note('untracking ' + hexsha7)
-#     Xrc["transform"].pop(hexsha7)
-#     with open("Xblog/.Xbooksrc", 'w') as f:
-#         f.write(json.dumps(Xrc, sort_keys=True, indent=4))
-#         f.close()
-#     ccc.success("updating transform key in .Xbooksrc")
-
-
-
-        # author = Actor("Xbooks[bot]", "")
-        # committer = Actor(author, email)
-
-# def update_Xrc_transform(hexsha7):
-#     """
-#     stores latest fetched data to transfrom key of Xrc
-#     """
-#     try:
-#         ccc.note('logging ' + hexsha7)
-#         xrc = XbooksrcReader.read("Xblog")
-#         if not "transform" in xrc:
-#             xrc.update({"transform":[]})
-#         xrc["transform"].append(hexsha7)
-#         with open("Xblog/.Xbooksrc", 'w') as f:
-#             f.write(json.dumps(xrc, sort_keys=True, indent=4))
-#             f.close()
-#         ccc.success("updating transform key in .Xbooksrc")
-#     except Exception as err:
-#         closer.close(err=err, fail="updating transform key in .Xbooksrc")
-

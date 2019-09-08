@@ -66,7 +66,6 @@ def delete(tbd, tipe):
     deletes and returns True if success; False otherwise
     """
     des = "Xblog/docs/" + tbd.replace(".ipynb", ".html")
-    print("des ", des)
     uninstall(des)
     if tipe == "Xpage":
         os.remove(des)
@@ -224,10 +223,7 @@ def removeFromParentIndex(des):
     """
     removes Xbook or Xpage from parent's index
     """
-    print(des)
-    print(os.path.basename(des))
     index = des.replace(os.path.basename(des), "index.html")
-    print(index)
     title = des.split("/")[-1].replace(".html", "")
     with open(index, "r") as f:
         soup = BeautifulSoup(f, "html.parser")
@@ -242,7 +238,6 @@ def uninstall(des):
     """
     called at every removal of Xbook or Xpage
     """
-    print(des)
     if "Xblog/docs/notebooks/" == des.replace(os.path.basename(des), ""):
         removeFromNavBar(des)
     else:
@@ -253,7 +248,6 @@ def editNavBar(src, des, tipe, Xrc):
     """
     edits Xbook or Xpage on navbar
     """
-    print("this is nav bar")
     old_title = src.split("/")[-1].replace(".html", "")
     new_title = des.split("/")[-1].replace(".html", "")
     index = "Xblog/docs/index.html"
@@ -279,7 +273,6 @@ def editParentIndex(src, des, tipe, Xrc):
     """
     edits Xbook or Xpage on parent's index
     """
-    print("this is parent index")
     old_title = src.split("/")[-1].replace(".html", "")
     new_title = des.split("/")[-1].replace(".html", "")
     index = des.replace(os.path.basename(des), "index.html")
@@ -287,9 +280,6 @@ def editParentIndex(src, des, tipe, Xrc):
         soup = BeautifulSoup(f, "html.parser")
         f.close()
     tag = soup.select("#"+old_title)[0]
-    print(tag)
-    print(tag["onclick"])
-    print(tag["onclick"].split(";"))
     old_tstamp = tag.td.string.lstrip().rstrip()
     new_tstamp = datetime.datetime.fromtimestamp(time.time()).strftime("%H:%M.%S|$MONTH$ %d %Y by Xbooks[bot]").replace("$MONTH$", chooseMonth(datetime.datetime.fromtimestamp(time.time()).strftime("%m")))
     old_src = tag["onclick"].split(";")[0].split('(')[1].split(')')[0]
@@ -312,10 +302,8 @@ def update(src, des, tipe):
     called at every rename of Xbook or Xpage
     """
     from xbooks.Xinit import Xrc
-    print(src, des, tipe)
     src = "Xblog/docs/" + src
     des = "Xblog/docs/" + des
-    print(src, des, tipe)
     if "Xblog/docs/notebooks/" == des.replace(os.path.basename(des), ""):
         editNavBar(src, des, tipe, Xrc)
     else:

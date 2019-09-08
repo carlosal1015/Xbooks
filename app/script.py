@@ -59,7 +59,6 @@ def transform(hexsha7, fetched_data):
             root = index.replace("index.html", "")
             ccc.note("checking if " + root + " is empty...")
             arr = os.listdir(root)
-            print(arr)
             if arr == ["index.html"]:
                 root = "/".join(root.split("/")[:-1])
                 i.uninstall(root)
@@ -72,21 +71,15 @@ def transform(hexsha7, fetched_data):
                 sd1.append(i.delete(tbddir, "Xbook"))
         if(all(sd0) and all(sd1)):
             push_url = "https://"+Xrc["GitHub_Username"]+":"+sys.argv[2]+"@github.com/"+Xrc["gh_repo_namespace"]+"/"+Xrc["gh_repo_name"]+".git"
+            # print("to be commited and pushed!")
             if gh.commit(fetched_data):
                 ccc.success("trans")
-            # candp = CommiterAndPusher(push_url, Xrc["GitHub_Username"], Xrc["Email"])
-            # if gh.commit(fetched_data):
-            #     if candp.push():
-            #         ccc.success("transforming "+hexsha7)
-            #         update_Xrc_transform(hexsha7)
-                    # print("woodoo!")
 
 
 # this script can be run only on cli
 
 if __name__ == "__main__":
     import sys
-    print(sys.argv)
     if len(sys.argv) == 3:
         from xbooks import Xinit
         Xinit.init(sys.argv[1])
@@ -98,41 +91,7 @@ if __name__ == "__main__":
                 transform(commit["hexsha7"], commit["tree"])
         else:
             ccc.note("skipping transformation process since latest commit is not authored by the owner " + Xrc["GitHub_Username"] + " but is by " + author)
-
-        # candf = ClonnerAndFetcher(sys.argv[1])
-        # clonned_repo = candf.clone()
-        # if clonned_repo:
-        #     Xrc = XbooksrcReader.read("Xblog")
-        #     if Xrc:
-        #         if clonned_repo.author == Xrc["GitHub_Username"]:
-        #             commits = candf.fetch()
-        #             if commits:
-        #                 for commit in commits:
-        #                     transformer.transform(commit["hexsha7"], commit["tree"])
-        #                 closer.close(cyan=["THANKS", "for using Xbooks!, visit me @ XinYaanZyoy.github.io"])
-        #         else:
-        #             closer.close(note="skipping transformation process since latest commit is not authored by the owner " + Xrc["GitHub_Username"] + " but is by " + clonned_repo.author)
     else:
         ccc.fail("kindly recheck your argumentation!")
         ccc.note("check whether env vars set properly! or check your CI script if it's not currepted")
         sys.exit()
-
-
-
-
-
-
-# def update_Xrc_transform(hexsha7):
-#     """
-#     delets hexsha7 from transform key of .Xbooksrc
-#     """
-#     try:
-#         ccc.note('untracking ' + hexsha7)
-#         Xrc = XbooksrcReader.read("Xblog")
-#         Xrc["transform"].pop(hexsha7)
-#         with open("Xblog/.Xbooksrc", 'w') as f:
-#             f.write(json.dumps(Xrc, sort_keys=True, indent=4))
-#             f.close()
-#         ccc.success("updating transform key in .Xbooksrc")
-#     except Exception as err:
-#         closer.close(err=err, fail="updating transform key in .Xbooksrc")

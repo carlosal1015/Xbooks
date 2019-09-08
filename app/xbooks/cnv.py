@@ -64,35 +64,11 @@ def jupy2pdf(src):
         import subprocess
         des = src.replace(".ipynb",".pdf").replace("Xblog", "Xblog/docs").replace("notebooks", "pdfs")
         ccc.note("converting " + str(src) + " to pdf")
-        if os.system("bash ./convert.sh {} {} Xblog/ref.bib Xblog/template.tplx".format(src, src.replace(os.path.basename(src), "").replace("Xblog", "Xblog/docs").replace("notebooks", "pdfs"))) == 0:
-            ccc.success("converting " + str(src) + "to " + os.path.join(des,os.path.basename(src).replace(".ipynb",".pdf")))
+        if os.system("bash ./convert.sh {} {} Xblog/ref.bib Xblog/template.tplx".format(src, src.replace(os.path.basename(src), "").replace("Xblog", "Xblog/docs").replace("notebooks/", "pdfs"))) == 0:
+            ccc.success("converting " + str(src) + " to " + des)
             return True
         else:
             ccc.fail("while running jupy2pdf.sh")
     except Exception as err:
         ccc.stderr(err)
 
-# def jupy2pdf(src):
-#     """
-#     converts .ipynb to pdf
-#     """
-    # des = src.replace(".ipynb",".pdf").replace("Xblog", "Xblog/docs").replace("notebooks", "pdfs")
-
-    # ccc.note("preparing " + str(src) + " for pdf conversion")
-
-    # with open(src, "r") as f:
-    #     nb = nbformat.read(f, as_version=4)
-    # ccc.success("reading " + src)
-
-#     if not os.path.isdir(des.replace(os.path.basename(des), "")):
-#         os.makedirs(des.replace(os.path.basename(des), ""))
-#         ccc.note("created " + des.replace(os.path.basename(des), ""))
-#     pdf_data, resources = pdf_exporter.from_notebook_node(nb)
-#     ccc.note("finished processing for " + des)
-
-#     with open(des, "wb") as f:
-#         f.write(pdf_data)
-#         f.close()
-
-    # ccc.success("converting " + str(src) + "to " + os.path.join(des,os.path.basename(src).replace(".ipynb",".pdf")))
-    # return True

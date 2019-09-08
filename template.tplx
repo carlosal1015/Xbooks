@@ -5,7 +5,7 @@
 ((* endblock author *))
 
 ((* block title *))
-\title{$TITLE$}
+\title{TITLE}
 ((* endblock title *))
 
 ((* block bibliography *))
