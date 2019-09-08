@@ -133,7 +133,7 @@ def addToParentIndex(des, tipe, Xrc):
         f.close()
     with open(index, 'w') as f:
         notebook = "/".join(des.split("/")[2:])
-        soup.head.title.string = 'TOC of ' + des.replace(des.split("/")[-1])
+        soup.head.title.string = 'TOC of ' + des.split("/")[-1].split(".")[0]
         if tipe == "Xpage":
             tr = soup.new_tag('tr')
             tr["id"] = title
@@ -177,7 +177,7 @@ def addToParentIndex(des, tipe, Xrc):
                 tr = soup.new_tag('tr')
                 soup.table.insert(0, tr)
             soup.table.tr.insert(0, td)
-        f.write(soup)
+        f.write(soup.prettify(formatter="html"))
         f.close()
     ccc.success("adding " + des + " to parent index")
 
