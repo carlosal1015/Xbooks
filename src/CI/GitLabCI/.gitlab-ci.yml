@@ -9,4 +9,4 @@ image: xsoft/xbooks:latest
 Xbooks_Transformation:
     stage: deploy
     script:
-        - cd /Xbooks/ && source activate Xbooks_env && python Xbooks.py $REPO $PAT
+        - cd /Xbooks/ && source activate Xbooks_env && python script.py $GH_REPO $GH_PAT
