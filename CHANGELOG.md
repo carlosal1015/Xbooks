@@ -1,3 +1,17 @@
+# [1.7.0](https://github.com/xsoft-technologies/Xbooks/compare/v1.6.1...v1.7.0) (2019-09-08)
+
+
+### Bug Fixes
+
+* resolves bs4 and string conflicts, fixes [#102](https://github.com/xsoft-technologies/Xbooks/issues/102) ([e31a517](https://github.com/xsoft-technologies/Xbooks/commit/e31a517))
+* stash mechanism to avoid sync conflicts, fixes [#98](https://github.com/xsoft-technologies/Xbooks/issues/98) ([24cd50b](https://github.com/xsoft-technologies/Xbooks/commit/24cd50b))
+* tex template installation for pdf, and placifier replacment of placeholder gh_namespace instead of gh_username, fixes [#100](https://github.com/xsoft-technologies/Xbooks/issues/100), fixes99 ([cd15660](https://github.com/xsoft-technologies/Xbooks/commit/cd15660))
+
+
+### Features
+
+* py env specific config template installation, fixes [#103](https://github.com/xsoft-technologies/Xbooks/issues/103), ffixes [#104](https://github.com/xsoft-technologies/Xbooks/issues/104) ([5332067](https://github.com/xsoft-technologies/Xbooks/commit/5332067))
+
 ## [1.6.1](https://github.com/xsoft-technologies/Xbooks/compare/v1.6.0...v1.6.1) (2019-09-08)
 
 
