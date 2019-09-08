@@ -22,8 +22,9 @@ Link to privacy policy of third party service providers used by the app
 We value your trust, as informed in CLI app, pipeline app, and documentation of Xbooks that; this project or xsoft-technologies do not carry your personal information in any means, the credentials or PATs are merly for the flow of app and it dosn't store them,
 PATs however are stored on your CI runner by yourself, your username and social information is stored in .Xbooksrc file in the root of your blog and this app doesn't transmit it anywhere, after initializing, installing and working flow of Xbooks in your repo on
 your namespace belongs to you and hence all those files in your blog including those of Xbooks generated do not correspond either to Xbooks or xsoft-technologies.
+the CI runner, however pulls an image of Xbooks container from docker, we dont know what happens on that runner except that all files from [app/](https://github.com/xsoft-technologies/Xbooks/tree/master/app) is executed, so the securiy of your files on CI runner depends on what CI platform you're using, Xbooks is responsible only for the Dockerfile script and all those app/ scripts; all other files (if) executed on CI runner it definately dosen't belong or correspond to either xsoft-technologies or initiator of this project.
 
-check out [SSECURITY POLICY](https://github.com/xsoft-technologies/Xbooks/edit/master/SECURITY.md) for more on reporting and finnding solutions!
+check out [SSECURITY POLICY](https://github.com/xsoft-technologies/Xbooks/blob/master/SECURITY.md) for more on reporting and finnding solutions!
 
 **Changes to This Privacy Policy**
 
