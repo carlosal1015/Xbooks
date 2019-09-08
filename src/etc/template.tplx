@@ -1,7 +1,7 @@
 ((*- extends 'article.tplx' -*))
 
 ((* block author *))
-\author{xsoft-technologies}
+\author{$AUTHOR$}
 ((* endblock author *))
 
 ((* block title *))
