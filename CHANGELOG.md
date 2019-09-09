@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/xsoft-technologies/Xbooks/compare/v1.7.1...v1.7.2) (2019-09-09)
+
+
+### Bug Fixes
+
+* publish script pushes after stash has been apllied back ([c5c5c0b](https://github.com/xsoft-technologies/Xbooks/commit/c5c5c0b))
+
 ## [1.7.1](https://github.com/xsoft-technologies/Xbooks/compare/v1.7.0...v1.7.1) (2019-09-09)
 
 
