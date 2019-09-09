@@ -1,3 +1,13 @@
+## [1.7.1](https://github.com/xsoft-technologies/Xbooks/compare/v1.7.0...v1.7.1) (2019-09-09)
+
+
+### Bug Fixes
+
+* CLI patches ([f9c3cd6](https://github.com/xsoft-technologies/Xbooks/commit/f9c3cd6))
+* resolves minor placifier errors ([bfdb76b](https://github.com/xsoft-technologies/Xbooks/commit/bfdb76b))
+* resolves tex des path correctly ([f5eb1e5](https://github.com/xsoft-technologies/Xbooks/commit/f5eb1e5))
+* stashing now includes all files, fixes [#98](https://github.com/xsoft-technologies/Xbooks/issues/98) ([d2868cf](https://github.com/xsoft-technologies/Xbooks/commit/d2868cf))
+
 # [1.7.0](https://github.com/xsoft-technologies/Xbooks/compare/v1.6.1...v1.7.0) (2019-09-08)
 
 
