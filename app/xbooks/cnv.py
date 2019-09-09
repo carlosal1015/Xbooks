@@ -64,7 +64,7 @@ def jupy2pdf(src):
         import subprocess
         des = src.replace(".ipynb",".pdf").replace("Xblog", "Xblog/docs").replace("notebooks", "pdfs")
         ccc.note("converting " + str(src) + " to pdf")
-        if os.system("bash ./convert.sh {} {} Xblog/ref.bib Xblog/template.tplx".format(src, src.replace(os.path.basename(src), "").replace("Xblog", "Xblog/docs").replace("notebooks/", "pdfs"))) == 0:
+        if os.system("bash ./convert.sh {} {} Xblog/ref.bib Xblog/template.tplx".format(src, src.replace(os.path.basename(src), "").replace("Xblog", "Xblog/docs").replace("notebooks/", "pdfs/"))) == 0:
             ccc.success("converting " + str(src) + " to " + des)
             return True
         else:

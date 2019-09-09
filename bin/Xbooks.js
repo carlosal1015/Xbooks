@@ -5,11 +5,11 @@
 const pkg = require('../package');
 const ccc = require("../lib/common_cli_conventions");
 const initiator = require('../lib/initiator');
-const installer = require("../lib/installer/install");
-const placifier = require("../lib/placifier/placify");
-const publisher = require("../lib/publisher/publish");
-const syncer = require("../lib/publisher/syncer");
-const uninstaller = require("../lib/uninstaller/uninstall");
+const installer = require("../lib/installer");
+const placifier = require("../lib/placifier");
+const publisher = require("../lib/publisher");
+const syncer = require("../lib/syncer");
+const uninstaller = require("../lib/uninstaller");
 
 const cmd = require('commander');
 const path = require('path');

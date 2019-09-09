@@ -71,9 +71,9 @@ def transform(hexsha7, fetched_data):
                 sd1.append(i.delete(tbddir, "Xbook"))
         if(all(sd0) and all(sd1)):
             push_url = "https://"+Xrc["GitHub_Username"]+":"+sys.argv[2]+"@github.com/"+Xrc["gh_repo_namespace"]+"/"+Xrc["gh_repo_name"]+".git"
-            # print("to be commited and pushed!")
-            if gh.commit(fetched_data):
-                ccc.success("trans")
+            print("to be commited and pushed!")
+            # if gh.commit(fetched_data):
+            #     ccc.success("trans")
 
 
 # this script can be run only on cli
