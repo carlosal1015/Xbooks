@@ -1,3 +1,10 @@
+## [1.7.5](https://github.com/xsoft-technologies/Xbooks/compare/v1.7.4...v1.7.5) (2020-02-14)
+
+
+### Bug Fixes
+
+* regexp match fixed to only root files ([f39e579](https://github.com/xsoft-technologies/Xbooks/commit/f39e579))
+
 ## [1.7.4](https://github.com/xsoft-technologies/Xbooks/compare/v1.7.3...v1.7.4) (2020-02-14)
 
 
