@@ -1,8 +1,8 @@
 app/
 node_modules/
-.editorconfig
-.gitignore
-.gitpod.dockerfile
-.gitpod.yml
-dockerfile
-environment.yml
+/.editorconfig
+/.gitignore
+/.gitpod.dockerfile
+/.gitpod.yml
+/dockerfile
+/environment.yml
