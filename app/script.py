@@ -36,7 +36,7 @@ def transform(hexsha7, fetched_data):
                 cnv.md2html()
                 continue
             sc.append(cnv.jupy2html("Xblog/" + tbc))
-            sc.append(cnv.jupy2pdf("Xblog/" + tbc))
+            # sc.append(cnv.jupy2pdf("Xblog/" + tbc))
     if(all(sc)):
         sd0 = []
         sd1 = []
@@ -65,8 +65,8 @@ def transform(hexsha7, fetched_data):
                 os.remove(root+"/index.html")
                 os.rmdir(root)
                 ccc.success("deleting " + root)
-                root_pdf = root.replace("notebooks", "pdfs")
-                os.rmdir(root_pdf)
+                # root_pdf = root.replace("notebooks", "pdfs")
+                # os.rmdir(root_pdf)
             for tbddir in tbddirs:
                 sd1.append(i.delete(tbddir, "Xbook"))
         if(all(sd0) and all(sd1)):
