@@ -1,3 +1,10 @@
+## [1.7.4](https://github.com/xsoft-technologies/Xbooks/compare/v1.7.3...v1.7.4) (2020-02-14)
+
+
+### Bug Fixes
+
+* skip pdf script ([ca1e713](https://github.com/xsoft-technologies/Xbooks/commit/ca1e713))
+
 ## [1.7.3](https://github.com/xsoft-technologies/Xbooks/compare/v1.7.2...v1.7.3) (2019-09-09)
 
 
