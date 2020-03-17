@@ -47,7 +47,7 @@
     "inquirer": "^7.0.0",
     "rimraf": "^3.0.0",
     "simple-git": "^1.124.0",
-    "update-notifier": "^3.0.1"
+    "update-notifier": "^4.0.0"
   },
   "repository": {
     "type": "git",
