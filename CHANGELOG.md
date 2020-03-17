@@ -1,3 +1,11 @@
+## [1.7.6](https://github.com/xsoft-technologies/Xbooks/compare/v1.7.5...v1.7.6) (2020-03-17)
+
+
+### Bug Fixes
+
+* **package:** update commander to version 4.0.0 ([b75295e](https://github.com/xsoft-technologies/Xbooks/commit/b75295e))
+* **package:** update update-notifier to version 4.0.0 ([4de991a](https://github.com/xsoft-technologies/Xbooks/commit/4de991a))
+
 ## [1.7.5](https://github.com/xsoft-technologies/Xbooks/compare/v1.7.4...v1.7.5) (2020-02-14)
 
 
