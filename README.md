@@ -1,3 +1,5 @@
+THIS PROJECT IS NO MORE ACTIVE, YOU MAY LIKE USING [https://github.com/executablebooks](https://github.com/executablebooks)/[https://executablebooks.org/](https://executablebooks.org/) INSTEAD. - Aug 09 2021
+
 ❌ DO NOT USE THIS; IF YOU DO NOT KNOW HOW TO DO CODDING, THIS PROJECT IS STILL UNDER WORK, as of FEB 16 2020, THERE ARE SO MANY BUGS ❌
 
 > NOTE: I'm trying to build v2.0 using github pages along with github actions (using jekyll liquid, though i'm still not sure of how to replace dockerized python app of Xbooks which runs on CI runner!), limiting this project to github might i think increase the quality! - Aug 03 2020
